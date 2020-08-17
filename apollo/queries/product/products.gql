@@ -1,0 +1,52 @@
+query MyQuery {
+  products(first: 20) {
+    nodes {
+      id
+      productId
+      averageRating
+      description
+      name
+      slug
+      onSale
+      image {
+        altText
+        uri
+        title
+        srcSet(size: LARGE)
+        sourceUrl
+        link
+        sizes(size: MEDIUM_LARGE)
+      }
+      link
+      ... on SimpleProduct {
+        price
+        id
+        regularPrice
+        stockStatus
+        stockQuantity
+      }
+      ... on VariableProduct {
+        price
+        id
+        regularPrice
+        stockQuantity
+      }
+      ... on ExternalProduct {
+        price
+        id
+        regularPrice
+      }
+      ... on GroupProduct {
+        products {
+          nodes {
+            ... on SimpleProduct {
+              price
+              stockStatus
+              stockQuantity
+            }
+          }
+        }
+      }
+    }
+  }
+}

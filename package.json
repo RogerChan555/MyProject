@@ -1,0 +1,78 @@
+{
+  "name": "woo-nuxt",
+  "version": "1.0.0",
+  "description": "Woocommerce Front-end app with NuxtJS",
+  "author": "hau.nguyen",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "npm run build-fragment && nuxt build",
+    "start": "nuxt start",
+    "export": "nuxt export",
+    "generate": "nuxt build && nuxt export",
+    "serve": "nuxt serve",
+    "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "lint:style": "stylelint **/*.{vue,css} --ignore-path .gitignore",
+    "lint": "npm run lint:js && npm run lint:style",
+    "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore ."
+  },
+  "lint-staged": {
+    "*.{js,vue}": "eslint",
+    "*.{css,vue}": "stylelint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "dependencies": {
+    "@nuxt/components": "^1.1.0",
+    "@nuxt/content": "^1.5.2",
+    "@nuxtjs/apollo": "^4.0.1-rc.1",
+    "@nuxtjs/axios": "^5.11.0",
+    "@nuxtjs/pwa": "^3.0.0-beta.20",
+    "@nuxtjs/sitemap": "^2.4.0",
+    "apollo-boost": "^0.4.9",
+    "apollo-cache-inmemory": "^1.6.6",
+    "apollo-client": "^2.6.10",
+    "apollo-link": "^1.2.14",
+    "apollo-link-context": "^1.0.20",
+    "apollo-link-error": "^1.1.13",
+    "apollo-link-http": "^1.5.17",
+    "fs": "0.0.1-security",
+    "graphql": "^15.3.0",
+    "graphql-tag": "^2.11.0",
+    "gsap": "^3.4.2",
+    "lodash": "^4.17.19",
+    "node-fetch": "^2.6.0",
+    "nuxt": "^2.14.2",
+    "smooth-scrollbar": "^8.5.2",
+    "vue-lazyload": "^1.3.3",
+    "vuex-persistedstate": "^3.0.1"
+  },
+  "devDependencies": {
+    "@aceforth/nuxt-optimized-images": "^1.1.0",
+    "@nuxtjs/eslint-config": "^3.1.0",
+    "@nuxtjs/eslint-module": "^2.0.0",
+    "@nuxtjs/stylelint-module": "^4.0.0",
+    "@nuxtjs/svg": "^0.1.11",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.6.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-nuxt": "^1.0.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-vue": "^6.2.2",
+    "husky": "^4.2.5",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-pngquant": "^9.0.0",
+    "imagemin-svgo": "^8.0.0",
+    "lint-staged": "^10.2.11",
+    "lqip-loader": "^2.2.0",
+    "prettier": "^2.0.5",
+    "stylelint": "^13.6.1",
+    "stylelint-config-prettier": "^8.0.1",
+    "stylelint-config-standard": "^20.0.0",
+    "webp-loader": "^0.6.0"
+  }
+}

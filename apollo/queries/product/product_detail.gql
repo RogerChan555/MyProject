@@ -1,0 +1,65 @@
+query getSingleProduct($id: ID!) {
+  product(id: $id) {
+    id
+    productId
+    averageRating
+    description
+    name
+    slug
+    image {
+      altText
+      uri
+      title
+      srcSet
+      sourceUrl
+      link
+    }
+    productCategories {
+      nodes {
+        name
+        link
+      }
+    }
+    galleryImages {
+      nodes {
+        altText
+        uri
+        link
+        sourceUrl
+      }
+    }
+    link
+    ... on SimpleProduct {
+      price
+      id
+    }
+    ... on VariableProduct {
+      price
+      id
+    }
+    ... on ExternalProduct {
+      price
+      id
+      contentType {
+        node {
+          id
+        }
+      }
+    }
+    ... on GroupProduct {
+      products {
+        nodes {
+          ... on SimpleProduct {
+            id
+            price
+          }
+        }
+      }
+      id
+    }
+  }
+  tag(id: $id) {
+    name
+    link
+  }
+}

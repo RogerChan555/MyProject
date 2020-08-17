@@ -1,0 +1,3 @@
+// store/index.js
+
+// end

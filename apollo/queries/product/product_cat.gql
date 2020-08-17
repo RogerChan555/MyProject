@@ -1,0 +1,6 @@
+query getProductCat($id: ID!) {
+  productCategory(id: $id) {
+    name
+    link
+  }
+}

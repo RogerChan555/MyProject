@@ -1,0 +1,6 @@
+query getProductTag($id: ID!) {
+  productTag(id: $id) {
+    name
+    link
+  }
+}
