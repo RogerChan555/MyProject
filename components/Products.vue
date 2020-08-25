@@ -95,12 +95,18 @@
                 </div>
               </div>
             </div>
-            <nuxt-link
+            <!-- <nuxt-link
               :to="{
                 path: 'product/' + product.productId,
                 params: { link: product.id },
               }"
-              prefetch
+              class="soma-link"
+            ></nuxt-link> -->
+            <nuxt-link
+              :to="{
+                name: 'product',
+                params: { id: product.id, productId: product.productId },
+              }"
               class="soma-link"
             ></nuxt-link>
           </div>

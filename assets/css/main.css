@@ -4556,6 +4556,8 @@ ul.woocommerce-error li a {
 
 .single-product .flex-row-reverse .single-product_info {
   padding-left: 0;
+  margin-top: 57px;
+  padding-top: 12rem;
 }
 @media (min-width: 577px) {
   .single-product .flex-row-reverse .single-product_info {

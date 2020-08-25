@@ -63,6 +63,8 @@ export default {
   buildModules: [
     // Doc: https://github.com/nuxt/components
     '@nuxt/components',
+    // Doc: https://github.com/nuxt-community/router-module
+    '@nuxtjs/router',
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/stylelint-module
@@ -70,6 +72,10 @@ export default {
     // Doc: https://github.com/aceforth/nuxt-optimized-images
     '@aceforth/nuxt-optimized-images',
   ],
+
+  routerModule: {
+    /* module options */
+  },
 
   optimizedImages: {
     optimizeImages: true,

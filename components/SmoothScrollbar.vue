@@ -10,23 +10,39 @@
 
 <script>
 // import { ScrollContainer } from '~/static/js/main.js'
-import { ScrollContainer } from '~/plugins/external/main.js'
+// import { ScrollContainer } from '~/plugins/external/main.js'
+import SmoothScrollbar from 'smooth-scrollbar'
+
+let options = {
+  damping: 0.055,
+  renderByPixels: true,
+  thumbMinSize: 20,
+  alwaysShowTracks: false,
+  continuousScrolling: true,
+  delegateTo: null,
+  plugins: {},
+}
 
 export default {
   name: 'SmoothScrollbar',
   props: {},
   data() {
-    return {
-      scrollContainer: null,
-    }
+    return {}
   },
   computed: {},
   mounted() {
     this.$nextTick(() => {
       // let scrollbar = new ScrollContainer(this.$refs.scrollArea)
-      this.scrollContainer = new ScrollContainer(this.$refs.scrollArea)
-      console.log(this.scrollContainer.scrollbar.size.content.height)
-      window.addEventListener('resize', this.scrollContainer.scrollbar.update())
+      const scrollbar = SmoothScrollbar.init(this.$refs.scrollArea, options)
+      console.log(this)
+      window.addEventListener('resize', scrollbar.update())
+      scrollbar.addListener((s) => {
+        if (s.offset.y >= 30) {
+          document.querySelector('header').classList.add('onScroll')
+        } else {
+          document.querySelector('header').classList.remove('onScroll')
+        }
+      })
     })
   },
   // updated() {
