@@ -1,5 +1,8 @@
 <template>
   <div>
+    <div class="menu-text_holder text-align_right">
+      <a href="#" class="menu-text" @click.prevent="handleMenuOpen">Menu</a>
+    </div>
     <div
       id="header-overlay"
       class="soma-overlay"

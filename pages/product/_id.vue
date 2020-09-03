@@ -1,8 +1,5 @@
 <template>
-  <div
-    id="product-84"
-    class="post-84 product type-product status-publish has-post-thumbnail product_cat-fashion product_tag-jackets first instock shipping-taxable purchasable product-type-simple"
-  >
+  <div id="product-84" class="product">
     <div class="non-container">
       <div class="product-holder padding-bottom_md row flex-row-reverse">
         <div class="col-md-6 col-xxl-7">
@@ -206,6 +203,7 @@
 </template>
 
 <script>
+import { gsap } from 'gsap'
 // import { mapGetters } from 'vuex'
 import PRODUCT_DETAIL from '~/apollo/queries/product/product_detail.gql'
 // import { isEmpty } from 'lodash'
@@ -213,13 +211,50 @@ import PRODUCT_DETAIL from '~/apollo/queries/product/product_detail.gql'
 export default {
   name: 'ProductId',
 
-  validate(data) {
-    return /^\d+$/.test(data.params.productId)
+  // validate(data) {
+  //   return /^\d+$/.test(data.params.id)
+  // },
+
+  transition: {
+    enter(el, done) {
+      console.log(el)
+      gsap
+        .timeline({
+          onComplete: done,
+          defaults: { ease: 'back.inOut(3)', duration: 0.5 },
+        })
+        .from(el, {
+          position: 'absolute',
+          y: 20,
+          autoAlpha: 0,
+          scale: 1.03,
+          transformOrigin: 'top center',
+        })
+        .set(el, { clearProps: true })
+    },
+    leave(el, done) {
+      console.log(el)
+      gsap
+        .timeline({
+          onComplete: done,
+          defaults: { ease: 'back.inOut(3)', duration: 0.5 },
+        })
+        .to(el, {
+          position: 'absolute',
+          y: -20,
+          autoAlpha: 0,
+          scale: 0.97,
+          transformOrigin: 'top center',
+        })
+        .set(el, { clearProps: true })
+    },
+    css: false,
+    mode: 'out-in',
   },
 
   async asyncData({ app, route }) {
     const id = route.params.id
-    console.log(id)
+    // const id = 'cHJvZHVjdDozNA=='
     const { data } = await app.apolloProvider.defaultClient.query({
       query: PRODUCT_DETAIL,
       variables: {
@@ -233,17 +268,14 @@ export default {
   },
 
   data() {
-    return {
-      // product: [],
-      loading: false,
-    }
+    return {}
   },
 
   head() {
     return {
       bodyAttrs: {
         class:
-          'product-template-default single single-product postid-84 woocommerce woocommerce-page wpb-js-composer js-comp-ver-5.4.7 vc_responsive',
+          'product-template-default single single-product woocommerce woocommerce-page',
       },
     }
   },

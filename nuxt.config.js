@@ -35,6 +35,18 @@ export default {
       class: '',
     },
   },
+  router: {
+    mode: 'history',
+    linkActiveClass: 'nuxt-link-active-cust',
+    linkExactActiveClass: 'nuxt-link-exact-active',
+
+    fallback: false,
+  },
+  /*
+   ** Loading page
+   */
+  // loading: '~/components/global/Loading.vue',
+  loading: false,
   /*
    ** Global CSS
    */
@@ -43,6 +55,10 @@ export default {
     '@/assets/css/vendor.css',
     '@/assets/css/main.css',
   ],
+  pageTransition: {
+    name: 'fade',
+    mode: 'out-in',
+  },
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
@@ -64,7 +80,7 @@ export default {
     // Doc: https://github.com/nuxt/components
     '@nuxt/components',
     // Doc: https://github.com/nuxt-community/router-module
-    '@nuxtjs/router',
+    // '@nuxtjs/router',
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/stylelint-module
@@ -73,9 +89,9 @@ export default {
     '@aceforth/nuxt-optimized-images',
   ],
 
-  routerModule: {
-    /* module options */
-  },
+  // routerModule: {
+  //   /* module options */
+  // },
 
   optimizedImages: {
     optimizeImages: true,

@@ -37,7 +37,7 @@ export default {
     return {
       bodyAttrs: {
         class:
-          'home archive post-type-archive post-type-archive-product woocommerce woocommerce-page wpb-js-composer js-comp-ver-5.4.7 vc_responsive',
+          'home archive post-type-archive post-type-archive-product woocommerce woocommerce-page',
       },
     }
   },

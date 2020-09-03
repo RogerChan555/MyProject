@@ -95,20 +95,30 @@
                 </div>
               </div>
             </div>
-            <!-- <nuxt-link
+            <nuxt-link
               :to="{
-                path: 'product/' + product.productId,
-                params: { link: product.id },
+                path: 'product/' + product.id,
+                params: { id: product.productId },
+                props: { newsletterPopup: false },
               }"
               class="soma-link"
-            ></nuxt-link> -->
-            <nuxt-link
+            ></nuxt-link>
+            <!-- <nuxt-link
               :to="{
                 name: 'product',
                 params: { id: product.id, productId: product.productId },
               }"
               class="soma-link"
-            ></nuxt-link>
+            ></nuxt-link> -->
+            <!-- <a
+              class="soma-link"
+              @click="
+                $router.push({
+                  path: 'product/' + product.productId,
+                  params: { id: product.id, productId: product.productId },
+                })
+              "
+            ></a> -->
           </div>
         </div>
       </div>

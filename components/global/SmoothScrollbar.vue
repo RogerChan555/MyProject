@@ -34,7 +34,6 @@ export default {
     this.$nextTick(() => {
       // let scrollbar = new ScrollContainer(this.$refs.scrollArea)
       const scrollbar = SmoothScrollbar.init(this.$refs.scrollArea, options)
-      console.log(this)
       window.addEventListener('resize', scrollbar.update())
       scrollbar.addListener((s) => {
         if (s.offset.y >= 30) {
