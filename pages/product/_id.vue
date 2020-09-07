@@ -214,10 +214,11 @@ export default {
   // validate(data) {
   //   return /^\d+$/.test(data.params.id)
   // },
+  // Key for <NuxtChild> (transitions)
+  key: (to) => to.fullPath,
 
   transition: {
     enter(el, done) {
-      console.log(el)
       gsap
         .timeline({
           onComplete: done,
@@ -233,7 +234,6 @@ export default {
         .set(el, { clearProps: true })
     },
     leave(el, done) {
-      console.log(el)
       gsap
         .timeline({
           onComplete: done,
@@ -252,9 +252,17 @@ export default {
     mode: 'out-in',
   },
 
+  // transition(to, from) {
+  //   if (!from) {
+  //     return 'slide-left'
+  //   }
+  //   // return +to.query.page < +from.query.page ? 'slide-right' : 'slide-left'
+  // },
+
   async asyncData({ app, route }) {
     const id = route.params.id
     // const id = 'cHJvZHVjdDozNA=='
+    console.log(app.apolloProvider)
     const { data } = await app.apolloProvider.defaultClient.query({
       query: PRODUCT_DETAIL,
       variables: {
@@ -291,5 +299,15 @@ export default {
   padding-left: 0;
   padding-right: 0;
   padding-bottom: 0;
+}
+.slide-left-enter,
+.slide-right-leave-active {
+  opacity: 0;
+  transform: translate(30px, 0);
+}
+.slide-left-leave-active,
+.slide-right-enter {
+  opacity: 0;
+  transform: translate(-30px, 0);
 }
 </style>

@@ -29,7 +29,6 @@
     "@nuxt/components": "^1.1.0",
     "@nuxt/content": "^1.5.2",
     "@nuxtjs/apollo": "^4.0.1-rc.1",
-    "@nuxtjs/axios": "^5.11.0",
     "@nuxtjs/pwa": "^3.0.0-beta.20",
     "@nuxtjs/sitemap": "^2.4.0",
     "apollo-boost": "^0.4.9",

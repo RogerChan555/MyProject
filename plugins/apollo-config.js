@@ -61,6 +61,7 @@ export default () => {
   return {
     link,
     cache: new InMemoryCache({ fragmentMatcher }),
+    connectToDevTools: true,
     defaultHttpLink: false, // this should do the trick
   }
 }

@@ -35,6 +35,14 @@ export default {
       class: '',
     },
   },
+
+  vue: {
+    config: {
+      productionTip: false,
+      devtools: true,
+    },
+  },
+
   router: {
     mode: 'history',
     linkActiveClass: 'nuxt-link-active-cust',
@@ -45,8 +53,8 @@ export default {
   /*
    ** Loading page
    */
-  // loading: '~/components/global/Loading.vue',
-  loading: false,
+  loading: '~/components/global/Loading.vue',
+  // loading: false,
   /*
    ** Global CSS
    */
@@ -118,8 +126,6 @@ export default {
    */
   modules: [
     '@nuxtjs/apollo',
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
@@ -131,14 +137,23 @@ export default {
   },
   apollo: {
     clientConfigs: {
-      default: '~/plugins/apollo.config.js',
+      default: '~/plugins/apollo-config.js',
     },
+    /**
+     * default 'apollo' definition
+     */
+    defaultOptions: {
+      $query: {
+        loadingKey: 'loading',
+        fetchPolicy: 'cache-and-network',
+      },
+    },
+    // setup a global query loader observer
+    watchLoading: '~/plugins/apollo-watch-loading-handler.js',
+
+    // setup a global error handler
+    errorHandler: '~/plugins/apollo-error-handler.js',
   },
-  /*
-   ** Axios module configuration
-   ** See https://axios.nuxtjs.org/options
-   */
-  axios: {},
   /*
    ** Content module configuration
    ** See https://content.nuxtjs.org/configuration
@@ -167,7 +182,7 @@ export default {
         config.devtool = ctx.isClient ? 'source-map' : 'inline-source-map'
       }
     },
-    transpile: ['gsap'],
+    // transpile: ['gsap'],
     vendor: ['main'],
     plugins: [
       new webpack.ProvidePlugin({

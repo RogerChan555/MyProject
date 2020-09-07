@@ -26,9 +26,7 @@
 <script>
 export default {
   data() {
-    return {
-      // products: this.$store.state.listProduct
-    }
+    return {}
   },
 
   computed: {},
@@ -41,28 +39,6 @@ export default {
       },
     }
   },
-  // apollo: {
-  //   products: {
-  //     prefetch: true,
-  //     query: productsQuery
-  //   }
-  // }
-  // mounted() {
-  //   this.getData()
-  // },
-  // methods: {
-  //   async getData() {
-  //     const result = await this.$apollo.query({ query: productsQuery })
-  //     return (this.listProducts = result.data.products.nodes)
-  //     // this.$apollo
-  //     //   .query({
-  //     //     query: productsQuery
-  //     //   })
-  //     //   .then((rs) => {
-  //     //     this.listProducts = rs.data.products.nodes
-  //     //   })
-  //   }
-  // }
 }
 </script>
 

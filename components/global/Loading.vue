@@ -12,11 +12,9 @@ export default {
   methods: {
     start() {
       this.loading = true
-      console.log('loading start')
     },
     finish() {
       this.loading = false
-      console.log('loading finish')
     },
   },
 }

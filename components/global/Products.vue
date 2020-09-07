@@ -127,23 +127,22 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+// import { mapGetters } from 'vuex'
+import productsQuery from '~/apollo/queries/product/products.gql'
 
 export default {
   name: 'Products',
 
+  async fetch() {
+    const result = await this.$apollo.query({ query: productsQuery })
+    return (this.listProduct = result.data.products.nodes)
+  },
+
   data() {
-    return {}
-  },
-
-  computed: {
-    ...mapGetters({
-      listProduct: 'product/listProduct',
-    }),
-  },
-
-  beforeCreate() {
-    this.$store.dispatch('product/fetchProducts')
+    return {
+      listProduct: '',
+      isLoading: false,
+    }
   },
 
   methods: {
