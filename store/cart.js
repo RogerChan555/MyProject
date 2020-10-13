@@ -19,7 +19,7 @@ const updateProductLocalStore = (state, currentProducts) => {
   const updatedProduct = {
     products: currentProducts,
     totalProductsCount: total.qty,
-    totalProductsPrice: total.totalPrice,
+    totalProductsPrice: total.totalPrice
   }
   state.cartList = updatedProduct
   return updatedProduct
@@ -38,7 +38,7 @@ const createNewProduct = (product, qty) => {
     srcSet: product.image.srcSet,
     qty,
     price: getFloatVal(product.price),
-    totalPrice: parseFloat((getFloatVal(product.price) * qty).toFixed(2)),
+    totalPrice: parseFloat((getFloatVal(product.price) * qty).toFixed(2))
   }
 }
 
@@ -47,11 +47,11 @@ const createNewProduct = (product, qty) => {
 // }
 
 export const state = () => ({
-  cartList: {},
+  cartList: {}
 })
 
 export const getters = {
-  cartList: (state) => state.cartList,
+  cartList: (state) => state.cartList
 }
 
 export const mutations = {
@@ -60,7 +60,7 @@ export const mutations = {
     const newCart = {
       products: [],
       totalProductsCount: qty,
-      totalProductsPrice: getFloatVal(product.price),
+      totalProductsPrice: getFloatVal(product.price)
     }
     newCart.products.push(newProduct)
 
@@ -107,7 +107,7 @@ export const mutations = {
 
   [types.CART_REMOVE_PRODUCT](state, updatedProducts) {
     updateProductLocalStore(state, updatedProducts)
-  },
+  }
   // decrementProductQuantity(state, product) {}
 }
 
@@ -129,13 +129,13 @@ export const actions = {
             // push new product if does not exist
             commit(types.CART_PUSH_NEW_PRODUCT, {
               product,
-              currentProducts,
+              currentProducts
             })
           } else {
             // increment exist product
             commit(types.CART_INCREMENT_PRODUCT_QTY, {
               existingProductIndex,
-              currentProducts,
+              currentProducts
             })
           }
         }
@@ -154,5 +154,5 @@ export const actions = {
     )
 
     commit(types.CART_REMOVE_PRODUCT, updatedProducts)
-  },
+  }
 }

@@ -4,12 +4,12 @@ import productDetailQuery from '~/apollo/queries/product/product_detail.gql'
 
 export const state = () => ({
   listProduct: [],
-  product: [],
+  product: []
 })
 
 export const getters = {
   product: (state) => state.product,
-  listProduct: (state) => state.listProduct,
+  listProduct: (state) => state.listProduct
 }
 
 export const mutations = {
@@ -18,7 +18,7 @@ export const mutations = {
   },
   [types.SAVE_PRODUCTS](state, listProduct) {
     state.listProduct = listProduct
-  },
+  }
 }
 
 export const actions = {
@@ -27,8 +27,8 @@ export const actions = {
       const response = await apolloClient.query({
         query: productDetailQuery,
         variables: {
-          id,
-        },
+          id
+        }
       })
 
       // Fetch Information Success
@@ -46,8 +46,8 @@ export const actions = {
   },
   async fetchProducts({ commit }) {
     const response = await this.app.apolloProvider.defaultClient.query({
-      query: productsQuery,
+      query: productsQuery
     })
     commit(types.SAVE_PRODUCTS, response.data.products.nodes)
-  },
+  }
 }

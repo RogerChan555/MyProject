@@ -14,14 +14,14 @@ export function createRouter() {
     routes: [
       {
         path: '/',
-        component: index,
+        component: index
       },
       {
         path: '/product/:productId',
         name: 'product',
-        component: product,
-      },
+        component: product
+      }
     ],
-    fallback: false,
+    fallback: false
   })
 }

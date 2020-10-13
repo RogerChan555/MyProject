@@ -17,7 +17,7 @@ import utils from '~/mixins/utils.js'
 
 Vue.mixin(utils)
 export default {
-  name: 'defaultLayout',
+  name: 'defaultLayout'
 }
 </script>
 

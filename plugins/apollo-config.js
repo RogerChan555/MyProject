@@ -5,13 +5,13 @@ import { onError } from 'apollo-link-error'
 import { setContext } from 'apollo-link-context'
 import {
   InMemoryCache,
-  IntrospectionFragmentMatcher,
+  IntrospectionFragmentMatcher
 } from 'apollo-cache-inmemory'
 import introspectionQueryResultData from '../fragmentTypes.json'
 import clientConfig from './client-config.js'
 
 const fragmentMatcher = new IntrospectionFragmentMatcher({
-  introspectionQueryResultData,
+  introspectionQueryResultData
 })
 
 // make sure to export default
@@ -20,10 +20,10 @@ export default () => {
   const httpLink = createHttpLink({
     // You should use an absolute URL here
     uri: clientConfig.graphqlUrl,
-    fetch: fetch,
+    fetch,
     headers: {
-      'Content-Type': 'application/json',
-    },
+      'Content-Type': 'application/json'
+    }
   })
 
   // Error Handling
@@ -48,8 +48,8 @@ export default () => {
       headers: {
         // Make sure you include any existing headers!
         ...previousContext.headers,
-        authorization: `Bearer ${token}`,
-      },
+        authorization: `Bearer ${token}`
+      }
     }
   })
 
@@ -62,6 +62,6 @@ export default () => {
     link,
     cache: new InMemoryCache({ fragmentMatcher }),
     connectToDevTools: true,
-    defaultHttpLink: false, // this should do the trick
+    defaultHttpLink: false // this should do the trick
   }
 }

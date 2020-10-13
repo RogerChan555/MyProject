@@ -1,9 +1,9 @@
 export const state = () => ({
-  loading: false,
+  loading: false
 })
 
 export const getters = {
-  loading: (state) => state.loading,
+  loading: (state) => state.loading
 }
 
 export const mutations = {
@@ -12,7 +12,7 @@ export const mutations = {
   },
   hide(state) {
     state.loading = false
-  },
+  }
 }
 
 export const actions = {
@@ -21,5 +21,5 @@ export const actions = {
   },
   hide({ commit }) {
     commit('hide')
-  },
+  }
 }

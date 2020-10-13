@@ -17,7 +17,7 @@ export default {
    */
   head: {
     htmlAttrs: {
-      lang: 'en',
+      lang: 'en'
     },
     title: process.env.npm_package_name || '',
     meta: [
@@ -26,21 +26,21 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || '',
-      },
+        content: process.env.npm_package_description || ''
+      }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     // script: [{ src: '/js/main.js' }],
     bodyAttrs: {
-      class: '',
-    },
+      class: ''
+    }
   },
 
   vue: {
     config: {
       productionTip: false,
-      devtools: true,
-    },
+      devtools: true
+    }
   },
 
   router: {
@@ -48,7 +48,11 @@ export default {
     linkActiveClass: 'nuxt-link-active-cust',
     linkExactActiveClass: 'nuxt-link-exact-active',
 
+    fallback: false
+  },
+  generate: {
     fallback: false,
+    routes: ['/', '404']
   },
   /*
    ** Loading page
@@ -61,11 +65,11 @@ export default {
   css: [
     '@/assets/css/woocommerce.css',
     '@/assets/css/vendor.css',
-    '@/assets/css/main.css',
+    '@/assets/css/main.css'
   ],
   pageTransition: {
     name: 'fade',
-    mode: 'out-in',
+    mode: 'out-in'
   },
   /*
    ** Plugins to load before mounting the App
@@ -74,7 +78,7 @@ export default {
   plugins: [
     { src: '~/plugins/vue-lazyload', mode: 'client' },
     { src: '~/plugins/vuex-persistedstate.js', mode: 'client' },
-    { src: '~/plugins/external/main.js', mode: 'client' },
+    { src: '~/plugins/external/main.js', mode: 'client' }
   ],
   /*
    ** Auto import components
@@ -89,12 +93,14 @@ export default {
     '@nuxt/components',
     // Doc: https://github.com/nuxt-community/router-module
     // '@nuxtjs/router',
+    // https://github.com/nuxt-community/style-resources-module
+    '@nuxtjs/style-resources',
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/stylelint-module
     '@nuxtjs/stylelint-module',
     // Doc: https://github.com/aceforth/nuxt-optimized-images
-    '@aceforth/nuxt-optimized-images',
+    '@aceforth/nuxt-optimized-images'
   ],
 
   // routerModule: {
@@ -102,7 +108,7 @@ export default {
   // },
 
   optimizedImages: {
-    optimizeImages: true,
+    optimizeImages: true
   },
 
   pwa: {
@@ -111,14 +117,14 @@ export default {
       short_name: 'Woo-nuxt',
       theme_color: '#83E8BC',
       background_color: '#83E8BC',
-      display: 'browser',
+      display: 'browser'
     },
     meta: {
       name: 'Woo-nuxt',
       description: 'Your personal workout assistant',
       author: 'Mowa-Zee',
-      theme_color: '#83E8BC',
-    },
+      theme_color: '#83E8BC'
+    }
   },
 
   /*
@@ -130,14 +136,14 @@ export default {
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
     // Doc: https://github.com/nuxt-community/sitemap-module
-    '@nuxtjs/sitemap',
+    '@nuxtjs/sitemap'
   ],
   sitemap: {
     // hostname: 'https://www.webnoob.dev',
   },
   apollo: {
     clientConfigs: {
-      default: '~/plugins/apollo-config.js',
+      default: '~/plugins/apollo-config.js'
     },
     /**
      * default 'apollo' definition
@@ -145,14 +151,17 @@ export default {
     defaultOptions: {
       $query: {
         loadingKey: 'loading',
-        fetchPolicy: 'cache-and-network',
-      },
+        fetchPolicy: 'cache-and-network'
+      }
     },
     // setup a global query loader observer
     watchLoading: '~/plugins/apollo-watch-loading-handler.js',
 
     // setup a global error handler
-    errorHandler: '~/plugins/apollo-error-handler.js',
+    errorHandler: '~/plugins/apollo-error-handler.js'
+  },
+  colorMode: {
+    preference: 'light' // disable system
   },
   /*
    ** Content module configuration
@@ -187,8 +196,8 @@ export default {
     plugins: [
       new webpack.ProvidePlugin({
         // global modules
-        _: 'lodash',
-      }),
+        _: 'lodash'
+      })
     ],
     extractCSS: true,
     optimization: {
@@ -198,13 +207,13 @@ export default {
             name: 'styles',
             test: /\.(css|vue)$/,
             chunks: 'all',
-            enforce: true,
-          },
-        },
-      },
-    },
+            enforce: true
+          }
+        }
+      }
+    }
   },
   render: {
-    resourceHints: false,
-  },
+    resourceHints: false
+  }
 }

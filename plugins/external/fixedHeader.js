@@ -40,7 +40,7 @@ window.addEventListener('resize', () => {
 })
 
 // Header fixed
-var onScroll = document.querySelector('header.fixed')
+const onScroll = document.querySelector('header.fixed')
 document.addEventListener('scroll', function () {
   if (document.scrollTop() >= 30) {
     onScroll.classList.add('onScroll')

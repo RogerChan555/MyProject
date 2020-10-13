@@ -20,8 +20,8 @@ fetch(`${graphqlUrl}`, {
           }
         }
       }
-    `,
-  }),
+    `
+  })
 })
   .then((result) => result.json())
   .then((result) => {

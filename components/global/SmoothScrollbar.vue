@@ -13,14 +13,14 @@
 // import { ScrollContainer } from '~/plugins/external/main.js'
 import SmoothScrollbar from 'smooth-scrollbar'
 
-let options = {
+const options = {
   damping: 0.055,
   renderByPixels: true,
   thumbMinSize: 20,
   alwaysShowTracks: false,
   continuousScrolling: true,
   delegateTo: null,
-  plugins: {},
+  plugins: {}
 }
 
 export default {
@@ -85,8 +85,8 @@ export default {
           ', 0)'
         )
       })
-    },
-  },
+    }
+  }
 }
 </script>
 

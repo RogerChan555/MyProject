@@ -47,7 +47,7 @@
                     class="woocommerce-review-link"
                     rel="nofollow"
                     ><div class="star-rating">
-                      <span style="width: 93.4%;"
+                      <span style="width: 93.4%"
                         >Rated <strong class="rating">4.67</strong> out of 5
                         based on <span class="rating">3</span> customer
                         ratings</span
@@ -56,7 +56,9 @@
                   >
                 </div>
               </div>
-              <h2 class="product_title entry-title">{{ product.name }}</h2>
+              <h2 class="product_title entry-title">
+                {{ product.name }}
+              </h2>
               <h4 class="price d-flex align-items-center">
                 <span class="woocommerce-Price-amount amount">
                   <i class="woocommerce-Price-currencySymbol">€</i
@@ -142,15 +144,15 @@
                   class="woocommerce-Tabs-panel woocommerce-Tabs-panel--description panel entry-content wc-tab"
                   role="tabpanel"
                   aria-labelledby="tab-title-description"
-                  style="display: block;"
+                  style="display: block"
                   v-html="product.description"
-                ></div>
+                />
                 <div
                   id="tab-additional_information"
                   class="woocommerce-Tabs-panel woocommerce-Tabs-panel--additional_information panel entry-content wc-tab"
                   role="tabpanel"
                   aria-labelledby="tab-title-additional_information"
-                  style="display: none;"
+                  style="display: none"
                 >
                   <table class="shop_attributes">
                     <tbody>
@@ -222,14 +224,14 @@ export default {
       gsap
         .timeline({
           onComplete: done,
-          defaults: { ease: 'back.inOut(3)', duration: 0.5 },
+          defaults: { ease: 'back.inOut(3)', duration: 0.5 }
         })
         .from(el, {
           position: 'absolute',
           y: 20,
           autoAlpha: 0,
           scale: 1.03,
-          transformOrigin: 'top center',
+          transformOrigin: 'top center'
         })
         .set(el, { clearProps: true })
     },
@@ -237,19 +239,19 @@ export default {
       gsap
         .timeline({
           onComplete: done,
-          defaults: { ease: 'back.inOut(3)', duration: 0.5 },
+          defaults: { ease: 'back.inOut(3)', duration: 0.5 }
         })
         .to(el, {
           position: 'absolute',
           y: -20,
           autoAlpha: 0,
           scale: 0.97,
-          transformOrigin: 'top center',
+          transformOrigin: 'top center'
         })
         .set(el, { clearProps: true })
     },
     css: false,
-    mode: 'out-in',
+    mode: 'out-in'
   },
 
   // transition(to, from) {
@@ -266,12 +268,12 @@ export default {
     const { data } = await app.apolloProvider.defaultClient.query({
       query: PRODUCT_DETAIL,
       variables: {
-        id,
+        id
       },
-      fetchPolicy: 'no-cache',
+      fetchPolicy: 'no-cache'
     })
     return {
-      product: data.product,
+      product: data.product
     }
   },
 
@@ -283,10 +285,10 @@ export default {
     return {
       bodyAttrs: {
         class:
-          'product-template-default single single-product woocommerce woocommerce-page',
-      },
+          'product-template-default single single-product woocommerce woocommerce-page'
+      }
     }
-  },
+  }
 }
 </script>
 

@@ -138,14 +138,14 @@ export default {
   data() {
     return {
       isOpen: false,
-      itemDelayOn: false,
+      itemDelayOn: false
     }
   },
 
   computed: {
     ...mapGetters({
-      cartProducts: 'cart/cartList',
-    }),
+      cartProducts: 'cart/cartList'
+    })
   },
 
   methods: {
@@ -165,8 +165,8 @@ export default {
         this.isOpen = false
       }, 250)
       setTimeout(() => {}, 300)
-    },
-  },
+    }
+  }
 }
 </script>
 

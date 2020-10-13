@@ -73,7 +73,7 @@
                     x="0px"
                     y="0px"
                     viewBox="0 0 56.966 56.966"
-                    style="enable-background: new 0 0 56.966 56.966;"
+                    style="enable-background: new 0 0 56.966 56.966"
                     xml:space="preserve"
                   >
                     <path
@@ -711,7 +711,7 @@ export default {
       isOpen: false,
       isOpenSearch: false,
       itemDelayOn: false,
-      checkMobile: false,
+      checkMobile: false
     }
   },
   created() {},
@@ -727,7 +727,7 @@ export default {
 
       const menuItem = {
         submenu,
-        parentItem,
+        parentItem
       }
 
       this.history.push(menuItem)
@@ -838,8 +838,8 @@ export default {
             document.querySelector('#search-input').focusout()
           })
       }
-    },
-  },
+    }
+  }
 }
 </script>
 

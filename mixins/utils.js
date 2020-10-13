@@ -1,6 +1,6 @@
 export default {
   methods: {
-    //Check Mobile
+    // Check Mobile
   /* eslint-disable */
     isMobile: function () {
       let check = false;

@@ -35,10 +35,10 @@ export default {
     return {
       bodyAttrs: {
         class:
-          'home archive post-type-archive post-type-archive-product woocommerce woocommerce-page',
-      },
+          'home archive post-type-archive post-type-archive-product woocommerce woocommerce-page'
+      }
     }
-  },
+  }
 }
 </script>
 

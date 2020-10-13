@@ -22,95 +22,9 @@
             width="100%"
             height="100%"
             viewBox="0 0 434.5 230.2"
-            style="enable-background: new 0 0 434.5 230.2;"
+            style="enable-background: new 0 0 434.5 230.2"
             xml:space="preserve"
           >
-            <style type="text/css">
-              .st0 {
-                clip-path: url(#SVGID_2_);
-              }
-              .st1 {
-                fill: #cfe5fc;
-              }
-              .st2 {
-                fill: #6ca5d0;
-              }
-              .st3 {
-                opacity: 0.3;
-                fill: #cfe5fc;
-              }
-              .st4 {
-                opacity: 0.36;
-                fill: none;
-                stroke: #bcc3ca;
-                stroke-width: 2;
-                stroke-linecap: round;
-                stroke-linejoin: round;
-                stroke-miterlimit: 10;
-              }
-              .st5 {
-                opacity: 0.63;
-                fill: none;
-                stroke: #bcc3ca;
-                stroke-width: 3;
-                stroke-linecap: round;
-                stroke-linejoin: round;
-                stroke-miterlimit: 10;
-              }
-              .st6 {
-                opacity: 0.4;
-                fill: none;
-                stroke: #bcc3ca;
-                stroke-width: 3;
-                stroke-linecap: round;
-                stroke-linejoin: round;
-                stroke-miterlimit: 10;
-              }
-              .st7 {
-                fill: none;
-                stroke: #d7dee2;
-                stroke-width: 4;
-                stroke-linecap: round;
-                stroke-linejoin: round;
-                stroke-miterlimit: 10;
-              }
-              .st8 {
-                opacity: 0.35;
-                fill: none;
-                stroke: #bcc3ca;
-                stroke-width: 2;
-                stroke-linecap: round;
-                stroke-linejoin: round;
-                stroke-miterlimit: 10;
-              }
-              .st9 {
-                opacity: 0.6;
-                fill: none;
-                stroke: #bcc3ca;
-                stroke-width: 5;
-                stroke-linecap: round;
-                stroke-linejoin: round;
-                stroke-miterlimit: 10;
-              }
-              .st10 {
-                opacity: 0.64;
-                fill: none;
-                stroke: #bcc3ca;
-                stroke-width: 6;
-                stroke-linecap: round;
-                stroke-linejoin: round;
-                stroke-miterlimit: 10;
-              }
-              .st11 {
-                opacity: 0.8;
-                fill: none;
-                stroke: #bcc3ca;
-                stroke-width: 7;
-                stroke-linecap: round;
-                stroke-linejoin: round;
-                stroke-miterlimit: 10;
-              }
-            </style>
             <g id="boat">
               <defs>
                 <path
@@ -122,7 +36,7 @@
                 ></path>
               </defs>
               <clipPath id="SVGID_2_">
-                <use xlink:href="#SVGID_1_" style="overflow: visible;"></use>
+                <use xlink:href="#SVGID_1_" style="overflow: visible"></use>
               </clipPath>
               <g id="transform" class="st0">
                 <g class="boat-reverse">
@@ -199,9 +113,95 @@ export default {
   head() {
     return {
       bodyAttrs: {
-        class: 'error404 wpb-js-composer js-comp-ver-5.4.7 vc_responsive',
-      },
+        class: 'error404 wpb-js-composer js-comp-ver-5.4.7 vc_responsive'
+      }
     }
-  },
+  }
 }
 </script>
+<style scoped>
+.st0 {
+  clip-path: url(#SVGID_2_);
+}
+.st1 {
+  fill: #cfe5fc;
+}
+.st2 {
+  fill: #6ca5d0;
+}
+.st3 {
+  opacity: 0.3;
+  fill: #cfe5fc;
+}
+.st4 {
+  opacity: 0.36;
+  fill: none;
+  stroke: #bcc3ca;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+}
+.st5 {
+  opacity: 0.63;
+  fill: none;
+  stroke: #bcc3ca;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+}
+.st6 {
+  opacity: 0.4;
+  fill: none;
+  stroke: #bcc3ca;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+}
+.st7 {
+  fill: none;
+  stroke: #d7dee2;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+}
+.st8 {
+  opacity: 0.35;
+  fill: none;
+  stroke: #bcc3ca;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+}
+.st9 {
+  opacity: 0.6;
+  fill: none;
+  stroke: #bcc3ca;
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+}
+.st10 {
+  opacity: 0.64;
+  fill: none;
+  stroke: #bcc3ca;
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+}
+.st11 {
+  opacity: 0.8;
+  fill: none;
+  stroke: #bcc3ca;
+  stroke-width: 7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+}
+</style>

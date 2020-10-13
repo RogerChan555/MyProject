@@ -1,17 +1,17 @@
 import SmoothScrollbar from 'smooth-scrollbar'
 
-let options = {
+const options = {
   damping: 0.055,
   renderByPixels: true,
   thumbMinSize: 20,
   alwaysShowTracks: false,
   continuousScrolling: true,
   delegateTo: null,
-  plugins: {},
+  plugins: {}
 }
 export class ScrollContainer {
   constructor(containerSelector) {
-    let scrollbar = SmoothScrollbar.init(containerSelector, options)
+    const scrollbar = SmoothScrollbar.init(containerSelector, options)
 
     this.scrollbar = scrollbar
   }

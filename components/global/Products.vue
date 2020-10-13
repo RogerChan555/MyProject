@@ -99,7 +99,7 @@
               :to="{
                 path: 'product/' + product.id,
                 params: { id: product.productId },
-                props: { newsletterPopup: false },
+                props: { newsletterPopup: false }
               }"
               class="soma-link"
             ></nuxt-link>
@@ -141,15 +141,15 @@ export default {
   data() {
     return {
       listProduct: '',
-      isLoading: false,
+      isLoading: false
     }
   },
 
   methods: {
     addProductToCart(product) {
       this.$store.dispatch('cart/addProductToCart', product)
-    },
-  },
+    }
+  }
 }
 </script>
 
