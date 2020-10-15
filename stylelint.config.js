@@ -37,6 +37,12 @@ module.exports = {
         ]
       }
     ],
+    'declaration-block-no-duplicate-properties': [
+      true,
+      {
+        ignoreProperties: ['color', '/background/']
+      }
+    ],
     'declaration-block-trailing-semicolon': null,
     'no-descending-specificity': null,
     // ===
