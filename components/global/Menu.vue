@@ -716,7 +716,6 @@ export default {
   },
   created() {},
   mounted() {
-    window.addEventListener('resize', () => console.log(this.isMobile()))
     this.initBackButtaddEventListener()
     this.mobileBindings()
   },

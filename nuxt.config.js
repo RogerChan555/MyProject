@@ -67,10 +67,16 @@ export default {
     '@/assets/css/vendor.css',
     '@/assets/css/main.css'
   ],
-  pageTransition: {
-    name: 'fade',
-    mode: 'out-in'
-  },
+  // pageTransition: {
+  //   name: 'fade',
+  //   mode: 'out-in',
+  //   enter() {
+  //     console.log('enter')
+  //   },
+  //   leave() {
+  //     console.log('leave')
+  //   }
+  // },
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
@@ -78,6 +84,7 @@ export default {
   plugins: [
     { src: '~/plugins/vue-lazyload', mode: 'client' },
     { src: '~/plugins/vuex-persistedstate.js', mode: 'client' },
+    { src: '~/plugins/after-each.js', mode: 'client' },
     { src: '~/plugins/external/main.js', mode: 'client' }
   ],
   /*

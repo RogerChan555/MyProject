@@ -24,12 +24,22 @@
 </template>
 
 <script>
+// import transitionMixin from '~/mixins/transition.js'
+
 export default {
+  name: 'Index',
+  // mixins: [transitionMixin],
+
   data() {
     return {}
   },
+  // mounted() {
+  //   this.$nextTick(() => {
+  //     this.$nuxt.$loading.start()
 
-  computed: {},
+  //     setTimeout(() => this.$nuxt.$loading.finish(), 500)
+  //   })
+  // },
 
   head() {
     return {

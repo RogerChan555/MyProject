@@ -205,8 +205,9 @@
 </template>
 
 <script>
-import { gsap } from 'gsap'
+// import { gsap } from 'gsap'
 // import { mapGetters } from 'vuex'
+// import transitionMixin from '~/mixins/transition.js'
 import PRODUCT_DETAIL from '~/apollo/queries/product/product_detail.gql'
 // import { isEmpty } from 'lodash'
 
@@ -216,55 +217,13 @@ export default {
   // validate(data) {
   //   return /^\d+$/.test(data.params.id)
   // },
-  // Key for <NuxtChild> (transitions)
-  key: (to) => to.fullPath,
 
-  transition: {
-    enter(el, done) {
-      gsap
-        .timeline({
-          onComplete: done,
-          defaults: { ease: 'back.inOut(3)', duration: 0.5 }
-        })
-        .from(el, {
-          position: 'absolute',
-          y: 20,
-          autoAlpha: 0,
-          scale: 1.03,
-          transformOrigin: 'top center'
-        })
-        .set(el, { clearProps: true })
-    },
-    leave(el, done) {
-      gsap
-        .timeline({
-          onComplete: done,
-          defaults: { ease: 'back.inOut(3)', duration: 0.5 }
-        })
-        .to(el, {
-          position: 'absolute',
-          y: -20,
-          autoAlpha: 0,
-          scale: 0.97,
-          transformOrigin: 'top center'
-        })
-        .set(el, { clearProps: true })
-    },
-    css: false,
-    mode: 'out-in'
-  },
-
-  // transition(to, from) {
-  //   if (!from) {
-  //     return 'slide-left'
-  //   }
-  //   // return +to.query.page < +from.query.page ? 'slide-right' : 'slide-left'
-  // },
+  // mixins: [transitionMixin],
 
   async asyncData({ app, route }) {
     const id = route.params.id
     // const id = 'cHJvZHVjdDozNA=='
-    console.log(app.apolloProvider)
+
     const { data } = await app.apolloProvider.defaultClient.query({
       query: PRODUCT_DETAIL,
       variables: {

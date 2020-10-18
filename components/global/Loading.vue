@@ -1,7 +1,14 @@
 <template lang="html">
-  <div v-if="loading" class="loading-page">
-    <p>Loading...</p>
-  </div>
+  <span
+    id="appLoading"
+    class="o-loader js-loader"
+    :class="{ 'is-loading': loading }"
+  >
+    <span class="o-loader__bg js-loader-bg"></span>
+    <span class="o-loader__anim">
+      <span class="o-loader__gradients"></span>
+    </span>
+  </span>
 </template>
 
 <script>
@@ -14,24 +21,12 @@ export default {
       this.loading = true
     },
     finish() {
-      this.loading = false
+      setTimeout(() => (this.loading = false), 500)
     }
   }
 }
 </script>
 
-<style scoped>
-.loading-page {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 9999;
-  background: rgba(255, 255, 255, 1);
-  text-align: center;
-  padding-top: 200px;
-  font-size: 30px;
-  font-family: sans-serif;
-}
+<style lang="scss">
+@import '@/assets/scss/loading.scss';
 </style>
