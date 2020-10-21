@@ -24,11 +24,11 @@
 </template>
 
 <script>
-// import transitionMixin from '~/mixins/transition.js'
+import { transitionMixin } from '~/mixins/transition.js'
 
 export default {
   name: 'Index',
-  // mixins: [transitionMixin],
+  mixins: [transitionMixin],
 
   data() {
     return {}

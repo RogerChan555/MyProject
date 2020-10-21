@@ -207,7 +207,7 @@
 <script>
 // import { gsap } from 'gsap'
 // import { mapGetters } from 'vuex'
-// import transitionMixin from '~/mixins/transition.js'
+import { transitionMixin } from '~/mixins/transition.js'
 import PRODUCT_DETAIL from '~/apollo/queries/product/product_detail.gql'
 // import { isEmpty } from 'lodash'
 
@@ -218,7 +218,7 @@ export default {
   //   return /^\d+$/.test(data.params.id)
   // },
 
-  // mixins: [transitionMixin],
+  mixins: [transitionMixin],
 
   async asyncData({ app, route }) {
     const id = route.params.id

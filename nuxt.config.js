@@ -45,7 +45,7 @@ export default {
 
   router: {
     mode: 'history',
-    linkActiveClass: 'nuxt-link-active-cust',
+    linkActiveClass: 'nuxt-link-active-custom',
     linkExactActiveClass: 'nuxt-link-exact-active',
 
     fallback: false

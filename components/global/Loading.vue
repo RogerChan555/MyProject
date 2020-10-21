@@ -21,7 +21,7 @@ export default {
       this.loading = true
     },
     finish() {
-      setTimeout(() => (this.loading = false), 500)
+      this.loading = false
     }
   }
 }

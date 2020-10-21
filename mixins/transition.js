@@ -2,12 +2,12 @@
 // var e = Math.sqrt(Math.pow(APP.W.w, 2) + Math.pow(APP.W.h, 2))
 // this.scale = APP.W.w > APP.W.h ? e / APP.W.w : e / APP.W.h
 // const main = document.getElementById('main')
-export default {
+export const transitionMixin = {
   transition: {
     css: false,
     mode: 'out-in',
-    enter(el, done) {
-      console.log('enter', el, done)
+    enter(el) {
+      console.log('enter' + el)
       // gsap
       //   .timeline({
       //     onComplete: done,
@@ -24,8 +24,8 @@ export default {
       //   })
       //   .set(el, { clearProps: true })
     },
-    leave(el, done) {
-      console.log('leave', el, done)
+    leave(el) {
+      console.log('leave' + el)
 
       // gsap
       //   .timeline({
