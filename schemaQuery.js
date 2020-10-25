@@ -1,7 +1,7 @@
 const fs = require('fs')
 const fetch = require('node-fetch')
 
-const graphqlUrl = 'http://35.243.204.182/graphql'
+const graphqlUrl = process.env.GRAPHQL_ENDPOINT
 
 fetch(`${graphqlUrl}`, {
   method: 'POST',

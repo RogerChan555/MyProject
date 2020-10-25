@@ -63,9 +63,10 @@ export default {
    ** Global CSS
    */
   css: [
-    '@/assets/css/woocommerce.css',
-    '@/assets/css/vendor.css',
-    '@/assets/css/main.css'
+    '~/assets/scss/themes.scss',
+    '~/assets/css/woocommerce.css',
+    '~/assets/css/vendor.css',
+    '~/assets/css/main.css'
   ],
   // pageTransition: {
   //   name: 'fade',
@@ -100,6 +101,8 @@ export default {
     '@nuxt/components',
     // Doc: https://github.com/nuxt-community/router-module
     // '@nuxtjs/router',
+    // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
+    '@nuxtjs/tailwindcss',
     // https://github.com/nuxt-community/style-resources-module
     '@nuxtjs/style-resources',
     // Doc: https://github.com/nuxt-community/eslint-module

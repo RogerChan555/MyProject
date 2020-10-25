@@ -1,0 +1,15 @@
+query MyQuery {
+  menus {
+    nodes {
+      menuItems {
+        nodes {
+          target
+          path
+          order
+          label
+          databaseId
+        }
+      }
+    }
+  }
+}
