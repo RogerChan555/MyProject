@@ -7,6 +7,7 @@ module.exports = {
     // https://github.com/shannonmoeller/stylelint-config-prettier
     'stylelint-config-prettier'
   ],
+  ignoreFiles: ['assets/css/main.css'],
   plugins: ['stylelint-scss'],
   // Rule lists:
   // - https://stylelint.io/user-guide/rules/
@@ -37,6 +38,7 @@ module.exports = {
         ]
       }
     ],
+    'selector-pseudo-element-colon-notation': 'single',
     'declaration-block-no-duplicate-properties': [
       true,
       {

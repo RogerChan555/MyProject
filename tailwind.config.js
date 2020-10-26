@@ -34,6 +34,13 @@ module.exports = {
         bgGrad2: 'var(bg-grad-2)'
       }
     },
+    screens: {
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+      xxl: '1921px'
+    },
     fontFamily: {
       body: 'var(--font-body)',
       sans: 'var(--font-sans)',
