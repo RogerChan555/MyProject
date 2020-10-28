@@ -1,14 +1,14 @@
 <template>
   <div class="header-wrapper header-height">
     <header class="normal fixed onScroll">
-      <div class="row align-items-center">
-        <div class="col-4">
+      <div class="flex items-center">
+        <div class="w-1/3">
           <Cart />
         </div>
-        <div class="col-4">
+        <div class="w-1/3">
           <Logo />
         </div>
-        <div class="col-4">
+        <div class="w-1/3">
           <Menu />
         </div>
       </div>

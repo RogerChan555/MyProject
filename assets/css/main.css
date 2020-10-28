@@ -7636,9 +7636,9 @@ footer .social-media.type-text ul li a {
   position: relative;
   overflow: hidden;
 }
-.fixed {
+/* .fixed {
   position: fixed;
   top: 50%;
   right: 10px;
   z-index: 99999999;
-}
+} */

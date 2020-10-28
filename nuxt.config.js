@@ -67,7 +67,7 @@ export default {
     '~/assets/scss/styles.scss',
     '~/assets/scss/fonts.scss',
     '~/assets/css/woocommerce.css',
-    '~/assets/css/vendor.css',
+    // '~/assets/css/vendor.css',
     '~/assets/css/main.css'
   ],
   // pageTransition: {

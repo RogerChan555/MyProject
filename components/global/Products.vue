@@ -86,7 +86,7 @@
                   </span>
                 </button>
                 <div class="ml-auto">
-                  <h4 class="price d-flex align-items-center">
+                  <h4 class="price flex items-center">
                     <del v-if="product.regularPrice && product.onSale"
                       ><span class="woocommerce-Price-amount amount">{{
                         product.regularPrice

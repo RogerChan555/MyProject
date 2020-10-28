@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="menu-text_holder text-align_right">
+    <div class="menu-text_holder text-right">
       <a href="#" class="menu-text" @click.prevent="handleMenuOpen">Menu</a>
     </div>
     <div
@@ -14,10 +14,10 @@
       :class="{ 'is-open': isOpen, 'is-mobile': isMobile }"
     >
       <div
-        class="search d-flex justify-content-center"
+        class="search flex justify-center"
         :class="{ 'is-open': isOpenSearch }"
       >
-        <div class="align-self-center">
+        <div class="self-center">
           <a id="close-search" href="#" :class="{ 'is-active': checkMobile }"
             >Close</a
           >
@@ -28,7 +28,7 @@
               name="s"
               type="search"
               placeholder="Search..."
-              class="margin-bottom_0 text-align_center padding_0"
+              class="mb0 text-center p-0"
             />
           </form>
         </div>
@@ -37,7 +37,7 @@
         <div class="inner-hide_scrollbar">
           <div class="lateral-wrapper">
             <div
-              class="d-flex language-search line item-delay_off"
+              class="flex language-search line item-delay_off"
               :class="{ 'item-delay_on': itemDelayOn }"
             >
               <ul id="menu-top-menu" class="language">
@@ -62,7 +62,7 @@
               </ul>
               <div class="search-icon_holder ml-auto">
                 <a
-                  class="search-icon_text d-flex align-items-center"
+                  class="search-icon_text flex items-center"
                   @click.prevent="handleSearchOpen"
                 >
                   <svg

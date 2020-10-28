@@ -1,5 +1,5 @@
 <template>
-  <div class="logo justify-content-center d-flex">
+  <div class="logo justify-center flex">
     <nuxt-link to="/" class="soma-link">
       <svg
         id="svg-replaced-0"

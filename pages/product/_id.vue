@@ -1,14 +1,14 @@
 <template>
   <div id="product-84" class="product">
     <client-only>
-      <div class="non-container">
-        <div class="product-holder padding-bottom_md row flex-row-reverse">
-          <div class="col-md-6 col-xxl-7">
+      <div class="w-full non-container">
+        <div class="product-holder padding-bottom_md flex flex-row-reverse">
+          <div class="md:w-1/2 xxl:w-7/12">
             <div
               class="woocommerce-product-gallery woocommerce-product-gallery--with-images"
             >
               <div
-                class="woocommerce-product-gallery__wrapper row masonry gallery-type_grid masonry-gallery"
+                class="woocommerce-product-gallery__wrapper masonry gallery-type_grid masonry-gallery"
               >
                 <div
                   v-for="galleryImage in product.galleryImages.nodes"
@@ -31,10 +31,10 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6 col-xxl-5 sticky-description">
+          <div class="md:w-1/2 xxl:w-5/12 sticky-description">
             <div class="theiaStickySidebar">
               <div class="single-product_info">
-                <div class="d-flex align-items-center breadcrumb-rating">
+                <div class="flex align-items-center breadcrumb-rating">
                   <nav class="woocommerce-breadcrumb">
                     <a href="https://neuronthemes.com/soma">Home</a
                     ><span>/</span
@@ -61,7 +61,7 @@
                 <h2 class="product_title entry-title">
                   {{ product.name }}
                 </h2>
-                <h4 class="price d-flex align-items-center">
+                <h4 class="price flex align-center">
                   <span class="woocommerce-Price-amount amount">
                     <i class="woocommerce-Price-currencySymbol">€</i
                     >{{ product.price }}</span
@@ -69,7 +69,7 @@
                 </h4>
 
                 <form
-                  class="cart d-flex align-items-center"
+                  class="cart flex align-center"
                   action="https://neuronthemes.com/soma/product/wheeler/"
                   method="post"
                   enctype="multipart/form-data"
@@ -181,10 +181,10 @@
           </div>
         </div>
       </div>
-      <div class="container">
+      <div class="max-w-screen-xl mx-auto">
         <div class="navigation">
-          <div class="row">
-            <div class="col-6 prev">
+          <div class="flex">
+            <div class="w-1/2 prev">
               <a
                 class="soma-link"
                 href="https://neuronthemes.com/soma/product/grimstone-17/"
@@ -193,7 +193,7 @@
                 <h6>Grimstone 17</h6></a
               >
             </div>
-            <div class="col-6 next text-align_right">
+            <div class="w-1/2 next text-align_right">
               <a
                 class="soma-link"
                 href="https://neuronthemes.com/soma/product/oxenhope/"

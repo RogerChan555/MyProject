@@ -26,18 +26,15 @@
                   cartProducts.products.length != null &&
                   cartProducts.products.length > 0
                 "
-                class="shopping-bag_holder d-flex flex-column"
+                class="shopping-bag_holder flex flex-col"
               >
                 <ul class="woocommerce-mini-cart cart_list product_list_widget">
                   <li
                     v-for="product in cartProducts.products"
                     :key="product.productId"
-                    class="woocommerce-mini-cart-item d-flex align-items-center mini_cart_item"
+                    class="woocommerce-mini-cart-item flex items-center mini_cart_item"
                   >
-                    <a
-                      class="cart-item_image"
-                      href="https://neuronthemes.com/soma/product/travist/"
-                    >
+                    <a class="cart-item_image" :href="product.link">
                       <img
                         width="300"
                         height="300"
@@ -49,7 +46,7 @@
                       />
                     </a>
                     <div class="cart-name_quantity mr-auto">
-                      <a href="https://neuronthemes.com/soma/product/travist/">
+                      <a :href="product.link">
                         <h6>{{ product.name }}</h6>
                       </a>
                       <p class="quantity">
@@ -60,7 +57,7 @@
                       </p>
                     </div>
                     <a
-                      class="remove remove_from_cart_button"
+                      class="remove remove_from_cart_button cursor-pointer"
                       aria-label="Remove this item"
                       @click="removeProductFromCart(product.productId)"
                       >×</a
@@ -70,7 +67,7 @@
 
                 <div class="cart-total_buttons">
                   <div
-                    class="woocommerce-mini-cart__total total d-flex align-items-center"
+                    class="woocommerce-mini-cart__total total flex align-center"
                   >
                     <h6>Subtotal:</h6>
                     <span class="ml-auto price"
@@ -82,7 +79,7 @@
                   </div>
 
                   <div
-                    class="woocommerce-mini-cart__buttons buttons d-flex justify-content-between"
+                    class="woocommerce-mini-cart__buttons buttons flex justify-between"
                   >
                     <a
                       href="https://neuronthemes.com/soma/cart/"
@@ -98,15 +95,16 @@
               </div>
               <div
                 v-else
-                class="d-flex align-items-center justify-content-center empty-message_holder"
+                class="flex items-center justify-center empty-message_holder"
               >
-                <div class="empty-message-inner_holder text-aling_center">
-                  <div class="empty-message_icon text-align_center">
+                <div class="empty-message-inner_holder text-center">
+                  <div class="empty-message_icon text-center">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="799"
                       height="800"
                       viewBox="0 0 799 800"
+                      class="inline-block"
                     >
                       <metadata />
                       <path
