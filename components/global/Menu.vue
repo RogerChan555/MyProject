@@ -40,26 +40,6 @@
               class="flex language-search line item-delay_off"
               :class="{ 'item-delay_on': itemDelayOn }"
             >
-              <ul id="menu-top-menu" class="language">
-                <li
-                  id="menu-item-15"
-                  class="active menu-item menu-item-type-custom menu-item-object-custom menu-item-15"
-                >
-                  <a href="#">En</a>
-                </li>
-                <li
-                  id="menu-item-16"
-                  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16"
-                >
-                  <a href="#">Fr</a>
-                </li>
-                <li
-                  id="menu-item-17"
-                  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17"
-                >
-                  <a href="#">De</a>
-                </li>
-              </ul>
               <div class="search-icon_holder ml-auto">
                 <a
                   class="search-icon_text flex items-center"
@@ -109,6 +89,20 @@
               :class="{ 'item-delay_on': itemDelayOn }"
             >
               <nav class="menu-main-menu-container">
+                <ul id="menu-main-menu" class="menu">
+                  <li
+                    v-for="menuItem in menuList"
+                    :key="menuItem.key"
+                    class="menu-item"
+                    :class="[
+                      menuItem.children.length ? 'menu-item-has-children' : ''
+                    ]"
+                  >
+                    <span
+                      ><a :href="menuItem.url">{{ menuItem.label }}</a></span
+                    >
+                  </li>
+                </ul>
                 <ul id="menu-main-menu" class="menu">
                   <li
                     id="menu-item-124"
@@ -704,9 +698,23 @@
 </template>
 
 <script>
+import getMenusquery from '~/apollo/queries/Menus.gql'
 export default {
+  async fetch() {
+    const id = 'default'
+    const result = await this.$apollo.query({
+      query: getMenusquery,
+      variables: {
+        id
+      }
+    })
+    return (this.menuList = this.flatListToHierarchical(
+      result.data.menu.menuItems.nodes
+    ))
+  },
   data() {
     return {
+      menuList: '',
       history: [],
       isOpen: false,
       isOpenSearch: false,
@@ -720,6 +728,24 @@ export default {
     this.mobileBindings()
   },
   methods: {
+    flatListToHierarchical(
+      data = [],
+      { idKey = 'key', parentKey = 'parentId', childrenKey = 'children' } = {}
+    ) {
+      const tree = []
+      const childrenOf = {}
+      data.forEach((item) => {
+        const newItem = { ...item }
+        const { [idKey]: id, [parentKey]: parentId = 0 } = newItem
+        childrenOf[id] = childrenOf[id] || []
+        newItem[childrenKey] = childrenOf[id]
+        parentId
+          ? (childrenOf[parentId] = childrenOf[parentId] || []).push(newItem)
+          : tree.push(newItem)
+      })
+      return tree
+    },
+
     handleMenuItemClick(event) {
       const submenu = event.target.closest('.menu-item-has-children')
       const parentItem = submenu.closest('ul')

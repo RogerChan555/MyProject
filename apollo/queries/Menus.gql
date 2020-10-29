@@ -1,14 +1,22 @@
-query MyQuery {
-  menus {
-    nodes {
-      menuItems {
-        nodes {
-          target
-          path
-          order
-          label
-          databaseId
-        }
+query GET_MENU($id: ID!) {
+  menu(id: $id, idType: NAME) {
+    count
+    id
+    databaseId
+    name
+    slug
+    menuItems {
+      nodes {
+        key: id
+        databaseId
+        title
+        url
+        cssClasses
+        description
+        label
+        linkRelationship
+        target
+        parentId
       }
     }
   }
