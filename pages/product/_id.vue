@@ -36,8 +36,7 @@
               <div class="single-product_info">
                 <div class="flex align-items-center breadcrumb-rating">
                   <nav class="woocommerce-breadcrumb">
-                    <a href="https://neuronthemes.com/soma">Home</a
-                    ><span>/</span
+                    <NuxtLink to="/">Home</NuxtLink><span>/</span
                     ><a :href="product.productCategories.nodes[0].link">{{
                       product.productCategories.nodes[0].name
                     }}</a
@@ -107,20 +106,22 @@
                   </button>
                 </form>
 
-                <!-- <div class="product_meta">
-                <span class="posted_in"
-                  >Category:
-                  <a :href="productCategory.link" rel="tag">{{
-                    productCategory.name
-                  }}</a></span
-                >
-                <span class="tagged_as"
-                  >Tag:
-                  <a :href="productTag.link" rel="tag">{{
-                    productTag.name
-                  }}</a></span
-                >
-              </div> -->
+                <div class="product_meta">
+                  <span class="posted_in"
+                    >Category:
+                    <a
+                      :href="product.productCategories.nodes[0].link"
+                      rel="tag"
+                      >{{ product.productCategories.nodes[0].name }}</a
+                    ></span
+                  >
+                  <!-- <span class="tagged_as"
+                    >Tag:
+                    <a :href="productTag.link" rel="tag">{{
+                      productTag.name
+                    }}</a></span
+                  > -->
+                </div>
 
                 <div class="woocommerce-tabs wc-tabs-wrapper">
                   <ul class="tabs wc-tabs" role="tablist">
@@ -227,7 +228,6 @@ export default {
 
   async asyncData({ app, route }) {
     const id = route.params.id
-    console.log(app.apolloProvider.defaultClient)
 
     const { data } = await app.apolloProvider.defaultClient.query({
       query: PRODUCT_DETAIL,

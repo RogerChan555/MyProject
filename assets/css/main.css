@@ -4031,8 +4031,25 @@ ul.woocommerce-error li a {
   font-family: 'Circular', Helvetica, Arial, sans-serif;
   font-weight: 400;
   padding: 0;
-  float: none;
+  vertical-align: middle;
+  float: left;
   background: none;
+  font-size: 100%;
+  margin: 0;
+  line-height: 1;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  overflow: visible;
+  padding: 0;
+  font-weight: 700;
+  left: auto;
+  color: #515151;
+  border: 0;
+  display: inline-block;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  text-shadow: none;
 }
 .single-product .single-product_info .cart .button span {
   font-size: 1.4rem;
