@@ -57,9 +57,12 @@ query getSingleProduct($id: ID!) {
       }
       id
     }
-  }
-  tag(id: $id) {
-    name
-    link
+    productTags {
+      nodes {
+        name
+        link
+      }
+    }
+    onSale
   }
 }
