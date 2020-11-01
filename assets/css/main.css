@@ -4330,7 +4330,7 @@ ul.woocommerce-error li a {
   opacity: 0.8;
 }
 
-.woocommerce .gallery-type_grid {
+/* .woocommerce .gallery-type_grid {
   margin-left: -1.5rem;
   margin-right: -1.5rem;
 }
@@ -4339,8 +4339,8 @@ ul.woocommerce-error li a {
     margin-left: -3rem;
     margin-right: -3rem;
   }
-}
-.woocommerce .gallery-type_grid .selector {
+} */
+/* .woocommerce .gallery-type_grid .selector {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   padding-bottom: 3rem;
@@ -4351,7 +4351,7 @@ ul.woocommerce-error li a {
     padding-right: 3rem;
     padding-bottom: 6rem;
   }
-}
+} */
 .woocommerce .gallery-type_grid .selector .lightbox {
   position: relative;
 }

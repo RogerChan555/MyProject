@@ -83,6 +83,7 @@ export default {
    ** https://nuxtjs.org/guide/plugins
    */
   plugins: [
+    { src: '~/plugins/filter.js' },
     { src: '~/plugins/vue-lazyload', mode: 'client' },
     { src: '~/plugins/vuex-persistedstate.js', mode: 'client' },
     { src: '~/plugins/after-each.js', mode: 'client' },
@@ -153,7 +154,7 @@ export default {
   },
   apollo: {
     clientConfigs: {
-      default: '~/plugins/apollo-config.js'
+      default: '~/plugins/apollo/apollo-config.js'
     },
     /**
      * default 'apollo' definition
@@ -165,10 +166,10 @@ export default {
       }
     },
     // setup a global query loader observer
-    watchLoading: '~/plugins/apollo-watch-loading-handler.js',
+    watchLoading: '~/plugins/apollo/apollo-watch-loading-handler.js',
 
     // setup a global error handler
-    errorHandler: '~/plugins/apollo-error-handler.js'
+    errorHandler: '~/plugins/apollo/apollo-error-handler.js'
   },
   colorMode: {
     preference: 'light' // disable system

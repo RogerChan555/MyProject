@@ -99,9 +99,7 @@
             </div>
             <nuxt-link
               :to="{
-                path: 'product/' + product.id,
-                params: { id: product.productId },
-                props: { newsletterPopup: false }
+                path: 'product/' + product.slug
               }"
               class="soma-link"
             ></nuxt-link>

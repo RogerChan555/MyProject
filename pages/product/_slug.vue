@@ -1,5 +1,5 @@
 <template>
-  <div id="product-84" class="product">
+  <div :id="product.productId" class="product">
     <client-only>
       <div class="w-full non-container">
         <div class="product-holder padding-bottom_md flex flex-row-reverse">
@@ -8,7 +8,7 @@
               class="woocommerce-product-gallery woocommerce-product-gallery--with-images"
             >
               <div
-                class="woocommerce-product-gallery__wrapper masonry gallery-type_grid masonry-gallery"
+                class="woocommerce-product-gallery__wrapper gallery-type_grid"
               >
                 <div
                   v-for="galleryImage in product.galleryImages.nodes"
@@ -17,7 +17,7 @@
                   class="woocommerce-product-gallery__image woocommerce-product-gallery__image gallery-thumbnail selector col-12"
                 >
                   <div class="lightbox">
-                    <a :href="galleryImage.link">
+                    <a :href="galleryImage.link | formatURL">
                       <div class="calculated-image">
                         <img
                           :src="galleryImage.sourceUrl"
@@ -37,9 +37,11 @@
                 <div class="flex align-items-center breadcrumb-rating">
                   <nav class="woocommerce-breadcrumb">
                     <NuxtLink to="/">Home</NuxtLink><span>/</span
-                    ><a :href="product.productCategories.nodes[0].link">{{
-                      product.productCategories.nodes[0].name
-                    }}</a
+                    ><a
+                      :href="
+                        product.productCategories.nodes[0].link | formatURL
+                      "
+                      >{{ product.productCategories.nodes[0].name }}</a
                     ><span>/</span>{{ product.name }}
                   </nav>
                   <div class="woocommerce-product-rating ml-auto">
@@ -107,7 +109,7 @@
                 </form>
 
                 <div class="product_meta">
-                  <span class="posted_in"
+                  <span v-if="product.productCategories" class="posted_in"
                     >Category:
                     <a
                       :href="product.productCategories.nodes[0].link"
@@ -115,12 +117,12 @@
                       >{{ product.productCategories.nodes[0].name }}</a
                     ></span
                   >
-                  <!-- <span class="tagged_as"
+                  <span v-if="product.productTag" class="tagged_as"
                     >Tag:
-                    <a :href="productTag.link" rel="tag">{{
-                      productTag.name
+                    <a :href="product.productTag.link" rel="tag">{{
+                      product.productTag.name
                     }}</a></span
-                  > -->
+                  >
                 </div>
 
                 <div class="woocommerce-tabs wc-tabs-wrapper">
@@ -211,11 +213,8 @@
 </template>
 
 <script>
-// import { gsap } from 'gsap'
-// import { mapGetters } from 'vuex'
 import { transitionMixin } from '~/mixins/transition.js'
 import PRODUCT_DETAIL from '~/apollo/queries/product/product_detail.gql'
-// import { isEmpty } from 'lodash'
 
 export default {
   name: 'ProductId',
@@ -227,12 +226,11 @@ export default {
   mixins: [transitionMixin],
 
   async asyncData({ app, route }) {
-    const id = route.params.id
-
+    const SLUG = route.params.slug
     const { data } = await app.apolloProvider.defaultClient.query({
       query: PRODUCT_DETAIL,
       variables: {
-        id
+        id: SLUG
       },
       fetchPolicy: 'no-cache'
     })
@@ -255,25 +253,3 @@ export default {
   }
 }
 </script>
-
-<style>
-.woocommerce-product-gallery__wrapper.masonry.masonry-gallery {
-  margin-left: 0;
-  margin-right: 0;
-}
-.woocommerce-product-gallery__wrapper.masonry.masonry-gallery .selector {
-  padding-left: 0;
-  padding-right: 0;
-  padding-bottom: 0;
-}
-.slide-left-enter,
-.slide-right-leave-active {
-  opacity: 0;
-  transform: translate(30px, 0);
-}
-.slide-left-leave-active,
-.slide-right-enter {
-  opacity: 0;
-  transform: translate(-30px, 0);
-}
-</style>
