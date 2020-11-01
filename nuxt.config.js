@@ -63,8 +63,8 @@ export default {
    ** Global CSS
    */
   css: [
-    '~/assets/scss/themes.scss',
     '~/assets/scss/styles.scss',
+    '~/assets/scss/themes.scss',
     '~/assets/scss/fonts.scss',
     '~/assets/css/main.css'
   ],
@@ -98,8 +98,6 @@ export default {
    ** Nuxt.js dev-modules
    */
   buildModules: [
-    // Doc: https://github.com/nuxt/components
-    '@nuxt/components',
     // Doc: https://github.com/nuxt-community/router-module
     // '@nuxtjs/router',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
@@ -110,6 +108,8 @@ export default {
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/stylelint-module
     '@nuxtjs/stylelint-module',
+    // https://github.com/nuxt-community/color-mode-module
+    '@nuxtjs/color-mode',
     // Doc: https://github.com/aceforth/nuxt-optimized-images
     '@aceforth/nuxt-optimized-images'
   ],
