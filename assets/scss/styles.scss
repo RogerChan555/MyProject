@@ -1,8 +1,8 @@
-$responsiveWidth: 768px;
+$responsivewidth: 768px;
 
 *,
-*::before,
-*::after {
+*:before,
+*:after {
   backface-visibility: hidden;
 }
 
@@ -13,8 +13,8 @@ $responsiveWidth: 768px;
 }
 
 ::selection {
-  @apply bg-acColor;
-  @apply text-actColor;
+  @apply bg-accentLight;
+  @apply text-accentDark;
 }
 
 ::-webkit-scrollbar {
@@ -23,7 +23,7 @@ $responsiveWidth: 768px;
   @apply rounded-lg;
 
   &:hover {
-    @apply bg-bgDarkColor;
+    @apply bg-accentDark;
   }
 }
 
@@ -46,7 +46,7 @@ html {
 }
 
 body {
-  @apply bg-bgColor;
+  @apply bg-accent;
   @apply text-fgColor;
   @apply text-base;
   @apply font-body;
@@ -92,13 +92,13 @@ a {
   @apply outline-none;
 
   &.link {
-    @apply text-acColor;
+    @apply text-accentLight;
   }
 }
 
 header,
 footer {
-  & > div {
+  > div {
     @apply flex;
     @apply py-2;
     @apply px-2;
@@ -342,8 +342,8 @@ button {
   @apply py-2;
   @apply px-4;
   @apply rounded-lg;
-  @apply bg-acColor;
-  @apply text-actColor;
+  @apply bg-accentLight;
+  @apply text-accentDark;
   @apply font-body;
   @apply font-bold;
   @apply transition;
@@ -389,13 +389,13 @@ button {
   }
 
   &.primary {
-    @apply text-acColor;
+    @apply text-accentDark;
 
     &:not([disabled]):hover,
     &:not([disabled]):active,
     &:not([disabled]):focus {
-      @apply bg-acColor;
-      @apply text-actColor;
+      @apply bg-accentLight;
+      @apply text-accentDark;
     }
   }
 }
@@ -425,7 +425,7 @@ button {
   @apply leading-6;
   @apply inline-block;
   @apply normal-case;
-  @apply tracking-normal;
+  // @apply tracking-normal;
   @apply whitespace-no-wrap;
   @apply antialiased;
 
@@ -477,7 +477,7 @@ code {
   @apply m-2;
   @apply p-2;
   @apply rounded-lg;
-  @apply bg-bgDarkColor;
+  @apply bg-accentDark;
   @apply text-fgColor;
   @apply font-mono;
   @apply font-normal;
@@ -538,7 +538,7 @@ pre {
     @apply w-full;
   }
 
-  &::after {
+  &:after {
     @apply inline-block;
     @apply absolute;
     @apply pointer-events-none;
@@ -569,11 +569,11 @@ input[type='checkbox'] {
   @apply hidden;
 
   &,
-  & + label {
+  + label {
     @apply align-middle;
     @apply cursor-pointer;
 
-    &::before {
+    &:before {
       @apply border;
       @apply border-fgColor;
       @apply rounded-lg;
@@ -592,10 +592,10 @@ input[type='checkbox'] {
     }
   }
 
-  &:checked + label::before {
-    @apply bg-acColor;
-    @apply border-acColor;
-    @apply text-actColor;
+  &:checked + label:before {
+    @apply border-accentLight;
+    @apply bg-accentLight;
+    @apply text-accentDark;
   }
 }
 
@@ -771,7 +771,7 @@ section {
   width: 33%;
 }
 
-@media (max-width: $responsiveWidth) {
+@media (max-width: $responsivewidth) {
   .content,
   .columns {
     @apply flex-col;

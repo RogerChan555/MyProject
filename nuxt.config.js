@@ -171,8 +171,11 @@ export default {
     // setup a global error handler
     errorHandler: '~/plugins/apollo/apollo-error-handler.js'
   },
+  // Color Mode module configuration (https://github.com/nuxt-community/color-mode-module)
   colorMode: {
-    preference: 'light' // disable system
+    classSuffix: '',
+    preference: 'light',
+    fallback: 'light'
   },
   /*
    ** Content module configuration
