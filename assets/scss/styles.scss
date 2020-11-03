@@ -109,7 +109,6 @@ body.sticky-footer footer {
 }
 
 a {
-  @apply inline-flex;
   @apply text-current;
   @apply no-underline;
   @apply outline-none;
@@ -347,9 +346,9 @@ button {
   @apply border-none;
 
   span {
-    @apply inline-flex;
-    @apply ml-4;
-    @apply text-left;
+    // @apply inline-flex;
+    // @apply ml-4;
+    // @apply text-left;
   }
 
   &:not([disabled]):hover,
