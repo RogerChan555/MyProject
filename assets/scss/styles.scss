@@ -4,6 +4,7 @@ $responsivewidth: 768px;
 *:before,
 *:after {
   backface-visibility: hidden;
+  @apply box-border;
 }
 
 :root {
@@ -12,9 +13,13 @@ $responsivewidth: 768px;
   font-variant-ligatures: common-ligatures;
 }
 
+:focus {
+  outline: 0;
+}
+
 ::selection {
-  @apply bg-accentLight;
-  @apply text-accentDark;
+  @apply bg-acColor;
+  @apply text-actColor;
 }
 
 ::-webkit-scrollbar {
@@ -23,7 +28,7 @@ $responsivewidth: 768px;
   @apply rounded-lg;
 
   &:hover {
-    @apply bg-accentDark;
+    @apply bg-bgDarkColor;
   }
 }
 
@@ -42,11 +47,19 @@ $responsivewidth: 768px;
 }
 
 html {
-  scroll-behavior: smooth;
+  /* Font varient */
+  // font-variant-ligatures: none;
+  // -webkit-font-variant-ligatures: none;
+  text-rendering: optimizeLegibility; /* Smoothing */
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+
+  @apply max-w-full;
+  @apply overflow-x-hidden;
 }
 
 body {
-  @apply bg-accent;
+  @apply bg-bgColor;
   @apply text-fgColor;
   @apply text-base;
   @apply font-body;
@@ -56,6 +69,16 @@ body {
   @apply ease-in-out;
   @apply duration-200;
 
+  @apply w-full;
+  @apply leading-relaxed;
+  @apply leading-relaxed;
+  @apply break-words;
+
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
 }
@@ -92,60 +115,16 @@ a {
   @apply outline-none;
 
   &.link {
-    @apply text-accentLight;
+    @apply text-acColor;
   }
-}
 
-header,
-footer {
-  > div {
-    @apply flex;
-    @apply py-2;
-    @apply px-2;
-    @apply w-full;
-    @apply items-center;
-    @apply justify-between;
-  }
-}
-
-.wrapper {
-  @apply min-h-screen;
-  @apply flex;
-  @apply flex-col;
-  @apply flex-no-wrap;
-}
-
-.wrapper .page {
-  min-height: calc(100vh - 153px);
-}
-
-.header,
-.content,
-.columns,
-.footer {
-  @apply flex;
-  @apply flex-1;
-}
-
-.nav-first,
-.sticky-inner {
-  @apply flex;
-  @apply order-1;
-  @apply flex-col;
-  @apply sticky;
-  @apply top-0;
-  @apply items-start;
-  @apply items-stretch;
-  @apply h-full;
+  -webkit-transition: color cubic-bezier(0.215, 0.61, 0.355, 1) 0.2s;
+  -o-transition: color cubic-bezier(0.215, 0.61, 0.355, 1) 0.2s;
+  transition: color cubic-bezier(0.215, 0.61, 0.355, 1) 0.2s;
 }
 
 main {
-  @apply flex;
-  @apply flex-col;
-  @apply flex-1;
-  @apply order-2;
-  @apply relative;
-  @apply px-4;
+  @apply overflow-hidden;
 }
 
 h1,
@@ -169,11 +148,24 @@ p {
   @apply duration-200;
 }
 
+small {
+  @apply text-xl;
+}
+
 hr {
   @apply border-b;
   @apply border-dashed;
   @apply border-brdColor;
   @apply my-4;
+}
+
+iframe {
+  @apply max-w-full;
+}
+
+img {
+  @apply max-w-full;
+  @apply h-auto;
 }
 
 .tooltip {
@@ -342,8 +334,8 @@ button {
   @apply py-2;
   @apply px-4;
   @apply rounded-lg;
-  @apply bg-accentLight;
-  @apply text-accentDark;
+  @apply bg-acColor;
+  @apply text-actColor;
   @apply font-body;
   @apply font-bold;
   @apply transition;
@@ -389,13 +381,13 @@ button {
   }
 
   &.primary {
-    @apply text-accentDark;
+    @apply text-acColor;
 
     &:not([disabled]):hover,
     &:not([disabled]):active,
     &:not([disabled]):focus {
-      @apply bg-accentLight;
-      @apply text-accentDark;
+      @apply bg-acColor;
+      @apply text-actColor;
     }
   }
 }
@@ -465,8 +457,6 @@ input[type='radio'],
   @apply flex-1;
 }
 
-.method,
-.url-field,
 kbd,
 select,
 input,
@@ -477,7 +467,7 @@ code {
   @apply m-2;
   @apply p-2;
   @apply rounded-lg;
-  @apply bg-accentDark;
+  @apply bg-bgDarkColor;
   @apply text-fgColor;
   @apply font-mono;
   @apply font-normal;
@@ -497,21 +487,10 @@ code {
   }
 }
 
-.method {
-  @apply cursor-pointer;
-  @apply uppercase;
-
-  min-width: 128px;
-
-  &:hover,
-  &:active,
-  &:focus {
-    box-shadow: inset 0 0 0 2px var(--fg-light-color);
-  }
-}
-
 pre {
   @apply grid;
+  @apply break-words;
+  @apply whitespace-no-wrap;
 }
 
 pre.ace_editor {
@@ -593,10 +572,18 @@ input[type='checkbox'] {
   }
 
   &:checked + label:before {
-    @apply border-accentLight;
-    @apply bg-accentLight;
-    @apply text-accentDark;
+    @apply bg-acColor;
+    @apply border-acColor;
+    @apply text-actColor;
   }
+}
+
+sup {
+  vertical-align: super;
+}
+
+sub {
+  vertical-align: sub;
 }
 
 .error:not(input),

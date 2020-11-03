@@ -47,6 +47,7 @@ module.exports = {
     ],
     'declaration-block-trailing-semicolon': null,
     'no-descending-specificity': null,
+    // 'comment-empty-line-before': 'never',
     // ===
     // SCSS
     // ===
