@@ -3,7 +3,7 @@
     <client-only>
       <div class="w-full non-container">
         <div class="product-holder padding-bottom_md flex flex-row-reverse">
-          <div class="md:w-1/2 xxl:w-7/12">
+          <div class="md:w-1/2">
             <div
               class="woocommerce-product-gallery woocommerce-product-gallery--with-images"
             >
@@ -31,7 +31,7 @@
               </div>
             </div>
           </div>
-          <div class="md:w-1/2 xxl:w-5/12 sticky-description">
+          <div class="md:w-1/2 sticky-description">
             <div class="theiaStickySidebar">
               <div class="single-product_info">
                 <div class="flex align-items-center breadcrumb-rating">
