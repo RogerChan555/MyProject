@@ -1,0 +1,47 @@
+.badge {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  z-index: 2;
+  .badge-inner {
+    font-size: 1rem;
+    padding: 0.1rem 0.5rem;
+    border-width: 2px;
+  }
+}
+.badge.shadow {
+  &:before {
+    top: 4px;
+    left: 4px;
+    border-width: 0;
+  }
+}
+.badge.on-sale {
+  .badge-inner {
+    color: #222326;
+    background-color: #cfe5fc;
+    border-color: #6ca5d0;
+  }
+}
+.badge.on-sale.shadow {
+  &:before {
+    background-color: #6ca5d0;
+  }
+}
+.badge.out-of-stock {
+  .badge-inner {
+    color: #222326;
+    border-color: #222326;
+  }
+}
+.badge.out-of-stock.shadow {
+  &:before {
+    background-color: #222326;
+  }
+}
+@media (min-width: 1651px) {
+  .badge {
+    top: 2rem;
+    right: 2rem;
+  }
+}

@@ -66,7 +66,13 @@ export default {
     '~/assets/scss/styles.scss',
     '~/assets/scss/themes.scss',
     '~/assets/scss/fonts.scss',
-    '~/assets/css/main.css'
+    '~/assets/css/main.css',
+    '~/assets/scss/pages/singleProduct.scss',
+    '~/assets/scss/pages/checkout.scss',
+    '~/assets/scss/components/badge.scss',
+    '~/assets/scss/components/header.scss',
+    '~/assets/scss/components/navigation.scss',
+    '~/assets/scss/components/breadcrumb.scss'
   ],
   // pageTransition: {
   //   name: 'fade',

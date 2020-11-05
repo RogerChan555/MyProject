@@ -98,12 +98,7 @@
                     />
                   </div>
 
-                  <button
-                    type="submit"
-                    name="add-to-cart"
-                    value="84"
-                    class="single_add_to_cart_button button light-blue shadow large alt"
-                  >
+                  <button type="submit" class="button light-blue shadow">
                     <span>Add to cart</span>
                   </button>
                 </form>
@@ -196,7 +191,7 @@
                 <h6>Grimstone 17</h6></a
               >
             </div>
-            <div class="w-1/2 next text-align_right">
+            <div class="w-1/2 next text-right">
               <a
                 class="soma-link"
                 href="https://neuronthemes.com/soma/product/oxenhope/"

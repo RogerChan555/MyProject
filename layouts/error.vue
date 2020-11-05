@@ -2,7 +2,7 @@
   <div v-if="error.statusCode === 404" class="error404-holder">
     <div class="container">
       <div class="row d-flex align-items-center justify-content-center">
-        <div class="error-text col-lg-3 offset-lg-1 text-align_center">
+        <div class="error-text col-lg-3 offset-lg-1 text-center">
           <h1>404</h1>
           <p>
             The page you were looking for couldn't be found. The page could be
