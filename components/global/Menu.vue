@@ -46,7 +46,6 @@
                   @click.prevent="handleSearchOpen"
                 >
                   <SearchIcon />
-                  <NuxtLogo />
                   <span>Search</span>
                 </a>
               </div>
@@ -70,6 +69,8 @@
                     :class="[
                       menuItem.children.length ? 'menu-item-has-children' : ''
                     ]"
+                    @item-click="handleMenuItemClick"
+                    @back-click="handleBackClick"
                   />
                 </ul>
               </nav>
@@ -83,12 +84,10 @@
 
 <script>
 import SearchIcon from '~/assets/images/search.svg'
-import NuxtLogo from '~/assets/images/logo.svg'
 import getMenusquery from '~/apollo/queries/Menus.gql'
 export default {
   components: {
-    SearchIcon,
-    NuxtLogo
+    SearchIcon
   },
   async fetch() {
     const id = 'default'
