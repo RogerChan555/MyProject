@@ -7,8 +7,8 @@ import {
   InMemoryCache,
   IntrospectionFragmentMatcher
 } from 'apollo-cache-inmemory'
-import introspectionQueryResultData from '../fragmentTypes.json'
-import clientConfig from './client-config.js'
+import introspectionQueryResultData from '~/fragmentTypes.json'
+import clientConfig from '~/client-config.js'
 
 const fragmentMatcher = new IntrospectionFragmentMatcher({
   introspectionQueryResultData

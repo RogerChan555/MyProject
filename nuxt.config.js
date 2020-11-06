@@ -63,10 +63,16 @@ export default {
    ** Global CSS
    */
   css: [
-    '~/assets/scss/themes.scss',
     '~/assets/scss/styles.scss',
+    '~/assets/scss/themes.scss',
     '~/assets/scss/fonts.scss',
-    '~/assets/css/main.css'
+    '~/assets/css/main.css',
+    '~/assets/scss/pages/singleProduct.scss',
+    '~/assets/scss/pages/checkout.scss',
+    '~/assets/scss/components/badge.scss',
+    '~/assets/scss/components/header.scss',
+    '~/assets/scss/components/navigation.scss',
+    '~/assets/scss/components/breadcrumb.scss'
   ],
   // pageTransition: {
   //   name: 'fade',
@@ -83,6 +89,7 @@ export default {
    ** https://nuxtjs.org/guide/plugins
    */
   plugins: [
+    { src: '~/plugins/filter.js' },
     { src: '~/plugins/vue-lazyload', mode: 'client' },
     { src: '~/plugins/vuex-persistedstate.js', mode: 'client' },
     { src: '~/plugins/after-each.js', mode: 'client' },
@@ -97,8 +104,6 @@ export default {
    ** Nuxt.js dev-modules
    */
   buildModules: [
-    // Doc: https://github.com/nuxt/components
-    '@nuxt/components',
     // Doc: https://github.com/nuxt-community/router-module
     // '@nuxtjs/router',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
@@ -109,6 +114,8 @@ export default {
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/stylelint-module
     '@nuxtjs/stylelint-module',
+    // https://github.com/nuxt-community/color-mode-module
+    '@nuxtjs/color-mode',
     // Doc: https://github.com/aceforth/nuxt-optimized-images
     '@aceforth/nuxt-optimized-images'
   ],
@@ -143,6 +150,8 @@ export default {
   modules: [
     '@nuxtjs/apollo',
     '@nuxtjs/pwa',
+    // 'nuxt-svg-loader',
+    'nuxt-svg-loader',
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
     // Doc: https://github.com/nuxt-community/sitemap-module
@@ -153,7 +162,7 @@ export default {
   },
   apollo: {
     clientConfigs: {
-      default: '~/plugins/apollo-config.js'
+      default: '~/plugins/apollo/apollo-config.js'
     },
     /**
      * default 'apollo' definition
@@ -165,13 +174,16 @@ export default {
       }
     },
     // setup a global query loader observer
-    watchLoading: '~/plugins/apollo-watch-loading-handler.js',
+    watchLoading: '~/plugins/apollo/apollo-watch-loading-handler.js',
 
     // setup a global error handler
-    errorHandler: '~/plugins/apollo-error-handler.js'
+    errorHandler: '~/plugins/apollo/apollo-error-handler.js'
   },
+  // Color Mode module configuration (https://github.com/nuxt-community/color-mode-module)
   colorMode: {
-    preference: 'light' // disable system
+    classSuffix: '',
+    preference: 'light',
+    fallback: 'light'
   },
   /*
    ** Content module configuration

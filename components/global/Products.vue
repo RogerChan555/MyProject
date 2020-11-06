@@ -1,10 +1,10 @@
 <template>
   <div class="max-w-screen-xl flex-grow mx-auto">
-    <div class="flex flex-wrap relative overflow-hidden xxl:-mx-16 -mx-8">
+    <div class="flex flex-wrap relative overflow-hidden xxl:-mx-8 -mx-4">
       <div
         v-for="product in listProduct"
         :key="product.id"
-        class="w-full sm:w-1/2 xl:w-1/3 product xxl:px-16 xxl:pb-32 px-8 pb-16"
+        class="w-full sm:w-1/2 xl:w-1/3 product xxl:px-8 xxl:pb-16 px-4 pb-8"
       >
         <div class="product-holder">
           <div class="product-inner_holder">
@@ -30,7 +30,7 @@
               <div class="product-overlay"></div>
             </div>
             <div
-              class="product-overlay_wrap flex flex-col xxl:inset-16 xl:inset-12 inset-10"
+              class="product-overlay_wrap flex flex-col xxl:inset-8 xl:inset-6 inset-5"
             >
               <h3 class="product-title">
                 <a class="soma-link" :href="product.link">{{ product.name }}</a>
@@ -99,9 +99,7 @@
             </div>
             <nuxt-link
               :to="{
-                path: 'product/' + product.id,
-                params: { id: product.productId },
-                props: { newsletterPopup: false }
+                path: 'product/' + product.slug
               }"
               class="soma-link"
             ></nuxt-link>

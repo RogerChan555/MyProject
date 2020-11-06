@@ -1,11 +1,18 @@
 query getSingleProduct($id: ID!) {
-  product(id: $id) {
+  product(id: $id, idType: SLUG) {
     id
     productId
     averageRating
     description
     name
     slug
+    onSale
+    productTags {
+      nodes {
+        name
+        link
+      }
+    }
     image {
       altText
       uri
@@ -57,12 +64,5 @@ query getSingleProduct($id: ID!) {
       }
       id
     }
-    productTags {
-      nodes {
-        name
-        link
-      }
-    }
-    onSale
   }
 }
