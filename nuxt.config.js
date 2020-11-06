@@ -150,6 +150,8 @@ export default {
   modules: [
     '@nuxtjs/apollo',
     '@nuxtjs/pwa',
+    // 'nuxt-svg-loader',
+    'nuxt-svg-loader',
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
     // Doc: https://github.com/nuxt-community/sitemap-module
