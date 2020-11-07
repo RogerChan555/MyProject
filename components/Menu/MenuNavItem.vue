@@ -1,7 +1,7 @@
 <template>
   <li>
     <span v-if="menuItem.children && menuItem.children.length"
-      ><a :href="menuItem.url | formatURL" @click.prevent="menuItemClick">{{
+      ><a :href="menuItem.url | formatURL" @click.prevent="handleItemClick">{{
         menuItem.label
       }}</a></span
     >
@@ -11,7 +11,7 @@
     <ul v-if="menuItem.children && menuItem.children.length" class="sub-menu">
       <li class="back-link">
         <span>
-          <a href="#" @click.prevent="backClick">Back</a>
+          <a href="#" @click.prevent="handleBackClick">Back</a>
         </span>
       </li>
       <menu-item
@@ -20,6 +20,8 @@
         :menu-item="menuSubItem"
         class="menu-item"
         :class="[menuSubItem.children.length ? 'menu-item-has-children' : '']"
+        :handle-back-click="handleBackClick"
+        :handle-item-click="handleItemClick"
       >
       </menu-item>
     </ul>
@@ -30,19 +32,14 @@
 export default {
   name: 'MenuItem',
   props: {
-    menuItem: Object
+    menuItem: Object,
+    handleItemClick: Function,
+    handleBackClick: Function
   },
   data() {
     return {}
   },
-  methods: {
-    menuItemClick(event) {
-      this.$emit('item-click', event)
-    },
-    backClick(event) {
-      this.$emit('back-click', event)
-    }
-  }
+  methods: {}
 }
 </script>
 

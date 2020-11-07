@@ -57,7 +57,7 @@ export default {
   /*
    ** Loading page
    */
-  loading: '~/components/global/Loading.vue',
+  loading: '~/components/Loading.vue',
   // loading: false,
   /*
    ** Global CSS
