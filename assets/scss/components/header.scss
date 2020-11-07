@@ -75,10 +75,7 @@
       position: relative;
       padding-top: 2.5rem;
       ul {
-        transition: opacity cubic-bezier(0.23, 1, 0.32, 1) 0.4s,
-          visibility cubic-bezier(0.23, 1, 0.32, 1) 0.4s,
-          -webkit-transform cubic-bezier(0.23, 1, 0.32, 1) 0.4s;
-
+        transition: all cubic-bezier(0.23, 1, 0.32, 1) 0.4s;
         li {
           margin-bottom: 0.5rem;
           span {
@@ -258,15 +255,9 @@ header {
       height: 0;
       z-index: 2;
       visibility: hidden;
-      -webkit-transition: top cubic-bezier(0.23, 1, 0.32, 1) 0.4s,
-        height cubic-bezier(0.23, 1, 0.32, 1) 0.4s,
-        visibility cubic-bezier(0.23, 1, 0.32, 1) 0.4s;
-      -o-transition: top cubic-bezier(0.23, 1, 0.32, 1) 0.4s,
-        height cubic-bezier(0.23, 1, 0.32, 1) 0.4s,
-        visibility cubic-bezier(0.23, 1, 0.32, 1) 0.4s;
-      transition: top cubic-bezier(0.23, 1, 0.32, 1) 0.4s,
-        height cubic-bezier(0.23, 1, 0.32, 1) 0.4s,
-        visibility cubic-bezier(0.23, 1, 0.32, 1) 0.4s;
+      -webkit-transition: all cubic-bezier(0.23, 1, 0.32, 1) 0.4s;
+      -o-transition: all cubic-bezier(0.23, 1, 0.32, 1) 0.4s;
+      transition: all cubic-bezier(0.23, 1, 0.32, 1) 0.4s;
       .align-self-center {
         width: calc(100% - 8rem);
         margin: 0 4rem;
@@ -283,12 +274,9 @@ header {
         border: 0;
         opacity: 0;
         visibility: hidden;
-        -webkit-transition: opacity cubic-bezier(0.23, 1, 0.32, 1) 0.4s,
-          visibility cubic-bezier(0.23, 1, 0.32, 1) 0.4s;
-        -o-transition: opacity cubic-bezier(0.23, 1, 0.32, 1) 0.4s,
-          visibility cubic-bezier(0.23, 1, 0.32, 1) 0.4s;
-        transition: opacity cubic-bezier(0.23, 1, 0.32, 1) 0.4s,
-          visibility cubic-bezier(0.23, 1, 0.32, 1) 0.4s;
+        -webkit-transition: all cubic-bezier(0.23, 1, 0.32, 1) 0.4s;
+        -o-transition: all cubic-bezier(0.23, 1, 0.32, 1) 0.4s;
+        transition: all cubic-bezier(0.23, 1, 0.32, 1) 0.4s;
         &:-webkit-input-placeholder {
           color: #fff;
           font-weight: 700;
@@ -426,12 +414,9 @@ header {
       color: #6ca5d0;
       opacity: 0;
       visibility: hidden;
-      -webkit-transition: opacity cubic-bezier(0.23, 1, 0.32, 1) 0.4s,
-        visibility cubic-bezier(0.23, 1, 0.32, 1) 0.4s;
-      -o-transition: opacity cubic-bezier(0.23, 1, 0.32, 1) 0.4s,
-        visibility cubic-bezier(0.23, 1, 0.32, 1) 0.4s;
-      transition: opacity cubic-bezier(0.23, 1, 0.32, 1) 0.4s,
-        visibility cubic-bezier(0.23, 1, 0.32, 1) 0.4s;
+      -webkit-transition: all cubic-bezier(0.23, 1, 0.32, 1) 0.4s;
+      -o-transition: all cubic-bezier(0.23, 1, 0.32, 1) 0.4s;
+      transition: all cubic-bezier(0.23, 1, 0.32, 1) 0.4s;
     }
     #close-search.is-active {
       opacity: 1;

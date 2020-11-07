@@ -882,7 +882,7 @@ ol li {
   transition: opacity cubic-bezier(0.23, 1, 0.32, 1) 0.7s,
     visibility cubic-bezier(0.23, 1, 0.32, 1) 0.7s;
   cursor: pointer;
-  .is-open {
+  &.is-open {
     opacity: 0.3;
     visibility: visible;
   }
