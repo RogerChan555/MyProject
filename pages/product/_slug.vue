@@ -208,17 +208,11 @@
 </template>
 
 <script>
-import { transitionMixin } from '~/mixins/transition.js'
+// import { transitionMixin } from '~/mixins/transition.js'
 import PRODUCT_DETAIL from '~/apollo/queries/product/product_detail.gql'
 
 export default {
-  name: 'ProductId',
-
-  // validate(data) {
-  //   return /^\d+$/.test(data.params.id)
-  // },
-
-  mixins: [transitionMixin],
+  // mixins: [transitionMixin],
 
   async asyncData({ app, route }) {
     const SLUG = route.params.slug

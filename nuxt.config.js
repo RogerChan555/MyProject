@@ -1,5 +1,5 @@
 const webpack = require('webpack')
-
+// import { gsap } from 'gsap'
 export default {
   /*
    ** Nuxt rendering mode
@@ -74,16 +74,17 @@ export default {
     '~/assets/scss/components/navigation.scss',
     '~/assets/scss/components/breadcrumb.scss'
   ],
-  // pageTransition: {
-  //   name: 'fade',
-  //   mode: 'out-in',
-  //   enter() {
-  //     console.log('enter')
-  //   },
-  //   leave() {
-  //     console.log('leave')
-  //   }
-  // },
+  pageTransition: {
+    // name: 'fade',
+    css: false,
+    mode: 'out-in',
+    beforeEnter() {
+      console.log('beforeEnter')
+    },
+    beforeLeave() {
+      console.log('beforeLeave')
+    }
+  },
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins

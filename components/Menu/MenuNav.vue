@@ -17,7 +17,10 @@
 <script>
 export default {
   props: {
-    menuList: Array
+    menuList: {
+      type: Array,
+      default: () => []
+    }
   },
   methods: {
     handleItemClick(event) {

@@ -32,9 +32,18 @@
 export default {
   name: 'MenuItem',
   props: {
-    menuItem: Object,
-    handleItemClick: Function,
-    handleBackClick: Function
+    menuItem: {
+      type: Object,
+      default: () => {}
+    },
+    handleItemClick: {
+      type: Function,
+      default: () => 1
+    },
+    handleBackClick: {
+      type: Function,
+      default: () => 1
+    }
   },
   data() {
     return {}
