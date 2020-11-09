@@ -72,6 +72,7 @@ export default {
     '~/assets/scss/components/badge.scss',
     '~/assets/scss/components/header.scss',
     '~/assets/scss/components/navigation.scss',
+    '~/assets/scss/components/shopping-bag.scss',
     '~/assets/scss/components/breadcrumb.scss'
   ],
   pageTransition: {
