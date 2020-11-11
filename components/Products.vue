@@ -131,8 +131,6 @@
 import productsQuery from '~/apollo/queries/product/products.gql'
 
 export default {
-  name: 'Products',
-
   data() {
     return {
       listProduct: '',
