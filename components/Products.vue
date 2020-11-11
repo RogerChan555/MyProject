@@ -133,16 +133,16 @@ import productsQuery from '~/apollo/queries/product/products.gql'
 export default {
   name: 'Products',
 
-  async fetch() {
-    const result = await this.$apollo.query({ query: productsQuery })
-    return (this.listProduct = result.data.products.nodes)
-  },
-
   data() {
     return {
       listProduct: '',
       isLoading: false
     }
+  },
+
+  async fetch() {
+    const result = await this.$apollo.query({ query: productsQuery })
+    return (this.listProduct = result.data.products.nodes)
   },
 
   methods: {

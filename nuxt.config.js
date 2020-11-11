@@ -1,5 +1,5 @@
 const webpack = require('webpack')
-
+// import { gsap } from 'gsap'
 export default {
   /*
    ** Nuxt rendering mode
@@ -57,7 +57,7 @@ export default {
   /*
    ** Loading page
    */
-  loading: '~/components/global/Loading.vue',
+  loading: '~/components/Loading.vue',
   // loading: false,
   /*
    ** Global CSS
@@ -72,18 +72,20 @@ export default {
     '~/assets/scss/components/badge.scss',
     '~/assets/scss/components/header.scss',
     '~/assets/scss/components/navigation.scss',
+    '~/assets/scss/components/shopping-bag.scss',
     '~/assets/scss/components/breadcrumb.scss'
   ],
-  // pageTransition: {
-  //   name: 'fade',
-  //   mode: 'out-in',
-  //   enter() {
-  //     console.log('enter')
-  //   },
-  //   leave() {
-  //     console.log('leave')
-  //   }
-  // },
+  pageTransition: {
+    // name: 'fade',
+    css: false,
+    mode: 'out-in',
+    beforeEnter() {
+      console.log('beforeEnter')
+    },
+    beforeLeave() {
+      console.log('beforeLeave')
+    }
+  },
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins

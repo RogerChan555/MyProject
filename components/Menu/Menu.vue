@@ -59,21 +59,11 @@
               class="menu-holder item-delay_off"
               :class="{ 'item-delay_on': itemDelayOn }"
             >
-              <nav class="menu-main-menu-container">
-                <ul id="menu-main-menu" class="menu">
-                  <menu-item
-                    v-for="menuItem in menuList"
-                    :key="menuItem.key"
-                    :menu-item="menuItem"
-                    class="menu-item"
-                    :class="[
-                      menuItem.children.length ? 'menu-item-has-children' : ''
-                    ]"
-                    @item-click="handleMenuItemClick"
-                    @back-click="handleBackClick"
-                  />
-                </ul>
-              </nav>
+              <menu-nav
+                :menu-list="menuList"
+                @back-click="handleBackClick"
+                @item-click="handleItemClick"
+              />
             </div>
           </div>
         </div>
@@ -89,6 +79,16 @@ export default {
   components: {
     SearchIcon
   },
+  data() {
+    return {
+      menuList: '',
+      history: [],
+      isOpen: false,
+      isOpenSearch: false,
+      itemDelayOn: false,
+      checkMobile: false
+    }
+  },
   async fetch() {
     const id = 'default'
     const result = await this.$apollo.query({
@@ -100,16 +100,6 @@ export default {
     return (this.menuList = this.flatListToHierarchical(
       result.data.menu.menuItems.nodes
     ))
-  },
-  data() {
-    return {
-      menuList: '',
-      history: [],
-      isOpen: false,
-      isOpenSearch: false,
-      itemDelayOn: false,
-      checkMobile: false
-    }
   },
   created() {},
   mounted() {
@@ -134,7 +124,7 @@ export default {
       return tree
     },
 
-    handleMenuItemClick(event) {
+    handleItemClick(event) {
       const submenu = event.target.closest('.menu-item-has-children')
       const parentItem = submenu.closest('ul')
 
