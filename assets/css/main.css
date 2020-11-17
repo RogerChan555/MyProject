@@ -46,17 +46,6 @@ input[type='text']:-ms-clear {
   font-weight: 400;
 }
 
-.heading-title {
-  font-size: 6.5rem;
-  line-height: 1.2;
-  margin-bottom: 1rem;
-}
-@media (min-width: 1921px) {
-  .heading-title {
-    font-size: 8rem;
-  }
-}
-
 .text-blue {
   color: #6ca5d0;
 }

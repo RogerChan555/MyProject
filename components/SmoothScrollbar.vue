@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import SmoothScrollbar from 'smooth-scrollbar'
 export default {
   name: 'SmoothScrollbar',
   props: {},
@@ -18,34 +19,42 @@ export default {
   computed: {},
   mounted() {
     this.$nextTick(() => {
-      let scrollbar = this.$scrollbar.init(this.$refs.scrollArea)
-      console.log(scrollbar)
-      // let scrollbar = new ScrollContainer(this.$refs.scrollArea)
-      // const scrollbar = SmoothScrollbar.init(this.$refs.scrollArea, options)
-      // window.addEventListener('resize', scrollbar.update())
-      // scrollbar.addListener((s) => {
-      //   if (s.offset.y >= 30) {
-      //     document.querySelector('header').classList.add('onScroll')
-      //   } else {
-      //     document.querySelector('header').classList.remove('onScroll')
-      //   }
-      // })
+      // let scrollbar = this.$scrollbar.init(this.$refs.scrollArea)
+      // console.log(this.$scrollbar)
+      const options = {
+        damping: 0.055,
+        renderByPixels: true,
+        thumbMinSize: 20,
+        alwaysShowTracks: false,
+        continuousScrolling: true,
+        delegateTo: null,
+        plugins: {}
+      }
+      const scrollbar = SmoothScrollbar.init(this.$refs.scrollArea, options)
+      window.addEventListener('resize', scrollbar.update())
+      scrollbar.addListener((s) => {
+        if (s.offset.y >= 30) {
+          document.querySelector('header').classList.add('onScroll')
+        } else {
+          document.querySelector('header').classList.remove('onScroll')
+        }
+      })
     })
   },
-  // updated() {
-  //   this.scrollContainer.scrollbar.update()
-  // },
+  updated() {
+    this.scrollContainer.scrollbar.update()
+  },
 
-  // beforeDestroy() {
-  //   window.removeEventListener(
-  //     'resize',
-  //     this.scrollContainer.scrollbar.update()
-  //   )
-  // },
+  beforeDestroy() {
+    window.removeEventListener(
+      'resize',
+      this.scrollContainer.scrollbar.update()
+    )
+  },
 
-  // destroyed() {
-  //   this.scrollContainer.scrollbar.destroy()
-  // },
+  destroyed() {
+    this.scrollContainer.scrollbar.destroy()
+  },
   methods: {
     MathUtils(max, time, speed) {
       return (1 - speed) * max + speed * time
