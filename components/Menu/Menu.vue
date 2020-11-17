@@ -9,10 +9,7 @@
       :class="{ 'is-open': isOpen }"
       @click.prevent="handleMenuClose"
     ></div>
-    <div
-      class="lateral fixed-lateral right"
-      :class="{ 'is-open': isOpen, 'is-mobile': isMobile }"
-    >
+    <div class="lateral fixed-lateral right" :class="{ 'is-open': isOpen }">
       <div
         class="search flex justify-center"
         :class="{ 'is-open': isOpenSearch }"
@@ -198,17 +195,17 @@ export default {
 
       setTimeout(() => {
         this.$refs.searchInput.focus()
-        if (this.isMobile) {
-          this.checkMobile = true
-        }
+        // if (this.isMobile) {
+        //   this.checkMobile = true
+        // }
       }, 400)
 
       document.addEventListener('keydown', (e) => {
         if (e.which == 27) {
           this.isOpenSearch = false
-          if (this.isMobile) {
-            this.checkMobile = false
-          }
+          // if (this.isMobile) {
+          //   this.checkMobile = false
+          // }
         }
       })
     },

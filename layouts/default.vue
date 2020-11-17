@@ -1,6 +1,7 @@
 <template>
   <main id="main" role="main">
     <!-- <loader /> -->
+    <div v-if="$nuxt.isOffline">You are offline</div>
     <SmoothScrollbar>
       <nuxt />
       <bottom-footer />
@@ -12,14 +13,6 @@
 <script></script>
 <script>
 import Vue from 'vue'
-// import transitionMixin from '~/mixins/transition.js'
 
-// Import mixins file
-import utils from '~/mixins/utils.js'
-
-Vue.mixin(utils)
-export default {
-  name: 'defaultLayout'
-  // mixins: [transitionMixin]
-}
+export default {}
 </script>
