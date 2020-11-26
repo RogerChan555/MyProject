@@ -33,7 +33,7 @@
                 >
                   <li
                     v-for="product in cartProducts.products"
-                    :key="product.productId"
+                    :key="product.databaseId"
                     class="woocommerce-mini-cart-item flex items-center mini_cart_item flex-row"
                   >
                     <a class="cart-item_image" :href="product.link">
@@ -61,7 +61,7 @@
                     <a
                       class="remove remove_from_cart_button cursor-pointer"
                       aria-label="Remove this item"
-                      @click="removeProductFromCart(product.productId)"
+                      @click="removeProductFromCart(product.databaseId)"
                       >×</a
                     >
                   </li>
@@ -149,8 +149,8 @@ export default {
   },
 
   methods: {
-    removeProductFromCart(productId) {
-      this.$store.dispatch('cart/removeProductFromCart', productId)
+    removeProductFromCart(databaseId) {
+      this.$store.dispatch('cart/removeProductFromCart', databaseId)
     },
     openCart() {
       this.isOpen = true

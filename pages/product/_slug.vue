@@ -1,5 +1,5 @@
 <template>
-  <div :id="product.productId" class="product">
+  <div :id="product.databaseId" class="product">
     <client-only>
       <div class="w-full non-container">
         <div class="product-holder padding-bottom_md flex flex-row-reverse">

@@ -1,22 +1,16 @@
-import SmoothScrollbar from 'smooth-scrollbar'
-
-// eslint-disable-next-line no-unused-vars
-export default ({ app }, inject) => {
-  const options = {
-    damping: 0.055,
-    renderByPixels: true,
-    thumbMinSize: 20,
-    alwaysShowTracks: false,
-    continuousScrolling: true,
-    delegateTo: null,
-    plugins: {}
-  }
-  const scrollbar = {
-    init(scrollArea) {
-      return SmoothScrollbar.init(scrollArea, options)
+export default () => {
+  window.onNuxtReady(() => {
+    // headerHeight
+    function getHeaderHeight() {
+      return document.querySelector('.header-wrapper header .inner')
+        .clientHeight
     }
-  }
-  // const scrollbar = SmoothScrollbar.init(scrollArea, options)
-  //  Inject $scrollbar() in Vue, context and store.
-  inject('scrollbar', scrollbar)
+    function calculateHeaderHeight() {
+      document.getElementsByClassName(
+        'header-height'
+      )[0].style.height = getHeaderHeight()
+      console.log(document.getElementsByClassName('header-height')[0])
+    }
+    calculateHeaderHeight()
+  })
 }

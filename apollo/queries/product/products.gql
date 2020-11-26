@@ -2,7 +2,7 @@ query MyQuery {
   products(first: 20) {
     nodes {
       id
-      productId
+      databaseId
       averageRating
       description
       name

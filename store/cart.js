@@ -32,7 +32,7 @@ const updateProductLocalStore = (state, currentProducts) => {
  */
 const createNewProduct = (product, qty) => {
   return {
-    productId: product.productId,
+    databaseId: product.databaseId,
     name: product.name,
     link: product.link,
     srcSet: product.image.srcSet,
@@ -122,7 +122,7 @@ export const actions = {
         } else {
           const currentProducts = state.cartList.products
           const existingProductIndex = state.cartList.products.findIndex(
-            (item) => item.productId === product.productId
+            (item) => item.databaseId === product.databaseId
           )
 
           if (existingProductIndex === -1) {
@@ -146,11 +146,11 @@ export const actions = {
       // context.commit('decrementProductQuantity', product)
     }
   },
-  removeProductFromCart({ commit, state }, productId) {
+  removeProductFromCart({ commit, state }, databaseId) {
     const currentProducts = state.cartList.products
     const updatedProducts = _.filter(
       currentProducts,
-      (item) => item.productId !== productId
+      (item) => item.databaseId !== databaseId
     )
 
     commit(types.CART_REMOVE_PRODUCT, updatedProducts)
