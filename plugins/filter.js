@@ -1,8 +1,8 @@
 import Vue from 'vue'
+import clientConfig from '../client-config'
 
 Vue.filter('formatURL', function (URL) {
   if (URL) {
-    const baseURL = 'http://localhost/wordpress/'
-    return URL.replace(baseURL, '')
+    return URL.replace(clientConfig.siteUrl, '')
   } else return ''
 })

@@ -9,20 +9,7 @@
 </template>
 
 <script>
-// import { ScrollContainer } from '~/static/js/main.js'
-// import { ScrollContainer } from '~/plugins/external/main.js'
 import SmoothScrollbar from 'smooth-scrollbar'
-
-const options = {
-  damping: 0.055,
-  renderByPixels: true,
-  thumbMinSize: 20,
-  alwaysShowTracks: false,
-  continuousScrolling: true,
-  delegateTo: null,
-  plugins: {}
-}
-
 export default {
   name: 'SmoothScrollbar',
   props: {},
@@ -32,7 +19,17 @@ export default {
   computed: {},
   mounted() {
     this.$nextTick(() => {
-      // let scrollbar = new ScrollContainer(this.$refs.scrollArea)
+      // let scrollbar = this.$scrollbar.init(this.$refs.scrollArea)
+      // console.log(this.$scrollbar)
+      const options = {
+        damping: 0.055,
+        renderByPixels: true,
+        thumbMinSize: 20,
+        alwaysShowTracks: false,
+        continuousScrolling: true,
+        delegateTo: null,
+        plugins: {}
+      }
       const scrollbar = SmoothScrollbar.init(this.$refs.scrollArea, options)
       window.addEventListener('resize', scrollbar.update())
       scrollbar.addListener((s) => {
@@ -44,20 +41,20 @@ export default {
       })
     })
   },
-  // updated() {
-  //   this.scrollContainer.scrollbar.update()
-  // },
+  updated() {
+    this.scrollContainer.scrollbar.update()
+  },
 
-  // beforeDestroy() {
-  //   window.removeEventListener(
-  //     'resize',
-  //     this.scrollContainer.scrollbar.update()
-  //   )
-  // },
+  beforeDestroy() {
+    window.removeEventListener(
+      'resize',
+      this.scrollContainer.scrollbar.update()
+    )
+  },
 
-  // destroyed() {
-  //   this.scrollContainer.scrollbar.destroy()
-  // },
+  destroyed() {
+    this.scrollContainer.scrollbar.destroy()
+  },
   methods: {
     MathUtils(max, time, speed) {
       return (1 - speed) * max + speed * time

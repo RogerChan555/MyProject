@@ -1,7 +1,7 @@
 query getSingleProduct($id: ID!) {
   product(id: $id, idType: SLUG) {
     id
-    productId
+    databaseId
     averageRating
     description
     name

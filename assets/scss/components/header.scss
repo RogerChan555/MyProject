@@ -82,10 +82,11 @@
             display: block;
           }
           a {
+            @apply text-3xl;
+
             font-family: 'Circular', Helvetica, Arial, sans-serif;
             font-weight: 700;
             position: relative;
-            font-size: 1.5rem;
             line-height: 1.6;
             color: #222326;
             display: inline-block;

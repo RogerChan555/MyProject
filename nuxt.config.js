@@ -69,10 +69,15 @@ export default {
     '~/assets/css/main.css',
     '~/assets/scss/pages/singleProduct.scss',
     '~/assets/scss/pages/checkout.scss',
+    '~/assets/scss/pages/blog.scss',
     '~/assets/scss/components/badge.scss',
     '~/assets/scss/components/header.scss',
     '~/assets/scss/components/navigation.scss',
-    '~/assets/scss/components/breadcrumb.scss'
+    '~/assets/scss/components/shopping-bag.scss',
+    '~/assets/scss/components/breadcrumb.scss',
+    '~/assets/scss/components/comments.scss',
+    '~/assets/scss/components/button.scss',
+    '~/assets/scss/components/socialMedia.scss'
   ],
   pageTransition: {
     // name: 'fade',

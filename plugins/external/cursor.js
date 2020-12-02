@@ -50,3 +50,7 @@ export default class Cursor {
     requestAnimationFrame(() => this.render())
   }
 }
+
+// export default ({app}, inject) =>{
+//    // Inject $cursor() in Vue, context and store.
+// }

@@ -28,11 +28,13 @@
                 "
                 class="shopping-bag_holder flex flex-col"
               >
-                <ul class="woocommerce-mini-cart cart_list product_list_widget">
+                <ul
+                  class="woocommerce-mini-cart cart_list product_list_widget flex-col"
+                >
                   <li
                     v-for="product in cartProducts.products"
-                    :key="product.productId"
-                    class="woocommerce-mini-cart-item flex items-center mini_cart_item"
+                    :key="product.databaseId"
+                    class="woocommerce-mini-cart-item flex items-center mini_cart_item flex-row"
                   >
                     <a class="cart-item_image" :href="product.link">
                       <img
@@ -59,7 +61,7 @@
                     <a
                       class="remove remove_from_cart_button cursor-pointer"
                       aria-label="Remove this item"
-                      @click="removeProductFromCart(product.productId)"
+                      @click="removeProductFromCart(product.databaseId)"
                       >×</a
                     >
                   </li>
@@ -69,7 +71,7 @@
                   <div
                     class="woocommerce-mini-cart__total total flex align-center"
                   >
-                    <h6>Subtotal:</h6>
+                    <h6 class="font-medium">Subtotal:</h6>
                     <span class="ml-auto price"
                       ><span class="woocommerce-Price-amount amount"
                         ><span class="woocommerce-Price-currencySymbol">€</span
@@ -147,8 +149,8 @@ export default {
   },
 
   methods: {
-    removeProductFromCart(productId) {
-      this.$store.dispatch('cart/removeProductFromCart', productId)
+    removeProductFromCart(databaseId) {
+      this.$store.dispatch('cart/removeProductFromCart', databaseId)
     },
     openCart() {
       this.isOpen = true

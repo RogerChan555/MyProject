@@ -1,5 +1,5 @@
 <template>
-  <div :id="product.productId" class="product">
+  <div :id="product.databaseId" class="product">
     <client-only>
       <div class="w-full non-container">
         <div class="product-holder padding-bottom_md flex flex-row-reverse">
@@ -10,7 +10,7 @@
               <div
                 class="woocommerce-product-gallery__wrapper gallery-type_grid"
               >
-                <div
+                <!-- <div
                   v-for="galleryImage in product.galleryImages.nodes"
                   :key="galleryImage.uri"
                   :data-thumb="product.image.sourceUrl"
@@ -27,6 +27,19 @@
                       </div>
                     </a>
                   </div>
+                </div> -->
+                <div
+                  class="woocommerce-product-gallery__image woocommerce-product-gallery__image gallery-thumbnail selector col-12"
+                >
+                  <a :href="product.image.link">
+                    <div class="calculated-image">
+                      <img
+                        :src="product.image.sourceUrl"
+                        :alt="product.image.altText"
+                        :title="product.image.title"
+                      />
+                    </div>
+                  </a>
                 </div>
               </div>
             </div>

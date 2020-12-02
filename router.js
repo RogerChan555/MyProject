@@ -17,7 +17,7 @@ export function createRouter() {
         component: index
       },
       {
-        path: '/product/:productId',
+        path: '/product/:databaseId',
         name: 'product',
         component: product
       }
