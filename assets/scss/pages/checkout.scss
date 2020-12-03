@@ -145,41 +145,6 @@
           }
         }
       }
-      .woocommerce-shipping-fields {
-        p {
-          margin: 2rem 0;
-          label {
-            input {
-              margin: 0 1rem 0 0;
-            }
-            span {
-              font-size: 1.3rem;
-              text-transform: uppercase;
-              letter-spacing: 1px;
-              color: #6ca5d0;
-            }
-          }
-        }
-      }
-      .woocommerce-account-fields {
-        p {
-          @apply m-0;
-
-          label {
-            input {
-              margin: 0 1rem 0 0;
-            }
-            span {
-              font-size: 1.3rem;
-              text-transform: uppercase;
-              letter-spacing: 1px;
-              color: #6ca5d0;
-            }
-          }
-        }
-
-        margin-top: 2rem;
-      }
       .your-order {
         padding-bottom: 10rem;
         .shadow {

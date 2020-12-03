@@ -42,8 +42,7 @@ export default {
   head() {
     return {
       bodyAttrs: {
-        class:
-          'home archive post-type-archive post-type-archive-product woocommerce woocommerce-page'
+        class: 'home archive woocommerce'
       }
     }
   }

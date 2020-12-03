@@ -4,12 +4,8 @@
       <div class="w-full non-container">
         <div class="product-holder padding-bottom_md flex flex-row-reverse">
           <div class="md:w-1/2">
-            <div
-              class="woocommerce-product-gallery woocommerce-product-gallery--with-images"
-            >
-              <div
-                class="woocommerce-product-gallery__wrapper gallery-type_grid"
-              >
+            <div class="woocommerce-product-gallery">
+              <div class="gallery-type_grid">
                 <!-- <div
                   v-for="galleryImage in product.galleryImages.nodes"
                   :key="galleryImage.uri"
@@ -28,9 +24,7 @@
                     </a>
                   </div>
                 </div> -->
-                <div
-                  class="woocommerce-product-gallery__image woocommerce-product-gallery__image gallery-thumbnail selector col-12"
-                >
+                <div class="gallery-thumbnail selector col-12">
                   <a :href="product.image.link">
                     <div class="calculated-image">
                       <img
@@ -248,8 +242,7 @@ export default {
   head() {
     return {
       bodyAttrs: {
-        class:
-          'product-template-default single single-product woocommerce woocommerce-page'
+        class: 'single single-product woocommerce'
       }
     }
   }

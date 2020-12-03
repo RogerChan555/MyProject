@@ -83,15 +83,15 @@
                   <div
                     class="woocommerce-mini-cart__buttons buttons flex justify-between"
                   >
-                    <a
-                      href="https://neuronthemes.com/soma/cart/"
-                      class="button wc-forward"
-                      >View cart</a
-                    ><a
-                      href="https://neuronthemes.com/soma/checkout/"
+                    <nuxt-link :to="{ path: 'cart' }" class="button wc-forward">
+                      View cart
+                    </nuxt-link>
+                    <nuxt-link
+                      :to="{ path: 'checkout' }"
                       class="button checkout wc-forward"
-                      >Checkout</a
                     >
+                      Checkout
+                    </nuxt-link>
                   </div>
                 </div>
               </div>

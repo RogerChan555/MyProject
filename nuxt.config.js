@@ -160,11 +160,13 @@ export default {
     'nuxt-svg-loader',
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
+    // Doc: https://github.com/nuxt-community/modules/tree/master/packages/toast
+    '@nuxtjs/toast',
     // Doc: https://github.com/nuxt-community/sitemap-module
     '@nuxtjs/sitemap'
   ],
   sitemap: {
-    // hostname: 'https://www.webnoob.dev',
+    hostname: 'http://35.237.228.46'
   },
   apollo: {
     clientConfigs: {
@@ -239,7 +241,9 @@ export default {
           }
         }
       }
-    }
+    },
+    parallel: true,
+    cache: true
   },
   render: {
     resourceHints: false
