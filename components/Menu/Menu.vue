@@ -98,6 +98,11 @@ export default {
       result.data.menu.menuItems.nodes
     ))
   },
+  watch: {
+    $route() {
+      this.handleMenuClose()
+    }
+  },
   created() {},
   mounted() {
     this.mobileBindings()
