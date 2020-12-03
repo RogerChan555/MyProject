@@ -1,5 +1,5 @@
 const clientConfig = {
-  siteUrl: 'http://35.237.228.46/',
-  graphqlUrl: 'http://35.237.228.46/graphql'
+  siteUrl: 'https://haudev.ga/',
+  graphqlUrl: 'https://haudev.ga/graphql'
 }
 module.exports = clientConfig
