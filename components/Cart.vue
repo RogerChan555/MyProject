@@ -40,7 +40,7 @@
                       <img
                         width="300"
                         height="300"
-                        src="//neuronthemes.com/soma/wp-content/uploads/2018/04/socks-300x300.jpg"
+                        :src="product.sourceUrl"
                         class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail wp-post-image"
                         alt=""
                         :srcset="product.srcSet"

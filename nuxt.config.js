@@ -1,5 +1,5 @@
 const webpack = require('webpack')
-// import { gsap } from 'gsap'
+import clientConfig from './client-config'
 export default {
   /*
    ** Nuxt rendering mode
@@ -166,7 +166,7 @@ export default {
     '@nuxtjs/sitemap'
   ],
   sitemap: {
-    hostname: 'http://35.237.228.46'
+    hostname: clientConfig.siteUrl
   },
   apollo: {
     clientConfigs: {
@@ -242,8 +242,8 @@ export default {
         }
       }
     },
-    parallel: true,
-    cache: true
+    parallel: true
+    // cache: true
   },
   render: {
     resourceHints: false

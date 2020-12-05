@@ -9,7 +9,7 @@ export default () => {
       document.getElementsByClassName(
         'header-height'
       )[0].style.height = getHeaderHeight()
-      console.log(document.getElementsByClassName('header-height')[0])
+      // console.log(document.getElementsByClassName('header-height')[0])
     }
     calculateHeaderHeight()
   })
