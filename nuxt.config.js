@@ -63,6 +63,8 @@ export default {
    ** Global CSS
    */
   css: [
+    // '~/assets/scss/woocommerce.scss',
+    '~/assets/scss/woocommerce-layout.scss',
     '~/assets/scss/styles.scss',
     '~/assets/scss/themes.scss',
     '~/assets/scss/fonts.scss',

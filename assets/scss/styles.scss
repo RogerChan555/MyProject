@@ -502,10 +502,10 @@ textarea,
 pre,
 code {
   @apply flex;
-  @apply m-2;
+  @apply my-2;
   @apply p-2;
-  @apply rounded-lg;
-  @apply bg-bgDarkColor;
+  // @apply rounded-lg;
+  // @apply bg-bgDarkColor;
   @apply text-fgColor;
   @apply font-mono;
   @apply font-normal;
@@ -517,6 +517,8 @@ code {
   @apply outline-none;
 
   width: calc(100% - 16px);
+  border-width: 3px;
+  border-style: solid;
 
   &:not([readonly]):not(.ace_editor):hover,
   &:not([readonly]):not(.ace_editor):active,
@@ -639,7 +641,7 @@ sub {
 }
 
 label {
-  @apply px-2;
+  // @apply px-2;
   @apply text-fgLightColor;
   @apply text-sm;
   @apply transition;

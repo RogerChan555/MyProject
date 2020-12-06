@@ -133,8 +133,6 @@
 import { mapGetters } from 'vuex'
 
 export default {
-  name: 'Cart',
-
   data() {
     return {
       isOpen: false,
