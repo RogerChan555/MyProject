@@ -243,8 +243,8 @@ export default {
           }
         }
       }
-    },
-    parallel: true
+    }
+    // parallel: true
     // cache: true
   },
   render: {
