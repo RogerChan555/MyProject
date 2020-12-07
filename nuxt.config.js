@@ -71,6 +71,7 @@ export default {
     '~/assets/css/main.css',
     '~/assets/scss/pages/singleProduct.scss',
     '~/assets/scss/pages/checkout.scss',
+    '~/assets/scss/pages/account.scss',
     '~/assets/scss/pages/blog.scss',
     '~/assets/scss/components/badge.scss',
     '~/assets/scss/components/header.scss',
