@@ -26,14 +26,6 @@
       -ms-transform: translateY(-15px);
       transform: translateY(-15px);
       opacity: 0;
-      -webkit-transition: opacity cubic-bezier(0.23, 1, 0.32, 1) 0.4s,
-        -webkit-transform cubic-bezier(0.23, 1, 0.32, 1) 0.4s;
-      transition: opacity cubic-bezier(0.23, 1, 0.32, 1) 0.4s,
-        -webkit-transform cubic-bezier(0.23, 1, 0.32, 1) 0.4s;
-      -o-transition: transform cubic-bezier(0.23, 1, 0.32, 1) 0.4s,
-        opacity cubic-bezier(0.23, 1, 0.32, 1) 0.4s;
-      transition: transform cubic-bezier(0.23, 1, 0.32, 1) 0.4s,
-        opacity cubic-bezier(0.23, 1, 0.32, 1) 0.4s;
       transition: transform cubic-bezier(0.23, 1, 0.32, 1) 0.4s,
         opacity cubic-bezier(0.23, 1, 0.32, 1) 0.4s,
         -webkit-transform cubic-bezier(0.23, 1, 0.32, 1) 0.4s;
