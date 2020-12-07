@@ -372,7 +372,7 @@ button {
   @apply bg-acColor;
   @apply text-actColor;
   @apply font-body;
-  @apply font-bold;
+  @apply font-medium;
   @apply transition;
   @apply ease-in-out;
   @apply duration-200;
@@ -482,8 +482,47 @@ input {
 }
 
 input[type='file'],
-input[type='radio'] {
-  @apply hidden;
+input[type='radio'],
+input[type='checkbox'] {
+  // @apply hidden;
+
+  width: auto;
+  display: inline-block;
+}
+
+input[type='checkbox'] {
+  // @apply hidden;
+
+  &,
+  + label {
+    @apply align-middle;
+    @apply cursor-pointer;
+
+    &:before {
+      @apply border;
+      @apply border-fgColor;
+      @apply rounded-lg;
+      @apply inline-flex;
+      @apply items-center;
+      @apply justify-center;
+      @apply text-transparent;
+      @apply transition;
+      @apply ease-in-out;
+      @apply duration-200;
+
+      content: '\2714';
+      height: 16px;
+      width: 16px;
+      margin: 8px 8px 8px 0;
+      display: none !important;
+    }
+  }
+
+  &:checked + label:before {
+    @apply bg-acColor;
+    @apply border-acColor;
+    @apply text-actColor;
+  }
 }
 
 input[type='submit'] {
@@ -493,6 +532,17 @@ input[type='submit'] {
 .show-on-large-screen {
   @apply flex;
   @apply flex-1;
+}
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  @apply inline-block;
 }
 
 kbd,
@@ -513,16 +563,16 @@ code {
   @apply ease-in-out;
   @apply duration-200;
   @apply select-text;
-  @apply resize-y;
+  @apply resize-none;
   @apply outline-none;
 
   width: calc(100% - 16px);
   border-width: 3px;
   border-style: solid;
 
-  &:not([readonly]):not(.ace_editor):hover,
-  &:not([readonly]):not(.ace_editor):active,
-  &:not([readonly]):not(.ace_editor):focus {
+  &:not([readonly]):not(.ace_editor):not([type='checkbox']):not([type='radio']):hover,
+  &:not([readonly]):not(.ace_editor):not([type='checkbox']):not([type='radio']):active,
+  &:not([readonly]):not(.ace_editor):not([type='checkbox']):not([type='radio']):focus {
     box-shadow: inset 0 0 0 2px var(--fg-light-color);
   }
 }
@@ -584,40 +634,6 @@ option {
   @apply bg-bgColor;
 }
 
-input[type='checkbox'] {
-  @apply hidden;
-
-  &,
-  + label {
-    @apply align-middle;
-    @apply cursor-pointer;
-
-    &:before {
-      @apply border;
-      @apply border-fgColor;
-      @apply rounded-lg;
-      @apply inline-flex;
-      @apply items-center;
-      @apply justify-center;
-      @apply text-transparent;
-      @apply transition;
-      @apply ease-in-out;
-      @apply duration-200;
-
-      content: '\2714';
-      height: 16px;
-      width: 16px;
-      margin: 8px 8px 8px 0;
-    }
-  }
-
-  &:checked + label:before {
-    @apply bg-acColor;
-    @apply border-acColor;
-    @apply text-actColor;
-  }
-}
-
 sup {
   vertical-align: super;
 }
@@ -647,6 +663,8 @@ label {
   @apply transition;
   @apply ease-in-out;
   @apply duration-200;
+  @apply font-medium;
+  @apply inline-block;
 }
 
 ul,

@@ -97,6 +97,7 @@ export default {
    ** https://nuxtjs.org/guide/plugins
    */
   plugins: [
+    { src: '~/plugins/vee-validate.js', mode: 'client' },
     { src: '~/plugins/filter.js' },
     { src: '~/plugins/vue-lazyload', mode: 'client' },
     { src: '~/plugins/vuex-persistedstate.js', mode: 'client' },
@@ -223,7 +224,7 @@ export default {
         config.devtool = ctx.isClient ? 'source-map' : 'inline-source-map'
       }
     },
-    // transpile: ['gsap'],
+    transpile: ['vee-validate/dist/rules'],
     vendor: ['main'],
     plugins: [
       new webpack.ProvidePlugin({

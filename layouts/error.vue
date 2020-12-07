@@ -109,6 +109,8 @@
 </template>
 <script>
 export default {
+  layout: 'error',
+  props: ['error'],
   head() {
     return {
       bodyAttrs: {

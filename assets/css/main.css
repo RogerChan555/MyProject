@@ -3047,66 +3047,6 @@ ul.woocommerce-error li a {
   padding: 4rem 2rem 4rem 0 !important;
 }
 
-.woocommerce #payment {
-  background-color: transparent;
-  border-radius: 0;
-}
-.woocommerce #payment ul.wc_payment_methods {
-  border-bottom-width: 3px;
-  border-bottom-color: #cfe5fc;
-  padding: 1.6rem 1rem;
-}
-.woocommerce #payment ul.wc_payment_methods:before,
-.woocommerce #payment ul.wc_payment_methods:after {
-  display: none;
-}
-.woocommerce #payment .form-row {
-  padding: 1.6rem 1rem;
-  margin: 0;
-}
-.woocommerce #payment .form-row .woocommerce-terms-and-conditions {
-  padding: 1.5rem;
-  background-color: transparent;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  border-width: 3px;
-  border-color: #cfe5fc;
-}
-.woocommerce #payment .form-row .wc-terms-and-conditions {
-  padding: 0;
-  margin: 8px 0 0 0;
-}
-.woocommerce #payment .form-row .wc-terms-and-conditions label span {
-  font-weight: 500;
-}
-.woocommerce #payment .form-row .wc-terms-and-conditions label span a {
-  color: #6ca5d0;
-}
-.woocommerce #payment .form-row .wc-terms-and-conditions label .required {
-  color: #6ca5d0;
-}
-.woocommerce #payment .form-row .button {
-  border-radius: 0;
-  background-color: #cfe5fc;
-  font-family: 'Circular', Helvetica, Arial, sans-serif;
-  font-weight: 500;
-  color: #222326;
-  padding: 0.8rem 1.7rem;
-}
-.woocommerce #payment .payment_box {
-  background-color: #f4f4f4 !important;
-  color: #222326 !important;
-  margin-top: 0 !important;
-}
-.woocommerce #payment .payment_box:before {
-  display: none !important;
-}
-.woocommerce #payment .payment_method_paypal label a {
-  margin-left: 1rem !important;
-  color: #6ca5d0;
-  margin-left: auto;
-}
-
 .navigation {
   padding-top: 3rem;
   padding-bottom: 5rem;

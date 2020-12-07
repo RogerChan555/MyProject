@@ -7,8 +7,10 @@
   }
 }
 .button.shadow {
-  span {
+  box-shadow: none;
+  button {
     border-width: 3px;
+    border-style: solid;
   }
   &:before {
     border-width: 0;
@@ -43,19 +45,19 @@
   }
 }
 .button.small {
-  span {
+  button {
     font-size: 1.4rem;
     padding: 0.3rem 4rem;
   }
 }
 .button.normal {
-  span {
+  button {
     font-size: 1.5rem;
     padding: 0.8rem 4rem;
   }
 }
 .button.large {
-  span {
+  button {
     font-size: 1.6rem;
     font-weight: 500;
     padding: 1.2rem 4.2rem;
@@ -63,12 +65,12 @@
 }
 .button.fluid {
   display: block;
-  span {
+  button {
     text-align: center;
   }
 }
 .button.white {
-  span {
+  button {
     border-color: #fff;
   }
   &:before {
@@ -81,7 +83,7 @@
   }
 }
 .button.black {
-  span {
+  button {
     border-color: #222326;
   }
   &:before {
@@ -94,7 +96,7 @@
   }
 }
 .button.grey {
-  span {
+  button {
     border-color: #919496;
   }
   &:before {
@@ -107,7 +109,7 @@
   }
 }
 .button.light-grey {
-  span {
+  button {
     border-color: #f4f4f4;
   }
   &:before {
@@ -120,7 +122,7 @@
   }
 }
 .button.green {
-  span {
+  button {
     border-color: #19b14f;
   }
   &:before {
@@ -133,7 +135,7 @@
   }
 }
 .button.red {
-  span {
+  button {
     border-color: #e43a19;
   }
   &:before {
@@ -146,7 +148,7 @@
   }
 }
 .button.blue {
-  span {
+  button {
     border-color: #6ca5d0;
   }
   &:before {
@@ -159,7 +161,7 @@
   }
 }
 .button.light-blue {
-  span {
+  button {
     border-color: #cfe5fc;
   }
   &:before {
@@ -173,21 +175,20 @@
 }
 @media (min-width: 1921px) {
   .button.small {
-    span {
-      font-size: 1.5rem;
-      padding: 0.4rem 4.6rem;
+    button {
+      padding: 0.2rem 2.3rem;
     }
   }
   .button.normal {
-    span {
-      font-size: 1.6rem;
-      padding: 1rem 5rem;
+    button {
+      font-size: 1rem;
+      padding: 0.7rem 3rem;
     }
   }
   .button.large {
-    span {
-      font-size: 1.7rem;
-      padding: 1.5rem 4.8rem;
+    button {
+      font-size: 1.2rem;
+      padding: 0.7rem 3rem;
     }
   }
 }
