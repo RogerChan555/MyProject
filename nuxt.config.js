@@ -57,7 +57,7 @@ export default {
   /*
    ** Loading page
    */
-  loading: '~/components/Loading.vue',
+  // loading: '~/components/Loading.vue',
   // loading: false,
   /*
    ** Global CSS
@@ -85,13 +85,13 @@ export default {
   pageTransition: {
     // name: 'fade',
     css: false,
-    mode: 'out-in',
-    beforeEnter() {
-      console.log('beforeEnter')
-    },
-    beforeLeave() {
-      console.log('beforeLeave')
-    }
+    mode: 'out-in'
+    // beforeEnter() {
+    //   console.log('beforeEnter')
+    // },
+    // beforeLeave() {
+    //   console.log('beforeLeave')
+    // }
   },
   /*
    ** Plugins to load before mounting the App
