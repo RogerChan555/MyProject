@@ -1,5 +1,9 @@
 <template>
-  <footer>this is footer</footer>
+  <footer>
+    <div class="max-w-screen-xl flex-grow mx-auto">
+      <p>this is footer</p>
+    </div>
+  </footer>
 </template>
 
 <script>

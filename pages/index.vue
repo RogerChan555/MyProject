@@ -163,9 +163,6 @@ export default {
   async asyncData({ app }) {
     const { data } = await app.apolloProvider.defaultClient.query({
       query: productsQuery,
-      // variables: {
-      //   id: SLUG
-      // },
       fetchPolicy: 'no-cache'
     })
     return {
@@ -173,10 +170,7 @@ export default {
     }
   },
   data() {
-    return {
-      // listProduct: '',
-      isLoading: false
-    }
+    return {}
   },
 
   head() {

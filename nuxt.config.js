@@ -57,7 +57,7 @@ export default {
   /*
    ** Loading page
    */
-  // loading: '~/components/Loading.vue',
+  loading: '~/components/Loading.vue',
   // loading: false,
   /*
    ** Global CSS
@@ -72,9 +72,11 @@ export default {
     '~/assets/scss/pages/singleProduct.scss',
     '~/assets/scss/pages/checkout.scss',
     '~/assets/scss/pages/account.scss',
+    '~/assets/scss/pages/cart.scss',
     '~/assets/scss/pages/blog.scss',
     '~/assets/scss/components/badge.scss',
     '~/assets/scss/components/header.scss',
+    '~/assets/scss/components/footer.scss',
     '~/assets/scss/components/navigation.scss',
     '~/assets/scss/components/shopping-bag.scss',
     '~/assets/scss/components/breadcrumb.scss',

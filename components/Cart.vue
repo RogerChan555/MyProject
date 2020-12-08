@@ -137,7 +137,11 @@ export default {
       cartProducts: 'cart/cartList'
     })
   },
-
+  watch: {
+    $route() {
+      this.closeCart()
+    }
+  },
   methods: {
     removeProductFromCart(databaseId) {
       this.$store.dispatch('cart/removeProductFromCart', databaseId)

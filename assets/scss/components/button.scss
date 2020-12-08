@@ -8,7 +8,8 @@
 }
 .button.shadow {
   box-shadow: none;
-  button {
+  button,
+  span {
     border-width: 3px;
     border-style: solid;
   }
@@ -45,22 +46,23 @@
   }
 }
 .button.small {
-  button {
-    font-size: 1.4rem;
+  button,
+  span {
+    // font-size: 1.4rem;
     padding: 0.3rem 4rem;
   }
 }
 .button.normal {
   button {
-    font-size: 1.5rem;
-    padding: 0.8rem 4rem;
+    // font-size: 1.5rem;
+    padding: 0.5rem 3rem;
   }
 }
 .button.large {
   button {
     font-size: 1.6rem;
     font-weight: 500;
-    padding: 1.2rem 4.2rem;
+    padding: 1rem 4rem;
   }
 }
 .button.fluid {
@@ -161,7 +163,8 @@
   }
 }
 .button.light-blue {
-  button {
+  button,
+  span {
     border-color: #cfe5fc;
   }
   &:before {
@@ -175,7 +178,8 @@
 }
 @media (min-width: 1921px) {
   .button.small {
-    button {
+    button,
+    span {
       padding: 0.2rem 2.3rem;
     }
   }

@@ -1,0 +1,128 @@
+footer {
+  padding: 5.5rem 0 4rem;
+  background-color: #cfe5fc;
+  .footer-widgets {
+    .widget {
+      .widgettitle {
+        &:after {
+          background-color: #6ca5d0;
+        }
+      }
+      ul {
+        li {
+          a {
+            &:hover {
+              color: #6ca5d0;
+            }
+            &:before {
+              background-color: #6ca5d0;
+            }
+          }
+        }
+      }
+    }
+    .widget.widget_archive {
+      ul {
+        li {
+          color: #6ca5d0;
+        }
+      }
+    }
+    .widget.widget_categories {
+      ul {
+        li {
+          color: #6ca5d0;
+        }
+      }
+    }
+    .widget.widget_calendar {
+      a {
+        color: #6ca5d0;
+        &:before {
+          background-color: #6ca5d0;
+        }
+      }
+    }
+  }
+  .social-media {
+    li {
+      margin-right: 1rem;
+      margin-left: 1rem;
+    }
+  }
+  .social-media.type-icon {
+    ul {
+      li {
+        a {
+          font-size: 1.9rem;
+          width: 4.8rem !important;
+          height: 4.8rem !important;
+          line-height: 4.5rem;
+          background-color: #fff !important;
+        }
+      }
+    }
+  }
+  .social-media.type-icon.light-color {
+    ul {
+      li {
+        a {
+          background-color: transparent !important;
+        }
+      }
+    }
+  }
+  .social-media.type-text {
+    ul {
+      li {
+        a {
+          width: auto !important;
+          height: auto !important;
+        }
+      }
+    }
+  }
+}
+footer.has-widgets {
+  .social-media {
+    padding-top: 2.5rem;
+  }
+}
+@media (min-width: 1921px) {
+  footer {
+    padding: 8.5rem 0 7rem;
+    .social-media {
+      li {
+        margin-right: 2.5rem;
+        margin-left: 2.5rem;
+      }
+    }
+    .social-media.type-icon {
+      ul {
+        li {
+          a {
+            font-size: 2.1rem;
+            width: 5.2rem !important;
+            height: 5.2rem !important;
+            line-height: 5rem;
+          }
+        }
+      }
+    }
+  }
+  footer.has-widgets {
+    .social-media {
+      padding-top: 4rem;
+    }
+  }
+}
+@media (min-width: 769px) {
+  footer {
+    .social-media {
+      li {
+        margin-right: 2rem;
+        margin-left: 2rem;
+      }
+    }
+  }
+}

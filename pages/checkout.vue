@@ -519,7 +519,14 @@ export default {
   data() {
     return {
       shippingFee: 5.0,
-      coupon_code: ''
+      coupon_code: '',
+      billing_first_name: '',
+      billing_last_name: '',
+      billing_address_1: '',
+      billing_city: '',
+      billing_email: '',
+      billing_phone: '',
+      order_comments: ''
     }
   },
   head() {
@@ -539,7 +546,7 @@ export default {
       return this.cartProducts.totalProductsPrice + this.shippingFee
     },
     submitForm() {
-      console.log('enter')
+      console.log('submited')
     }
   }
 }
