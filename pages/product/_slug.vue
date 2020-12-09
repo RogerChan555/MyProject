@@ -51,7 +51,7 @@
                       >{{ product.productCategories.nodes[0].name }}</a
                     ><span>/</span>{{ product.name }}
                   </nav>
-                  <div class="woocommerce-product-rating ml-auto">
+                  <!-- <div class="woocommerce-product-rating ml-auto">
                     <a
                       href="#reviews"
                       class="woocommerce-review-link"
@@ -64,51 +64,24 @@
                         >
                       </div></a
                     >
-                  </div>
+                  </div> -->
                 </div>
                 <h2 class="product_title entry-title">
                   {{ product.name }}
                 </h2>
                 <h4 class="price flex align-center">
                   <span class="woocommerce-Price-amount amount">
-                    <i class="woocommerce-Price-currencySymbol">€</i
+                    <i class="woocommerce-Price-currencySymbol"></i
                     >{{ product.price }}</span
                   >
                 </h4>
 
-                <form
-                  class="cart flex align-center"
-                  action="https://neuronthemes.com/soma/product/wheeler/"
-                  method="post"
-                  enctype="multipart/form-data"
+                <a
+                  class="button shadow small light-blue soma-link mt-3 mb-3"
+                  @click="addProductToCart(product)"
                 >
-                  <div class="quantity">
-                    <label
-                      class="screen-reader-text"
-                      for="quantity_5ee4a11c8ce64"
-                      >Quantity</label
-                    >
-                    <input
-                      id="quantity_5ee4a11c8ce64"
-                      type="number"
-                      class="input-text qty text"
-                      step="1"
-                      min="1"
-                      max=""
-                      name="quantity"
-                      value="1"
-                      title="Qty"
-                      size="4"
-                      pattern="[0-9]*"
-                      inputmode="numeric"
-                      aria-labelledby=""
-                    />
-                  </div>
-
-                  <button type="submit" class="button light-blue shadow">
-                    <span>Add to cart</span>
-                  </button>
-                </form>
+                  <span>Add to cart</span>
+                </a>
 
                 <div class="product_meta">
                   <span v-if="product.productCategories" class="posted_in"
@@ -190,19 +163,13 @@
         <div class="navigation">
           <div class="flex">
             <div class="w-1/2 prev">
-              <a
-                class="soma-link"
-                href="https://neuronthemes.com/soma/product/grimstone-17/"
-                rel="prev"
+              <a class="soma-link" href="#" rel="prev"
                 ><h1>Prev</h1>
                 <h6>Grimstone 17</h6></a
               >
             </div>
             <div class="w-1/2 next text-right">
-              <a
-                class="soma-link"
-                href="https://neuronthemes.com/soma/product/oxenhope/"
-                rel="next"
+              <a class="soma-link" href="#" rel="next"
                 ><h1>Next</h1>
                 <h6>Oxenhope</h6></a
               >
@@ -244,6 +211,12 @@ export default {
       bodyAttrs: {
         class: 'single single-product woocommerce'
       }
+    }
+  },
+
+  methods: {
+    addProductToCart(product) {
+      this.$store.dispatch('cart/addProductToCart', product)
     }
   }
 }
