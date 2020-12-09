@@ -231,6 +231,7 @@ input[type='text']:-ms-clear {
 
 .shadow {
   position: relative;
+  z-index: 1;
 }
 
 .shadow:before {
@@ -248,6 +249,7 @@ input[type='text']:-ms-clear {
   -webkit-transition: background-color cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s !important;
   -o-transition: background-color cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s !important;
   transition: background-color cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s !important;
+  z-index: -1;
 }
 
 .shadow > * {

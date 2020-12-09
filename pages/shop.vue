@@ -1,29 +1,7 @@
 <template>
   <div class="max-w-screen-xl flex-grow mx-auto">
-    <div class="text-center lg:pt-14 pt-10 lg:pb-16 pb-14">
-      <h1 class="heading-title">The Shop</h1>
-    </div>
-    <div class="shop">
-      <Products />
-      <div class="ac-info-content-wrapper ac-parallax">
-        <div
-          class="ac-info-content ac-parallax-item"
-          data-y=".05"
-          data-speed="1"
-          data-max="-1"
-        >
-          <div>
-            <h3 class="ac-info-title ac-section-title">Insight + creativity</h3>
-          </div>
-          <div>
-            <p class="ac-info-text ac-section-text">
-              We’re adept at understanding what a project needs. Our designs
-              capture the essence of your business, so you can make a more
-              consistent and memorable impact, everywhere.
-            </p>
-          </div>
-        </div>
-      </div>
+    <div class="md:pt-5 lg:pb-10 text-center checkout-title">
+      <h1 class="mb-0 heading-title">Coming Soon</h1>
     </div>
   </div>
 </template>

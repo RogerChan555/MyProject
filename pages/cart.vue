@@ -69,7 +69,13 @@
                     class="product-quantity text-align_center"
                     data-title="Quantity"
                   >
-                    <div class="quantity">
+                    <ValidationProvider
+                      v-slot="{ errors }"
+                      name="E-mail"
+                      rules=""
+                      tag="div"
+                      class="quantity"
+                    >
                       <label
                         class="screen-reader-text"
                         for="quantity_5fc9011e68a38"
@@ -77,17 +83,16 @@
                       >
                       <input
                         type="number"
-                        class="input-text qty text"
                         step="1"
                         min="0"
-                        max=""
                         :value="product.qty"
-                        title="Qty"
+                        class="input-text qty text"
                         size="4"
                         pattern="[0-9]*"
                         inputmode="numeric"
                       />
-                    </div>
+                      <span class="error">{{ errors[0] }}</span>
+                    </ValidationProvider>
                   </td>
 
                   <td class="product-subtotal" data-title="Total">
@@ -121,30 +126,26 @@
                           placeholder="Coupon code"
                         />
                         <div class="button light-blue shadow normal">
-                          <span
-                            ><button
-                              type="submit"
-                              class="button flex"
-                              name="apply_coupon"
-                              value="Apply coupon"
-                              :disabled="invalid"
-                            >
-                              Apply coupon
-                            </button></span
+                          <button
+                            type="submit"
+                            class="button flex"
+                            name="apply_coupon"
+                            value="Apply coupon"
+                            :disabled="invalid"
                           >
+                            Apply coupon
+                          </button>
                         </div>
                       </div>
 
                       <div class="button light-blue shadow normal">
-                        <span
-                          ><button
-                            type="submit"
-                            class="button flex"
-                            name="update_cart"
-                          >
-                            Update cart
-                          </button></span
+                        <button
+                          type="submit"
+                          class="button flex"
+                          name="update_cart"
                         >
+                          Update cart
+                        </button>
                       </div>
                     </div>
                   </td>

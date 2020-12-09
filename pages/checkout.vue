@@ -34,17 +34,15 @@
               <span class="error">{{ errors[0] }}</span>
             </ValidationProvider>
             <div class="button light-blue shadow normal">
-              <span
-                ><button
-                  type="submit"
-                  class="button flex"
-                  name="apply_coupon"
-                  value="Apply coupon"
-                  :disabled="invalid"
-                >
-                  Apply coupon
-                </button></span
+              <button
+                type="submit"
+                class="button flex"
+                name="apply_coupon"
+                value="Apply coupon"
+                :disabled="invalid"
               >
+                Apply coupon
+              </button>
             </div>
           </div>
         </ValidationObserver>

@@ -1,12 +1,12 @@
 <template>
   <li>
     <span v-if="menuItem.children && menuItem.children.length"
-      ><a :href="menuItem.url | formatURL" @click.prevent="handleItemClick">{{
+      ><a :href="menuItem.path" @click.prevent="handleItemClick">{{
         menuItem.label
       }}</a></span
     >
     <span v-else
-      ><a :href="menuItem.url | formatURL">{{ menuItem.label }}</a></span
+      ><a :href="menuItem.path">{{ menuItem.label }}</a></span
     >
     <ul v-if="menuItem.children && menuItem.children.length" class="sub-menu">
       <li class="back-link">
