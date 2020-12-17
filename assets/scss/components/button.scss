@@ -32,7 +32,7 @@
       padding: 0;
       opacity: 1;
       &:before {
-        background-color: #cfe5fc;
+        background-color: var(--ac-color);
       }
     }
     &:disabled[disabled] {
@@ -40,7 +40,7 @@
       padding: 0;
       opacity: 1;
       &:before {
-        background-color: #cfe5fc;
+        background-color: var(--ac-color);
       }
     }
   }
@@ -53,13 +53,15 @@
   }
 }
 .button.normal {
-  button {
+  button,
+  span {
     // font-size: 1.5rem;
     padding: 0.5rem 3rem;
   }
 }
 .button.large {
-  button {
+  button,
+  span {
     font-size: 1.6rem;
     font-weight: 500;
     padding: 1rem 4rem;
@@ -67,7 +69,8 @@
 }
 .button.fluid {
   display: block;
-  button {
+  button,
+  span {
     text-align: center;
   }
 }
@@ -125,14 +128,14 @@
 }
 .button.green {
   button {
-    border-color: #19b14f;
+    border-color: var(--act-color);
   }
   &:before {
-    background-color: #19b14f;
+    background-color: var(--act-color);
   }
   &:hover {
     &:before {
-      background-color: #19b14f;
+      background-color: var(--act-color);
     }
   }
 }
@@ -151,28 +154,28 @@
 }
 .button.blue {
   button {
-    border-color: #6ca5d0;
+    border-color: var(--act-color);
   }
   &:before {
-    background-color: #6ca5d0;
+    background-color: var(--act-color);
   }
   &:hover {
     &:before {
-      background-color: #6ca5d0;
+      background-color: var(--act-color);
     }
   }
 }
 .button.light-blue {
   button,
   span {
-    border-color: #cfe5fc;
+    border-color: var(--ac-color);
   }
   &:before {
-    background-color: #cfe5fc;
+    background-color: var(--ac-color);
   }
   &:hover {
     &:before {
-      background-color: #cfe5fc;
+      background-color: var(--ac-color);
     }
   }
 }

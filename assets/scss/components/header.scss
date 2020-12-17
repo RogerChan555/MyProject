@@ -36,13 +36,13 @@
       font-size: 1rem;
       font-weight: 400;
       &:hover {
-        color: #19b14f;
+        color: var(--act-color);
       }
     }
     .line {
       a {
         &:before {
-          background-color: #19b14f;
+          background-color: var(--act-color);
         }
       }
     }
@@ -67,7 +67,7 @@
       .number {
         font-size: 0.9rem;
         font-weight: 500;
-        color: #19b14f;
+        color: var(--act-color);
         margin-left: 5px;
       }
     }
@@ -92,10 +92,10 @@
             display: inline-block;
             white-space: nowrap;
             &:hover {
-              color: #6ca5d0;
+              color: var(--act-color);
             }
             &:focus {
-              color: #6ca5d0;
+              color: var(--act-color);
             }
           }
           &:last-child {
@@ -154,11 +154,11 @@
               }
               &:hover {
                 &:after {
-                  background-color: #6ca5d0;
+                  background-color: var(--act-color);
                   right: 0.5rem;
                 }
                 &:before {
-                  background-color: #6ca5d0;
+                  background-color: var(--act-color);
                   right: 0.5rem;
                 }
               }
@@ -177,7 +177,7 @@
             a {
               display: inline-block;
               color: #fff;
-              background-color: #6ca5d0;
+              background-color: var(--act-color);
               font-size: 2rem;
               padding: 0 0.8rem;
               margin-left: 1px;
@@ -248,7 +248,7 @@
 header {
   .lateral {
     .search {
-      background-color: #cfe5fc;
+      background-color: var(--ac-color);
       position: absolute;
       top: 50%;
       left: 0;
@@ -259,12 +259,28 @@ header {
       -webkit-transition: all cubic-bezier(0.23, 1, 0.32, 1) 0.4s;
       -o-transition: all cubic-bezier(0.23, 1, 0.32, 1) 0.4s;
       transition: all cubic-bezier(0.23, 1, 0.32, 1) 0.4s;
-      .align-self-center {
+      .self-center {
         width: calc(100% - 8rem);
         margin: 0 4rem;
       }
       #close-search {
-        display: none;
+        display: block;
+        position: absolute;
+        top: 3rem;
+        right: 3rem;
+        font-family: 'Circular', Helvetica, Arial, sans-serif;
+        font-weight: 500;
+        font-size: 1rem;
+        color: var(--act-color);
+        opacity: 0;
+        visibility: hidden;
+        -webkit-transition: all cubic-bezier(0.23, 1, 0.32, 1) 0.4s;
+        -o-transition: all cubic-bezier(0.23, 1, 0.32, 1) 0.4s;
+        transition: all cubic-bezier(0.23, 1, 0.32, 1) 0.4s;
+      }
+      #close-search.is-active {
+        opacity: 1;
+        visibility: visible;
       }
       input {
         width: 100%;
@@ -338,10 +354,10 @@ header {
           font-weight: 400;
           color: #222326;
           &:before {
-            background-color: #6ca5d0;
+            background-color: var(--act-color);
           }
           &:hover {
-            color: #6ca5d0;
+            color: var(--act-color);
           }
         }
         .language {
@@ -364,7 +380,7 @@ header {
           }
           &:hover {
             svg {
-              fill: #6ca5d0;
+              fill: var(--act-color);
             }
           }
         }
@@ -379,7 +395,7 @@ header {
       margin: 0 5rem;
       border-top-width: 0;
       border-style: solid;
-      border-color: #6ca5d0;
+      border-color: var(--act-color);
       -webkit-transition: border cubic-bezier(0.23, 1, 0.32, 1) 0.4s;
       -o-transition: border cubic-bezier(0.23, 1, 0.32, 1) 0.4s;
       transition: border cubic-bezier(0.23, 1, 0.32, 1) 0.4s;
@@ -403,25 +419,6 @@ header {
   .lateral.is-mobile {
     .close-menu_holder {
       display: block;
-    }
-    #close-search {
-      display: block;
-      position: absolute;
-      top: 3rem;
-      right: 3rem;
-      font-family: 'Circular', Helvetica, Arial, sans-serif;
-      font-weight: 500;
-      font-size: 2rem;
-      color: #6ca5d0;
-      opacity: 0;
-      visibility: hidden;
-      -webkit-transition: all cubic-bezier(0.23, 1, 0.32, 1) 0.4s;
-      -o-transition: all cubic-bezier(0.23, 1, 0.32, 1) 0.4s;
-      transition: all cubic-bezier(0.23, 1, 0.32, 1) 0.4s;
-    }
-    #close-search.is-active {
-      opacity: 1;
-      visibility: visible;
     }
     .search-icon_holder {
       border-left: 1px solid #222326;

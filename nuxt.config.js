@@ -44,12 +44,13 @@ export default {
   },
 
   router: {
-    mode: 'history',
-    linkActiveClass: 'nuxt-link-active-custom',
-    linkExactActiveClass: 'nuxt-link-exact-active',
-
-    fallback: false
+    mode: 'history'
+    // linkActiveClass: 'nuxt-link-active-custom',
+    // linkExactActiveClass: 'nuxt-link-exact-active',
+    // middleware: 'pages',
+    // fallback: false
   },
+
   generate: {
     fallback: false,
     routes: ['/', '404']
@@ -86,8 +87,8 @@ export default {
   ],
   pageTransition: {
     // name: 'fade',
-    css: false,
-    mode: 'out-in'
+    // css: false,
+    // mode: 'out-in'
     // beforeEnter() {
     //   console.log('beforeEnter')
     // },

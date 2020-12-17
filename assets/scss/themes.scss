@@ -33,7 +33,7 @@
   // Tooltip color
   --tt-color: rgba(48, 48, 48, 1);
   // Active text color
-  --act-color: rgba(32, 33, 36, 1);
+  // --act-color: rgba(32, 33, 36, 1);
 }
 
 @mixin lightTheme {
@@ -53,29 +53,19 @@
   --err-color: rgba(0, 0, 0, 0.1);
   // Tooltip color
   --tt-color: rgba(255, 255, 255, 1);
-  // Active text color
-  --act-color: rgba(255, 255, 255, 1);
 }
 
 @mixin blueTheme {
   // Acent color
-  --ac-color: theme('colors.blue.400');
-}
-
-@mixin greenTheme {
-  // Acent color
-  --ac-color: theme('colors.green.400');
-}
-
-@mixin tealTheme {
-  // Acent color
-  --ac-color: theme('colors.teal.400');
+  --ac-color: rgba(207, 229, 252, 1);
+  // Active text color
+  --act-color: rgba(108, 165, 208, 1);
 }
 
 :root {
   @include baseTheme;
   @include lightTheme;
-  @include greenTheme;
+  @include blueTheme;
 }
 
 :root.light {
@@ -88,7 +78,4 @@
 
 :root[data-accent='blue'] {
   @include blueTheme;
-}
-:root[data-accent='green'] {
-  @include greenTheme;
 }
