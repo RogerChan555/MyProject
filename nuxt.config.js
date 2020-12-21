@@ -1,5 +1,20 @@
 const webpack = require('webpack')
-import clientConfig from './client-config'
+// import clientConfig from './client-config'
+
+// Common options
+export const options = {
+  name: 'WooNuxt',
+  shortDescription: 'WooCommerce Store in Vue',
+  description:
+    'Vue WooCommerce theme, built with Next JS, Webpack, Babel, Node, GraphQl',
+  app: {
+    background: '#202124'
+  },
+  social: {
+    twitter: ''
+  }
+}
+
 export default {
   /*
    ** Nuxt rendering mode
@@ -19,17 +34,64 @@ export default {
     htmlAttrs: {
       lang: 'en'
     },
-    title: process.env.npm_package_name || '',
+    title: `${options.name} • ${options.shortDescription}`,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
-        hid: 'description',
-        name: 'description',
-        content: process.env.npm_package_description || ''
+        name: 'keywords',
+        content: 'woocommerce, nuxt, woocommerce nuxt, nuxt app, graphql'
+      },
+      {
+        name: 'X-UA-Compatible',
+        content: 'IE=edge, chrome=1'
+      },
+      {
+        itemprop: 'name',
+        content: `${options.name} • ${options.shortDescription}`
+      },
+      {
+        itemprop: 'description',
+        content: options.description
+      },
+      {
+        itemprop: 'image',
+        content: `${process.env.BASE_URL}banner.png`
+      },
+      {
+        property: 'og:image',
+        content: `${process.env.BASE_URL}banner.png`
+      },
+      // Add to homescreen for Chrome on Android. Fallback for PWA (handled by nuxt)
+      {
+        name: 'application-name',
+        content: options.name
+      },
+      // Windows phone tile icon
+      {
+        name: 'msapplication-TileImage',
+        content: `/icon.png`
+      },
+      {
+        name: 'msapplication-TileColor',
+        content: options.app.background
+      },
+      {
+        name: 'msapplication-tap-highlight',
+        content: 'no'
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'apple-touch-icon',
+        href: '/icon.png'
+      },
+      {
+        rel: 'apple-touch-startup-image',
+        href: '/icon.png'
+      }
+    ],
     // script: [{ src: '/js/main.js' }],
     bodyAttrs: {
       class: ''
@@ -52,8 +114,8 @@ export default {
   },
 
   generate: {
-    fallback: false,
-    routes: ['/', '404']
+    fallback: false
+    // routes: ['/', '404']
   },
   /*
    ** Loading page
@@ -119,6 +181,8 @@ export default {
   buildModules: [
     // Doc: https://github.com/nuxt-community/router-module
     // '@nuxtjs/router',
+    // https://github.com/nuxt-community/pwa-module
+    '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
     // https://github.com/nuxt-community/style-resources-module
@@ -127,10 +191,30 @@ export default {
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/stylelint-module
     '@nuxtjs/stylelint-module',
+    // https://github.com/nuxt-community/svg-module
+    '@nuxtjs/svg',
     // https://github.com/nuxt-community/color-mode-module
     '@nuxtjs/color-mode',
     // Doc: https://github.com/aceforth/nuxt-optimized-images
     '@aceforth/nuxt-optimized-images'
+  ],
+
+  /*
+   ** Nuxt.js modules
+   */
+  modules: [
+    // 'nuxt-svg-loader',
+    'nuxt-svg-loader',
+    // https://github.com/nuxt-community/apollo-module
+    '@nuxtjs/apollo',
+    // https://github.com/nuxt-community/robots-module
+    '@nuxtjs/robots',
+    // Doc: https://github.com/nuxt/content
+    '@nuxt/content',
+    // Doc: https://github.com/nuxt-community/modules/tree/master/packages/toast
+    '@nuxtjs/toast',
+    // Doc: https://github.com/nuxt-community/sitemap-module
+    '@nuxtjs/sitemap'
   ],
 
   // routerModule: {
@@ -143,38 +227,48 @@ export default {
 
   pwa: {
     manifest: {
-      name: 'Woo-nuxt',
-      short_name: 'Woo-nuxt',
-      theme_color: '#83E8BC',
-      background_color: '#83E8BC',
+      name: options.name,
+      short_name: options.name,
+      description: options.shortDescription,
+      start_url: '/',
+      theme_color: options.app.background,
+      background_color: options.app.background,
       display: 'browser'
     },
     meta: {
+      ogHost: process.env.BASE_URL,
+      twitterCard: 'summary_large_image',
+      twitterSite: options.social.twitter,
+      twitterCreator: options.social.twitter,
       name: 'Woo-nuxt',
-      description: 'Your personal workout assistant',
+      description:
+        'Vue WooCommerce theme, built with Next JS, Webpack, Babel, Node, GraphQl',
       author: 'Mowa-Zee',
-      theme_color: '#83E8BC'
-    }
+      theme_color: options.app.background
+    },
+    workbox: false
   },
 
-  /*
-   ** Nuxt.js modules
-   */
-  modules: [
-    '@nuxtjs/apollo',
-    '@nuxtjs/pwa',
-    // 'nuxt-svg-loader',
-    'nuxt-svg-loader',
-    // Doc: https://github.com/nuxt/content
-    '@nuxt/content',
-    // Doc: https://github.com/nuxt-community/modules/tree/master/packages/toast
-    '@nuxtjs/toast',
-    // Doc: https://github.com/nuxt-community/sitemap-module
-    '@nuxtjs/sitemap'
-  ],
-  sitemap: {
-    hostname: clientConfig.siteUrl
+  // Toast module configuration (https://github.com/nuxt-community/modules/tree/master/packages/toast)
+  toast: {
+    position: 'bottom-center',
+    duration: 3000,
+    theme: 'bubble',
+    keepOnHover: true
   },
+
+  sitemap: {
+    hostname: process.env.BASE_URL || 'https://woo-nuxt.netlify.app/'
+  },
+
+  // Robots module configuration (https://github.com/nuxt-community/robots-module)
+  robots: {
+    UserAgent: '*',
+    Disallow: '',
+    Allow: '/',
+    Sitemap: `${process.env.BASE_URL}sitemap.xml`
+  },
+
   apollo: {
     clientConfigs: {
       default: '~/plugins/apollo/apollo-config.js'
@@ -205,6 +299,17 @@ export default {
    ** See https://content.nuxtjs.org/configuration
    */
   content: {},
+
+  // Public runtime configuration (https://nuxtjs.org/guide/runtime-config)
+  publicRuntimeConfig: {
+    // GA_ID: process.env.GA_ID || 'UA-61422507-4',
+    // GTM_ID: process.env.GTM_ID || 'GTM-NMKVBMV',
+    BASE_URL: process.env.BASE_URL || 'https://woo-nuxt.netlify.app/'
+  },
+
+  // Private runtime configuration (https://nuxtjs.org/guide/runtime-config)
+  privateRuntimeConfig: {},
+
   /*
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
