@@ -182,12 +182,9 @@
 </template>
 
 <script>
-// import { transitionMixin } from '~/mixins/transition.js'
 import PRODUCT_DETAIL from '~/apollo/queries/product/product_detail.gql'
 
 export default {
-  // mixins: [transitionMixin],
-
   async asyncData({ app, route }) {
     const SLUG = route.params.slug
     const { data } = await app.apolloProvider.defaultClient.query({

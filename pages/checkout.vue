@@ -8,44 +8,49 @@
         </div>
         <div class="woocommerce-info">
           Have a coupon?
-          <a href="#" class="showcoupon">Click here to enter your code</a>
+          <a href="#" class="showcoupon" @click="handleCouponToggle"
+            >Click here to enter your code</a
+          >
         </div>
-
-        <ValidationObserver
-          ref="checkout_coupon"
-          v-slot="{ invalid }"
-          tag="form"
-          class="checkout_coupon"
-          @submit.prevent="submitForm"
-        >
-          <div class="flex items-center justify-between">
-            <ValidationProvider
-              v-slot="{ errors }"
-              name="E-mail"
-              rules="required"
-              tag="p"
+        <transition-expand>
+          <div v-show="hasCouponToggle">
+            <ValidationObserver
+              ref="checkout_coupon"
+              v-slot="{ invalid }"
+              tag="form"
+              class="checkout_coupon"
+              @submit.prevent="submitForm"
             >
-              <input
-                v-model="coupon_code"
-                type="text"
-                class="input-text"
-                placeholder="Coupon code"
-              />
-              <span class="error">{{ errors[0] }}</span>
-            </ValidationProvider>
-            <div class="button light-blue shadow normal">
-              <button
-                type="submit"
-                class="button flex"
-                name="apply_coupon"
-                value="Apply coupon"
-                :disabled="invalid"
-              >
-                Apply coupon
-              </button>
-            </div>
+              <div class="flex items-center justify-between">
+                <ValidationProvider
+                  v-slot="{ errors }"
+                  name="E-mail"
+                  rules="required"
+                  tag="p"
+                >
+                  <input
+                    v-model="coupon_code"
+                    type="text"
+                    class="input-text"
+                    placeholder="Coupon code"
+                  />
+                  <span class="error">{{ errors[0] }}</span>
+                </ValidationProvider>
+                <div class="button light-blue shadow normal">
+                  <button
+                    type="submit"
+                    class="button flex"
+                    name="apply_coupon"
+                    value="Apply coupon"
+                    :disabled="invalid"
+                  >
+                    Apply coupon
+                  </button>
+                </div>
+              </div>
+            </ValidationObserver>
           </div>
-        </ValidationObserver>
+        </transition-expand>
 
         <div class="md:pt-5 lg:pb-10 text-center checkout-title">
           <h1 class="mb-0 heading-title">Checkout</h1>
@@ -516,6 +521,7 @@ import { mapGetters } from 'vuex'
 export default {
   data() {
     return {
+      hasCouponToggle: false,
       shippingFee: 5.0,
       coupon_code: '',
       billing_first_name: '',
@@ -540,6 +546,9 @@ export default {
     })
   },
   methods: {
+    handleCouponToggle() {
+      this.hasCouponToggle = !this.hasCouponToggle
+    },
     getTotal() {
       return this.cartProducts.totalProductsPrice + this.shippingFee
     },

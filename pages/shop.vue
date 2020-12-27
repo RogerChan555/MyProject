@@ -7,12 +7,7 @@
 </template>
 
 <script>
-// import { transitionMixin } from '~/mixins/transition.js'
-
 export default {
-  name: 'Index',
-  // mixins: [transitionMixin],
-
   data() {
     return {}
   },
