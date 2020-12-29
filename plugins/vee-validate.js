@@ -1,6 +1,15 @@
 import Vue from 'vue'
 import { ValidationObserver, ValidationProvider, extend } from 'vee-validate'
-import { required, email, min, alpha, confirmed } from 'vee-validate/dist/rules'
+import {
+  required,
+  email,
+  min,
+  max,
+  alpha,
+  numeric,
+  confirmed
+} from 'vee-validate/dist/rules'
+import { MobileValidate } from './external/mobileValidates'
 
 extend('required', {
   ...required,
@@ -8,7 +17,12 @@ extend('required', {
 })
 extend('email', email)
 extend('min', min)
+extend('max', max)
 extend('alpha', alpha)
+console.log(alpha)
+console.log(MobileValidate)
+extend('phone', MobileValidate)
+extend('numeric', numeric)
 extend('confirmed', confirmed)
 
 Vue.component('ValidationProvider', ValidationProvider)

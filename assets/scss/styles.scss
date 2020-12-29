@@ -74,7 +74,7 @@ html {
 body {
   @apply bg-bgColor;
   @apply text-fgColor;
-  @apply text-base;
+  @apply text-sm;
   @apply font-body;
   @apply font-medium;
   // @apply select-none;
@@ -177,7 +177,7 @@ h6,
 }
 
 p {
-  @apply text-base;
+  @apply text-sm;
   @apply transition;
   @apply ease-in-out;
   @apply duration-200;
@@ -306,7 +306,7 @@ img {
     .popover-inner {
       @apply bg-ttColor;
       @apply text-fgColor;
-      @apply text-base;
+      @apply text-sm;
       @apply p-2;
       @apply rounded-lg;
       @apply overflow-auto;
@@ -573,7 +573,7 @@ code {
   &:not([readonly]):not(.ace_editor):not([type='checkbox']):not([type='radio']):hover,
   &:not([readonly]):not(.ace_editor):not([type='checkbox']):not([type='radio']):active,
   &:not([readonly]):not(.ace_editor):not([type='checkbox']):not([type='radio']):focus {
-    box-shadow: inset 0 0 0 2px var(--fg-light-color);
+    // box-shadow: inset 0 0 0 2px var(--fg-light-color);
   }
 }
 
@@ -658,7 +658,7 @@ sub {
 
 label {
   // @apply px-2;
-  @apply text-fgLightColor;
+  // @apply text-fgLightColor;
   @apply text-sm;
   @apply transition;
   @apply ease-in-out;

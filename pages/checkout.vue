@@ -1,7 +1,7 @@
 <template>
   <client-only>
     <div class="max-w-screen-xl flex-grow mx-auto">
-      <div class="woocommerce">
+      <div class="flex flex-col">
         <div class="woocommerce-info">
           Returning customer?
           <a href="#" class="showlogin">Click here to login</a>
@@ -23,8 +23,7 @@
             >
               <div class="flex items-center justify-between">
                 <ValidationProvider
-                  v-slot="{ errors }"
-                  name="E-mail"
+                  v-slot="{ errors, classes }"
                   rules="required"
                   tag="p"
                 >
@@ -32,6 +31,7 @@
                     v-model="coupon_code"
                     type="text"
                     class="input-text"
+                    :class="{ invalid: classes.invalid }"
                     placeholder="Coupon code"
                   />
                   <span class="error">{{ errors[0] }}</span>
@@ -70,15 +70,16 @@
                     <h6 class="margin-bottom_0">Billing details</h6>
                   </div>
 
-                  <div class="woocommerce-billing-fields__field-wrapper">
+                  <div class="flex flex-wrap">
                     <ValidationProvider
-                      v-slot="{ errors }"
-                      name="E-mail"
+                      v-slot="{ errors, classes }"
                       rules="required|alpha"
                       tag="p"
-                      class="form-row form-row-first validate-required"
+                      class="form-row w-1/2"
                     >
-                      <label for="billing_first_name" class=""
+                      <label
+                        for="billing_first_name"
+                        :class="{ invalid: classes.invalid }"
                         >First name
                         <abbr class="required" title="required">*</abbr></label
                       >
@@ -86,6 +87,7 @@
                         v-model="billing_first_name"
                         type="text"
                         class="input-text"
+                        :class="{ invalid: classes.invalid }"
                         placeholder=""
                         autocomplete="given-name"
                         autofocus="autofocus"
@@ -93,13 +95,14 @@
                       <span class="error">{{ errors[0] }}</span>
                     </ValidationProvider>
                     <ValidationProvider
-                      v-slot="{ errors }"
-                      name="E-mail"
+                      v-slot="{ errors, classes }"
                       rules="required|alpha"
                       tag="p"
-                      class="form-row form-row-last validate-required"
+                      class="form-row w-1/2"
                     >
-                      <label for="billing_last_name" class=""
+                      <label
+                        for="billing_last_name"
+                        :class="{ invalid: classes.invalid }"
                         >Last name
                         <abbr class="required" title="required">*</abbr></label
                       >
@@ -107,6 +110,7 @@
                         v-model="billing_last_name"
                         type="text"
                         class="input-text"
+                        :class="{ invalid: classes.invalid }"
                         placeholder=""
                         autocomplete="given-name"
                         autofocus="autofocus"
@@ -114,13 +118,14 @@
                       <span class="error">{{ errors[0] }}</span>
                     </ValidationProvider>
                     <ValidationProvider
-                      v-slot="{ errors }"
-                      name="E-mail"
+                      v-slot="{ errors, classes }"
                       rules="required"
                       tag="p"
-                      class="form-row form-row-wide address-field validate-required"
+                      class="form-row w-full"
                     >
-                      <label for="billing_address_1" class=""
+                      <label
+                        for="billing_address_1"
+                        :class="{ invalid: classes.invalid }"
                         >Street address
                         <abbr class="required" title="required">*</abbr></label
                       >
@@ -128,19 +133,21 @@
                         v-model="billing_address_1"
                         type="text"
                         class="input-text"
+                        :class="{ invalid: classes.invalid }"
                         placeholder="House number and street name"
                         autocomplete="address-line1"
                       />
                       <span class="error">{{ errors[0] }}</span>
                     </ValidationProvider>
                     <ValidationProvider
-                      v-slot="{ errors }"
-                      name="E-mail"
+                      v-slot="{ errors, classes }"
                       rules="required"
                       tag="p"
-                      class="form-row form-row-wide address-field validate-required"
+                      class="form-row w-full"
                     >
-                      <label for="billing_city" class=""
+                      <label
+                        for="billing_city"
+                        :class="{ invalid: classes.invalid }"
                         >Town / City
                         <abbr class="required" title="required">*</abbr></label
                       >
@@ -148,19 +155,21 @@
                         v-model="billing_city"
                         type="text"
                         class="input-text"
+                        :class="{ invalid: classes.invalid }"
                         placeholder=""
                         autocomplete="address-level2"
                       />
                       <span class="error">{{ errors[0] }}</span>
                     </ValidationProvider>
                     <ValidationProvider
-                      v-slot="{ errors }"
-                      name="E-mail"
-                      rules="required"
+                      v-slot="{ errors, classes }"
+                      rules="required|phone"
                       tag="p"
-                      class="form-row form-row-wide validate-required validate-phone"
+                      class="form-row w-full"
                     >
-                      <label for="billing_phone" class=""
+                      <label
+                        for="billing_phone"
+                        :class="{ invalid: classes.invalid }"
                         >Phone
                         <abbr class="required" title="required">*</abbr></label
                       >
@@ -168,19 +177,21 @@
                         v-model="billing_phone"
                         type="tel"
                         class="input-text"
+                        :class="{ invalid: classes.invalid }"
                         placeholder=""
                         autocomplete="tel"
                       />
                       <span class="error">{{ errors[0] }}</span>
                     </ValidationProvider>
                     <ValidationProvider
-                      v-slot="{ errors }"
-                      name="E-mail"
+                      v-slot="{ errors, classes }"
                       rules="required|email"
                       tag="p"
-                      class="form-row form-row-wide validate-required validate-email"
+                      class="form-row w-full"
                     >
-                      <label for="billing_email" class=""
+                      <label
+                        for="billing_email"
+                        :class="{ invalid: classes.invalid }"
                         >Email address
                         <abbr class="required" title="required">*</abbr></label
                       >
@@ -188,6 +199,7 @@
                         v-model="billing_email"
                         type="email"
                         class="input-text"
+                        :class="{ invalid: classes.invalid }"
                         placeholder=""
                         autocomplete="email username"
                       />
@@ -199,16 +211,20 @@
                 <div class="woocommerce-additional-fields">
                   <div class="woocommerce-additional-fields__field-wrapper">
                     <ValidationProvider
-                      v-slot="{ errors }"
-                      name="E-mail"
+                      v-slot="{ errors, classes }"
                       rules=""
                       tag="p"
-                      class="form-row notes"
+                      class="form-row notes w-full"
                     >
-                      <label for="order_comments" class="">Order notes</label>
+                      <label
+                        for="order_comments"
+                        :class="{ invalid: classes.invalid }"
+                        >Order notes</label
+                      >
                       <textarea
                         v-model="order_comments"
                         class="input-text"
+                        :class="{ invalid: classes.invalid }"
                         placeholder="Notes about your order, e.g. special notes for delivery."
                         rows="2"
                         cols="5"
@@ -315,71 +331,25 @@
                         <ul
                           class="wc_payment_methods payment_methods methods flex-col"
                         >
-                          <li class="wc_payment_method payment_method_bacs">
+                          <li
+                            v-for="(method, index) in payment_methods"
+                            :key="method.label"
+                          >
                             <input
-                              id="payment_method_bacs"
+                              :id="method.label"
                               type="radio"
                               class="input-radio"
-                              name="payment_method"
-                              value="bacs"
-                              checked="checked"
-                              data-order_button_text=""
+                              :checked="current_payment_method === index"
+                              @click="current_payment_method = index"
                             />
-
-                            <label for="payment_method_bacs">
-                              Direct bank transfer
-                            </label>
-                            <div class="payment_box payment_method_bacs">
-                              <p>
-                                Make your payment directly into our bank
-                                account. Please use your Order ID as the payment
-                                reference. Your order will not be shipped until
-                                the funds have cleared in our account.
-                              </p>
-                            </div>
-                          </li>
-                          <li class="wc_payment_method payment_method_cheque">
-                            <input
-                              id="payment_method_cheque"
-                              type="radio"
-                              class="input-radio"
-                              name="payment_method"
-                              value="cheque"
-                              data-order_button_text=""
-                            />
-
-                            <label for="payment_method_cheque">
-                              Check payments
-                            </label>
+                            <label :for="method.label">{{
+                              method.label
+                            }}</label>
                             <div
-                              class="payment_box payment_method_cheque"
-                              style="display: none"
+                              v-show="current_payment_method === index"
+                              class="payment_box"
                             >
-                              <p>
-                                Please send a check to Store Name, Store Street,
-                                Store Town, Store State / County, Store
-                                Postcode.
-                              </p>
-                            </div>
-                          </li>
-                          <li class="wc_payment_method payment_method_cod">
-                            <input
-                              id="payment_method_cod"
-                              type="radio"
-                              class="input-radio"
-                              name="payment_method"
-                              value="cod"
-                              data-order_button_text=""
-                            />
-
-                            <label for="payment_method_cod">
-                              Cash on delivery
-                            </label>
-                            <div
-                              class="payment_box payment_method_cod"
-                              style="display: none"
-                            >
-                              <p>Pay with cash upon delivery.</p>
+                              <p>{{ method.description }}</p>
                             </div>
                           </li>
                         </ul>
@@ -492,7 +462,6 @@
                               >
                               <span class="required">*</span>
                             </label>
-                            <input type="hidden" name="terms-field" value="1" />
                           </p>
 
                           <button
@@ -530,7 +499,24 @@ export default {
       billing_city: '',
       billing_email: '',
       billing_phone: '',
-      order_comments: ''
+      order_comments: '',
+      payment_methods: [
+        {
+          label: 'Direct bank transfer',
+          description:
+            'Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.'
+        },
+        // {
+        //   label: 'Check payments',
+        //   description:
+        //     'Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.'
+        // },
+        {
+          label: 'Cash on delivery',
+          description: 'Pay with cash upon delivery.'
+        }
+      ],
+      current_payment_method: 0
     }
   },
   head() {

@@ -1,0 +1,135 @@
+#reviews {
+  #comments {
+    h6 {
+      margin-bottom: 0;
+    }
+    ol.commentlist {
+      margin-top: 2.5rem;
+      padding-left: 0;
+      li {
+        margin-bottom: 4rem;
+        .shadow {
+          position: absolute;
+          left: 0;
+          top: 0;
+          &:before {
+            border-color: #222326;
+            border-width: 2px;
+            background-color: #cfe5fc;
+          }
+          img.avatar {
+            display: block;
+            float: none;
+            position: relative;
+            width: 4.5rem;
+            height: 4.5rem;
+            padding: 0;
+            border-width: 2px;
+            border-style: solid;
+            border-color: #222326;
+          }
+        }
+        .comment-text {
+          margin: 0.4rem 0 0 7.5rem;
+          padding: 0;
+          border-radius: 0;
+          border: 0;
+          .description {
+            p {
+              &:last-child {
+                margin-bottom: 0;
+              }
+            }
+          }
+          .meta {
+            margin-bottom: 0;
+            strong {
+              text-transform: capitalize;
+              font-family: 'Circular', Helvetica, Arial, sans-serif;
+              font-weight: 500;
+              font-size: 1.6rem;
+              color: #222326;
+            }
+            .woocommerce-review__dash {
+              display: none;
+            }
+            time {
+              display: block;
+              font-size: 1.2rem;
+              color: #444548;
+              margin-bottom: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  #review_form_wrapper {
+    #review_form {
+      .comment-reply-title {
+        margin-bottom: 0;
+      }
+      .comment-form-rating {
+        margin: 2.5rem 0 2rem;
+        label {
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          color: #222326;
+          font-size: 1.2rem;
+          font-weight: 500;
+        }
+        p.stars {
+          margin-bottom: 0;
+          span {
+            a {
+              color: #6ca5d0;
+            }
+          }
+        }
+        select {
+          display: none;
+        }
+      }
+      .shadow {
+        margin-bottom: 2rem;
+        &:before {
+          border-width: 0;
+          background-color: #cfe5fc;
+        }
+        textarea {
+          border-width: 3px;
+          border-color: #cfe5fc;
+          font-family: 'Circular', Helvetica, Arial, sans-serif;
+          font-weight: 500;
+          display: block;
+          height: 15rem;
+        }
+        input {
+          border-width: 3px;
+          border-color: #cfe5fc;
+          font-family: 'Circular', Helvetica, Arial, sans-serif;
+          font-weight: 500;
+          width: 100%;
+        }
+      }
+      .form-submit {
+        .shadow {
+          margin-bottom: 0;
+          input {
+            font-family: 'Circular', Helvetica, Arial, sans-serif;
+            font-weight: 500;
+            font-size: 1.6rem;
+            color: #222326;
+            line-height: 1.5;
+            background-color: #fff;
+            border-radius: 0;
+            border-width: 3px;
+            border-style: solid;
+            border-color: #cfe5fc;
+            padding: 0.8rem 3rem;
+          }
+        }
+      }
+    }
+  }
+}

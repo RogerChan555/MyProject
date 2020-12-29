@@ -1,0 +1,126 @@
+.woocommerce-info {
+  @apply text-base;
+
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	margin-bottom: 2rem;
+	padding: 0.8rem 1.25rem;
+	border-top: 0 !important;
+	background-color: #cfe5fc;
+	color: #222326;
+	&:before {
+		display: none;
+	}
+	&:after {
+		display: none;
+	}
+	a {
+		margin-left: auto;
+		color: #222326;
+	}
+	a.button {
+		-webkit-box-ordinal-group: 3;
+		-ms-flex-order: 2;
+		order: 2;
+		margin-left: auto;
+		float: none !important;
+		border-radius: 0;
+		background-color: transparent !important;
+		padding: 0;
+		font-weight: 500 !important;
+		color: #fff;
+	}
+}
+.woocommerce-message {
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	margin-bottom: 2rem;
+	padding: 0.8rem 1.25rem;
+	border-top: 0 !important;
+	font-weight: 500 !important;
+	background-color: #19b14f;
+	color: #fff;
+	&:before {
+		display: none;
+	}
+	&:after {
+		display: none;
+	}
+	a {
+		margin-left: auto;
+		color: #fff;
+	}
+	a.button {
+		-webkit-box-ordinal-group: 3;
+		-ms-flex-order: 2;
+		order: 2;
+		margin-left: auto;
+		float: none !important;
+		border-radius: 0;
+		background-color: transparent !important;
+		padding: 0;
+		font-weight: 500 !important;
+		color: #fff;
+	}
+}
+.woocommerce-error {
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	margin-bottom: 2rem;
+	padding: 0.8rem 1.25rem;
+	border-top: 0 !important;
+	font-weight: 500 !important;
+	background-color: #e43a19;
+	color: #fff;
+	&:before {
+		display: none;
+	}
+	&:after {
+		display: none;
+	}
+	a {
+		margin-left: auto;
+		color: #fff !important;
+	}
+	a.button {
+		-webkit-box-ordinal-group: 3;
+		-ms-flex-order: 2;
+		order: 2;
+		margin-left: auto;
+		float: none !important;
+		border-radius: 0;
+		background-color: transparent !important;
+		padding: 0;
+		font-weight: 500 !important;
+		color: #fff;
+	}
+}
+ul.woocommerce-error {
+	display: block;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	background-color: transparent;
+	li {
+		background-color: #e43a19;
+		color: #fff;
+		margin-bottom: 1.5rem;
+		padding: 1.5rem 2.5rem !important;
+		&:last-child {
+			margin-bottom: 3rem;
+		}
+		strong {
+			font-family: 'Circular', Helvetica, Arial, sans-serif;
+			font-weight: 500;
+		}
+		a {
+			color: #fff;
+		}
+	}
+}

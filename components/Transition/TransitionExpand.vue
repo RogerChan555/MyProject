@@ -1,7 +1,6 @@
 <template>
   <transition
     name="expand"
-    @before-enter="beforeEnter"
     @enter="enter"
     @after-enter="afterEnter"
     @leave="leave"
@@ -23,11 +22,12 @@ export default {
       element.style.visibility = 'hidden'
       element.style.height = 'auto'
 
-      const height = ['height', 'padding-top', 'padding-bottom']
-        .map((key) =>
-          parseInt(getComputedStyle(element).getPropertyValue(key), 10)
-        )
-        .reduce((prev, cur) => prev + cur)
+      const height = getComputedStyle(element).height
+      // const height = ['height', 'padding-top', 'padding-bottom']
+      //   .map((key) =>
+      //     parseInt(getComputedStyle(element).getPropertyValue(key), 10)
+      //   )
+      //   .reduce((prev, cur) => prev + cur)
 
       element.style.width = null
       element.style.position = null
@@ -79,7 +79,7 @@ export default {
   overflow: hidden;
 }
 .expand-leave-active {
-  transition: all 0.35s cubic-bezier(0, 1, 0.5, 1);
+  transition: all 0.35s ease-in;
 }
 
 .expand-enter,
