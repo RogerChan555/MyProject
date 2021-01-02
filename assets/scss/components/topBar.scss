@@ -1,7 +1,7 @@
 .top-bar_right {
   .dropdown {
     position: relative;
-    min-width: 15rem;
+    min-width: 14rem;
     cursor: pointer;
     #dropdown-button {
       border-width: 2px;
@@ -10,11 +10,10 @@
       color: #222326;
     }
     a {
-      font-size: 0.9em;
       font-weight: 500;
       color:var(--fg-light-color);
       display: block;
-      padding: 0.6rem 1.2rem;
+      padding: 0.5rem 1rem;
       transition: background-color cubic-bezier(0.215, 0.61, 0.355, 1) 0.2s;
       .icon {
         position: absolute;

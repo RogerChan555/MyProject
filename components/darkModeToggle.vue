@@ -1,13 +1,4 @@
 <template>
-  <!-- <label class="dayNight">
-    <input
-      type="checkbox"
-      :checked="$colorMode.preference === 'dark'"
-      @click="changeMode"
-    />
-    <div></div>
-  </label> -->
-
   <div
     class="dayNight"
     :class="{ switched: $colorMode.preference === 'dark' }"
@@ -15,10 +6,6 @@
   >
     <div></div>
   </div>
-  <!-- <select v-model="$colorMode.preference">
-    <option value="light">Light</option>
-    <option value="dark">Dark</option>
-  </select> -->
 </template>
 
 <script>

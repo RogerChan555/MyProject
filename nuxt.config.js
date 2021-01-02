@@ -148,6 +148,7 @@ export default {
     '~/assets/scss/components/comments.scss',
     '~/assets/scss/components/button.scss',
     '~/assets/scss/components/socialMedia.scss',
+    '~/assets/scss/components/topBar.scss',
     '~/assets/scss/components/darkModeToggle.scss'
   ],
   pageTransition: {
