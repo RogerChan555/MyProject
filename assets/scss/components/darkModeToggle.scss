@@ -1,0 +1,55 @@
+.dayNight {
+  width: 50px;
+	height: 4px;
+  border-radius: 27px;
+  background: #222326;
+	// background-image: linear-gradient(298deg, #da2c4d, #f8ab37);
+  div {
+    cursor: pointer;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    position: relative;
+    top: 50%;
+    left: -40px;
+    box-shadow: inset 12px -12px 0 0 #222326;
+    transform: translateY(-50%) scale(1) rotate(4deg);
+    transition: all .3s linear;
+    &:before {
+        content: '';
+        width: inherit;
+        height: inherit;
+        border-radius: inherit;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition: all .3s ease;
+    }
+    &:after {
+        content: '';
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        margin: -3px 0 0 -3px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        box-shadow: 0 -23px 0 #6ca5d0, 0 23px 0 #6ca5d0, 23px 0 0 #6ca5d0, -23px 0 0 #6ca5d0, 15px 15px 0 #6ca5d0, -15px 15px 0 #6ca5d0, 15px -15px 0 #6ca5d0, -15px -15px 0 #6ca5d0;
+        transform: scale(0);
+        transition: all .3s ease;
+    }
+  }
+  &.switched div {
+      box-shadow: inset 32px -32px 0 0 #222326;
+      left: 60px;
+      transform: translateY(-50%) scale(.5) rotate(0deg);
+      &:before {
+          background: #6ca5d0;
+          transition: all .3s ease .1s;
+      }
+      &:after {
+          transform: scale(1.5);
+          transition: transform .5s ease .15s;
+      }
+  }
+}

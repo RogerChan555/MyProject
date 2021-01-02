@@ -1,20 +1,17 @@
 .woocommerce-breadcrumb {
   @apply text-sm;
 
-  color: #444548;
+  color: var(--fg-light-color);
   span {
     @apply text-sm;
 
     position: relative;
     bottom: -0.1rem;
     padding-right: 0.2rem;
-    color: #444548;
+    color: var(--fg-light-color);
   }
   a {
     padding-right: 0.2rem;
-    color: #444548;
-    &:hover {
-      color: #6ca5d0;
-    }
+    color: var(--fg-light-color);
   }
 }

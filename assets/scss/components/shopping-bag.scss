@@ -2,7 +2,6 @@
   a.remove {
     font-weight: 400 !important;
     font-size: 2.3rem;
-    color: #222326 !important;
     background-color: transparent !important;
     width: 3rem !important;
     height: 3rem !important;
@@ -21,7 +20,6 @@
   a.remove {
     @apply text-xl;
 
-    color: #222326 !important;
     background-color: transparent !important;
     width: 1.5rem !important;
     height: 1.5rem !important;
@@ -69,7 +67,6 @@
             }
           }
           .quantity {
-            font-family: 'Circular', Helvetica, Arial, sans-serif;
             font-weight: 500;
             color: #6ca5d0;
           }
@@ -102,7 +99,6 @@
       }
     }
     .cart-total_buttons {
-      background-color: #fff;
       position: fixed;
       bottom: 0;
       left: 3rem;
@@ -120,25 +116,18 @@
         h6 {
           margin-bottom: 0;
         }
-        .price {
-          font-family: 'Circular', Helvetica, Arial, sans-serif;
-          font-weight: 500;
-          color: #6ca5d0;
-        }
       }
       .woocommerce-mini-cart__buttons {
         margin-top: 1.5rem;
         .button {
           @apply text-sm;
 
-          font-family: 'Circular', Helvetica, Arial, sans-serif;
           flex: 0 0 50%;
           max-width: 50%;
           text-align: center;
           padding: 1.5rem 0.35rem;
           border-radius: 0;
           background-color: #cfe5fc;
-          color: #222326 !important;
           font-weight: 500;
           line-height: 1;
           &:before {
@@ -158,13 +147,11 @@
       .empty-message_icon {
         opacity: 0;
         visibility: hidden;
-        -webkit-transform: translateY(2rem);
-        -ms-transform: translateY(2rem);
         transform: translateY(2rem);
         transition: all cubic-bezier(0.23, 1, 0.32, 1) 0.4s;
         margin-bottom: 2rem;
         svg {
-          fill: #222326;
+          fill: var(--fg-color);
           width: 70px;
           height: 70px;
         }
@@ -172,8 +159,6 @@
       .woocommerce-mini-cart__empty-message {
         opacity: 0;
         visibility: hidden;
-        -webkit-transform: translateY(2rem);
-        -ms-transform: translateY(2rem);
         transform: translateY(2rem);
         transition: all cubic-bezier(0.23, 1, 0.32, 1) 0.4s;
         margin-bottom: 0;
@@ -185,29 +170,19 @@
   .cart-total_buttons {
     opacity: 1;
     visibility: visible;
-    -webkit-transform: translateY(0);
-    -ms-transform: translateY(0);
     transform: translateY(0);
-    -webkit-transition-delay: 0.4s;
-    -o-transition-delay: 0.4s;
     transition-delay: 0.4s;
   }
   .empty-message-inner_holder {
     .empty-message_icon {
       opacity: 1;
       visibility: visible;
-      -webkit-transform: translateY(0);
-      -ms-transform: translateY(0);
       transform: translateY(0);
     }
     .woocommerce-mini-cart__empty-message {
       opacity: 1;
       visibility: visible;
-      -webkit-transform: translateY(0);
-      -ms-transform: translateY(0);
       transform: translateY(0);
-      -webkit-transition-delay: 0.1s;
-      -o-transition-delay: 0.1s;
       transition-delay: 0.1s;
     }
   }
@@ -219,7 +194,6 @@
 
       display: block;
       cursor: pointer;
-      font-family: 'Circular', Helvetica, Arial, sans-serif;
       font-weight: 500;
       color: #6ca5d0;
       position: absolute;

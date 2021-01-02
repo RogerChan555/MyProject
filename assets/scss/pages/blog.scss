@@ -47,7 +47,7 @@
     .post-meta {
       .post-meta_date {
         font-size: 1.3rem;
-        color: #444548;
+        color:var(--fg-light-color);
         display: inline-block;
         &:after {
           content: '-';

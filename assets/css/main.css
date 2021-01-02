@@ -246,7 +246,7 @@ input[type='text']:-ms-clear {
   border-style: solid;
   border-width: 3px;
   border-color: #222326;
-  background-color: #f4f4f4;
+  background-color: var(--bg-dark-color);
   -webkit-transition: background-color cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s !important;
   -o-transition: background-color cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s !important;
   transition: background-color cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s !important;
@@ -258,7 +258,7 @@ input[type='text']:-ms-clear {
   z-index: 1;
   border-style: solid;
   border-color: #222326;
-  background-color: #fff;
+  background-color: var(--bg-color);
 }
 
 .wp-caption {
@@ -1389,7 +1389,7 @@ header .lateral.is-mobile .language-search.item-delay_on .close-menu_holder,
   font-family: 'Circular', Helvetica, Arial, sans-serif;
   font-weight: 500;
   font-size: 1.1rem;
-  color: #444548;
+  color:var(--fg-light-color);
 }
 
 .woocommerce .woo-sidebar .widget.widget_rating_filter ul li a {

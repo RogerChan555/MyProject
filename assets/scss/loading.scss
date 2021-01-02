@@ -90,20 +90,14 @@
   height: 100%;
   opacity: 0;
   will-change: transform;
-  -webkit-transition: all 0s 1s;
-  -o-transition: all 0s 1s;
   transition: all 0s 1s;
 }
 .o-loader.is-loading {
   z-index: 2000;
   opacity: 1;
-  -webkit-transition: all 0s 0s;
-  -o-transition: all 0s 0s;
   transition: all 0s 0s;
   .o-loader__anim {
     opacity: 1;
-    -webkit-transition: opacity 0.4s ease-out 0.4s;
-    -o-transition: opacity 0.4s ease-out 0.4s;
     transition: opacity 0.4s ease-out 0.4s;
   }
   .o-loader__gradients {
@@ -118,9 +112,7 @@
   width: 100vmax;
   height: 100vmax;
   border-radius: 50%;
-  background-color: #fff;
-  -webkit-transform: scale(0);
-  -o-transform: scale(0);
+  background-color: var(--bg-color);
   transform: scale(0);
   will-change: transform;
 }
@@ -133,8 +125,6 @@
   height: 100%;
   background-color: #fff;
   opacity: 0;
-  -webkit-transition: opacity 0.6s ease-in 0s;
-  -o-transition: opacity 0.6s ease-in 0s;
   transition: opacity 0.6s ease-in 0s;
   &:after {
     content: '';
@@ -186,9 +176,6 @@
     background: -webkit-linear-gradient(top, #ffe603, #8ce894);
     background: -o-linear-gradient(top, #ffe603, #8ce894);
     background: linear-gradient(to bottom, #ffe603, #8ce894);
-    -webkit-animation: loadergradient 4s infinite var(--animation-state)
-      calc(4s / 2);
-    -o-animation: loadergradient 4s infinite var(--animation-state) calc(4s / 2);
     animation: loadergradient 4s infinite var(--animation-state) calc(4s / 2);
     background-size: auto 100%;
     background-repeat: repeat-x;
@@ -215,8 +202,6 @@
     background: linear-gradient(to bottom, rgba(224, 25, 25, 0.5), #274ee5);
     background-size: auto 100%;
     background-repeat: repeat-x;
-    -webkit-animation: loadergradient 4s infinite var(--animation-state);
-    -o-animation: loadergradient 4s infinite var(--animation-state);
     animation: loadergradient 4s infinite var(--animation-state);
   }
 }

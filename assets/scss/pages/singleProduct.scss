@@ -71,7 +71,7 @@
       }
       p {
         color: #fff;
-        background-color: #444548;
+        background-color:var(--fg-light-color);
         border-color: #222326;
       }
     }
@@ -118,7 +118,7 @@
       margin-bottom: 4rem;
       > span {
         display: block;
-        color: #444548;
+        color:var(--fg-light-color);
         font-size: 1rem;
         font-weight: 500;
         text-transform: uppercase;

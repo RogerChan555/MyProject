@@ -12,7 +12,7 @@
     a {
       font-size: 0.9em;
       font-weight: 500;
-      color: #444548;
+      color:var(--fg-light-color);
       display: block;
       padding: 0.6rem 1.2rem;
       transition: background-color cubic-bezier(0.215, 0.61, 0.355, 1) 0.2s;

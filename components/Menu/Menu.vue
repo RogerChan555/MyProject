@@ -70,7 +70,7 @@
 </template>
 
 <script>
-import SearchIcon from '~/assets/images/search.svg'
+import SearchIcon from '~/assets/images/search.svg?inline'
 import getMenusquery from '~/apollo/queries/Menus.gql'
 export default {
   components: {

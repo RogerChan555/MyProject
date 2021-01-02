@@ -555,7 +555,7 @@ code {
   @apply my-2;
   @apply p-2;
   // @apply rounded-lg;
-  // @apply bg-bgDarkColor;
+  @apply bg-bgDarkColor;
   @apply text-fgColor;
   @apply font-mono;
   @apply font-normal;
@@ -895,10 +895,6 @@ ol li {
   background-color: #222326;
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: opacity cubic-bezier(0.23, 1, 0.32, 1) 0.7s,
-    visibility cubic-bezier(0.23, 1, 0.32, 1) 0.7s;
-  -o-transition: opacity cubic-bezier(0.23, 1, 0.32, 1) 0.7s,
-    visibility cubic-bezier(0.23, 1, 0.32, 1) 0.7s;
   transition: opacity cubic-bezier(0.23, 1, 0.32, 1) 0.7s,
     visibility cubic-bezier(0.23, 1, 0.32, 1) 0.7s;
   cursor: pointer;
@@ -936,17 +932,12 @@ ol li {
         text-align: center;
         line-height: 1;
         overflow: hidden;
-        -webkit-transition: background-color cubic-bezier(0.215, 0.61, 0.355, 1)
-          0.2s;
-        -o-transition: background-color cubic-bezier(0.215, 0.61, 0.355, 1) 0.2s;
         transition: background-color cubic-bezier(0.215, 0.61, 0.355, 1) 0.2s;
         span {
           display: inline-block;
         }
         svg {
           fill: #222326;
-          -webkit-transition: fill cubic-bezier(0.215, 0.61, 0.355, 1) 0.2s;
-          -o-transition: fill cubic-bezier(0.215, 0.61, 0.355, 1) 0.2s;
           transition: fill cubic-bezier(0.215, 0.61, 0.355, 1) 0.2s;
         }
         .checkbox-icon {
@@ -989,8 +980,6 @@ ol li {
     .product-entry_overlay {
       .calculated-image {
         .second-image {
-          -webkit-transition: opacity cubic-bezier(0.215, 0.61, 0.355, 1) 0.4s;
-          -o-transition: opacity cubic-bezier(0.215, 0.61, 0.355, 1) 0.4s;
           transition: opacity cubic-bezier(0.215, 0.61, 0.355, 1) 0.4s;
           opacity: 0;
         }
@@ -1036,9 +1025,7 @@ ol li {
   }
 }
 .price {
-  font-family: 'Circular', Helvetica, Arial, sans-serif;
   font-weight: 500;
-  color: #222326 !important;
   margin-bottom: 0;
   ins {
     text-decoration: none;
@@ -1092,11 +1079,7 @@ ol li {
             transform cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s,
             opacity cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
           opacity: 0;
-          -webkit-transform: translateY(1rem);
-          -ms-transform: translateY(1rem);
           transform: translateY(1rem);
-          -webkit-transition-delay: 0.06s;
-          -o-transition-delay: 0.06s;
           transition-delay: 0.06s;
           outline: none;
           border: none;
@@ -1112,11 +1095,8 @@ ol li {
           transition: transform cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s,
             opacity cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
           opacity: 0;
-          -webkit-transform: translateY(1rem);
-          -ms-transform: translateY(1rem);
+          color: #222326;
           transform: translateY(1rem);
-          -webkit-transition-delay: 0.18s;
-          -o-transition-delay: 0.18s;
           transition-delay: 0.18s;
           del {
             background-color: #fff;

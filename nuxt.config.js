@@ -147,7 +147,8 @@ export default {
     '~/assets/scss/components/breadcrumb.scss',
     '~/assets/scss/components/comments.scss',
     '~/assets/scss/components/button.scss',
-    '~/assets/scss/components/socialMedia.scss'
+    '~/assets/scss/components/socialMedia.scss',
+    '~/assets/scss/components/darkModeToggle.scss'
   ],
   pageTransition: {
     // name: 'fade',
@@ -193,12 +194,11 @@ export default {
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/stylelint-module
     '@nuxtjs/stylelint-module',
-    // https://github.com/nuxt-community/svg-module
-    '@nuxtjs/svg',
+
     // https://github.com/nuxt-community/color-mode-module
-    '@nuxtjs/color-mode',
+    '@nuxtjs/color-mode'
     // Doc: https://github.com/aceforth/nuxt-optimized-images
-    '@aceforth/nuxt-optimized-images'
+    // '@aceforth/nuxt-optimized-images'
   ],
 
   /*
@@ -206,7 +206,9 @@ export default {
    */
   modules: [
     // 'nuxt-svg-loader',
-    'nuxt-svg-loader',
+    // 'nuxt-svg-loader',
+    // https://github.com/nuxt-community/svg-module
+    '@nuxtjs/svg',
     // https://github.com/nuxt-community/apollo-module
     '@nuxtjs/apollo',
     // https://github.com/nuxt-community/robots-module

@@ -1,7 +1,7 @@
 <template>
   <footer>
     <div class="max-w-screen-xl flex-grow mx-auto">
-      <p>this is footer</p>
+      <DarkModeToggle />
     </div>
   </footer>
 </template>

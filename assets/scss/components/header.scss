@@ -7,7 +7,7 @@
   max-height: 100vh;
   overflow: hidden;
   box-sizing: border-box;
-  background-color: #fff;
+  background-color: var(--bg-dark-color);
   transition: transform cubic-bezier(0.23, 1, 0.32, 1) 0.9s,
     -webkit-transform cubic-bezier(0.23, 1, 0.32, 1) 0.9s;
   &.left {
@@ -32,7 +32,6 @@
     width: 100%;
     z-index: 1;
     a {
-      color: #222326;
       font-size: 1rem;
       font-weight: 400;
       &:hover {
@@ -48,13 +47,11 @@
     }
     .logo {
       a {
-        font-family: 'Circular', Helvetica, Arial, sans-serif;
         font-weight: 900;
         font-size: 0.9rem;
         text-transform: uppercase;
         display: block;
         letter-spacing: 2px;
-        color: #222326;
         svg {
           display: block;
         }
@@ -84,11 +81,9 @@
           a {
             @apply text-3xl;
 
-            font-family: 'Circular', Helvetica, Arial, sans-serif;
             font-weight: 700;
             position: relative;
             line-height: 1.6;
-            color: #222326;
             display: inline-block;
             white-space: nowrap;
             &:hover {
@@ -111,7 +106,7 @@
                 display: block;
                 width: 0.25rem;
                 height: 1rem;
-                background-color: #222326;
+                background-color: var(--fg-color);
                 position: absolute;
                 right: 1rem;
                 -webkit-transition: background-color
@@ -134,7 +129,7 @@
                 display: block;
                 width: 0.25rem;
                 height: 1rem;
-                background-color: #222326;
+                background-color: var(--fg-color);
                 position: absolute;
                 right: 1rem;
                 -webkit-transition: background-color
@@ -225,8 +220,8 @@
   header.fixed.onScroll {
     padding-top: 1rem;
     padding-bottom: 1rem;
-    background-color: #fff;
-    border-bottom-color: #f4f4f4;
+    background-color: var(--bg-color);
+    border-bottom-color: var(--brd-color);
   }
 }
 .header-wrapper.header-height {
@@ -268,7 +263,6 @@ header {
         position: absolute;
         top: 3rem;
         right: 3rem;
-        font-family: 'Circular', Helvetica, Arial, sans-serif;
         font-weight: 500;
         font-size: 1rem;
         color: var(--act-color);
@@ -352,7 +346,6 @@ header {
           @apply text-sm;
 
           font-weight: 400;
-          color: #222326;
           &:before {
             background-color: var(--act-color);
           }
@@ -373,9 +366,7 @@ header {
           svg {
             width: 1.3rem;
             margin-right: 1rem;
-            color: #222326;
-            -webkit-transition: fill cubic-bezier(0.215, 0.61, 0.355, 1) 0.2s;
-            -o-transition: fill cubic-bezier(0.215, 0.61, 0.355, 1) 0.2s;
+            fill: var(--fg-color);
             transition: fill cubic-bezier(0.215, 0.61, 0.355, 1) 0.2s;
           }
           &:hover {
@@ -421,7 +412,7 @@ header {
       display: block;
     }
     .search-icon_holder {
-      border-left: 1px solid #222326;
+      border-left: 1px solid var(--fg-color);
       margin-left: 1.5rem !important;
       padding-left: 1.5rem;
     }

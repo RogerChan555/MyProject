@@ -117,7 +117,7 @@
 </template>
 
 <script>
-import CartEmpty from '~/assets/images/CartEmpty.svg'
+import CartEmpty from '@/assets/images/CartEmpty.svg?inline'
 import { mapGetters } from 'vuex'
 
 export default {
