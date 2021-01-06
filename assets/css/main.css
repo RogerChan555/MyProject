@@ -1574,27 +1574,6 @@ header .lateral.is-mobile .language-search.item-delay_on .close-menu_holder,
   position: relative;
 }
 
-
-
-.related-upsell_products h6 {
-  font-size: 1.4rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  margin-bottom: 5rem;
-}
-
-.related-upsell_products .up-sells,
-.related-upsell_products .related-products {
-  padding: 8rem 0 3rem;
-  margin-bottom: 4px;
-  background-color: #f4f4f4;
-}
-
-.related-upsell_products .related-products {
-  margin-bottom: 0;
-}
-
 .woocommerce .emoji-svg {
   color: #222326;
 }

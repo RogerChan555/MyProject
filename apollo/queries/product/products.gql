@@ -4,10 +4,10 @@ query MyQuery {
       id
       databaseId
       averageRating
-      description
       name
       slug
       onSale
+      date
       image {
         altText
         uri

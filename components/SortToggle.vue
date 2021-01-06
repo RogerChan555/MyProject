@@ -62,8 +62,8 @@ export default {
       isOpen: false,
       sortOptions: [
         'All',
-        'Popularity',
-        'Newness',
+        // 'Popularity',
+        // 'Newness',
         'Low to high',
         'Hight to low'
       ]

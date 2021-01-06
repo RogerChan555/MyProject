@@ -3,7 +3,7 @@ query getSingleProduct($id: ID!) {
     id
     databaseId
     averageRating
-    description
+    description(format: RAW)
     name
     slug
     onSale
@@ -20,6 +20,39 @@ query getSingleProduct($id: ID!) {
       srcSet
       sourceUrl
       link
+    }
+    related(first: 3) {
+      nodes {
+        name
+        link
+        onSale
+        image {
+          altText
+          uri
+          title
+          srcSet
+          sourceUrl
+          link
+        }
+        ... on VariableProduct {
+          price
+        }
+        ... on ExternalProduct {
+          price
+        }
+        ... on SimpleProduct {
+          price
+        }
+        ... on GroupProduct {
+          products {
+            nodes {
+              ... on SimpleProduct {
+                price
+              }
+            }
+          }
+        }
+      }
     }
     productCategories {
       nodes {
@@ -38,31 +71,21 @@ query getSingleProduct($id: ID!) {
     link
     ... on SimpleProduct {
       price
-      id
     }
     ... on VariableProduct {
       price
-      id
     }
     ... on ExternalProduct {
       price
-      id
-      contentType {
-        node {
-          id
-        }
-      }
     }
     ... on GroupProduct {
       products {
         nodes {
           ... on SimpleProduct {
-            id
             price
           }
         }
       }
-      id
     }
   }
 }

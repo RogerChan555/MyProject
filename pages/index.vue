@@ -9,7 +9,7 @@
     <div class="shop">
       <div class="flex flex-wrap relative overflow-hidden xxl:-mx-8 -mx-4">
         <div
-          v-for="product in listProduct"
+          v-for="product in listProductComputed"
           :key="product.id"
           class="w-full sm:w-1/2 xl:w-1/3 product xxl:px-8 xxl:pb-16 px-4 pb-8"
         >
@@ -76,17 +76,17 @@ export default {
     listProductComputed() {
       if (this.sort !== 'All') {
         switch (this.sort) {
-          case 'Popularity':
-            return this.resultsSort()
-            break
-          case 'Newness':
-            return this.resultsSort()
-            break
+          // case 'Popularity':
+          //   return this.resultsSort(this.listProduct)
+          //   break
+          // case 'Newness':
+          //   return this.resultsSort(this.listProduct)
+          //   break
           case 'Low to high':
-            return this.resultsSort()
+            return this.sortByPrice(this.listProduct, 'lowtohigh')
             break
           case 'Hight to low':
-            return this.resultsSort()
+            return this.sortByPrice(this.listProduct, 'hightolow')
             break
           default:
             return this.listProduct
@@ -101,8 +101,18 @@ export default {
     onSort(sort) {
       this.sort = sort
     },
-    resultsSort() {
-      return this.listProduct
+    sortByPrice(listProduct, condition) {
+      return listProduct.slice().sort((a, b) => {
+        let na =
+          a['price'] !== undefined ? a['price'].match(/(\d+\.\d{1,2})/g) : false
+        let nb =
+          b['price'] !== undefined ? b['price'].match(/(\d+\.\d{1,2})/g) : false
+        if (condition == 'lowtohigh') {
+          return na - nb
+        } else {
+          return nb - na
+        }
+      })
     }
   }
 }

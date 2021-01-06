@@ -77,7 +77,7 @@
                 </h4>
 
                 <a
-                  class="button shadow small light-blue soma-link mt-3 mb-3"
+                  class="button shadow small light-blue mb-5 cursor-pointer"
                   @click="addProductToCart(product)"
                 >
                   <span>Add to cart</span>
@@ -127,8 +127,9 @@
                     role="tabpanel"
                     aria-labelledby="tab-title-description"
                     style="display: block"
-                    v-html="product.description"
-                  />
+                  >
+                    <p>{{ product.description }}</p>
+                  </div>
                   <div
                     id="tab-additional_information"
                     class="woocommerce-Tabs-panel woocommerce-Tabs-panel--additional_information panel entry-content wc-tab"
@@ -159,7 +160,7 @@
           </div>
         </div>
       </div>
-      <div class="max-w-screen-xl mx-auto">
+      <!-- <div class="max-w-screen-xl mx-auto">
         <div class="navigation">
           <div class="flex">
             <div class="w-1/2 prev">
@@ -176,15 +177,18 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
+      <RelatedProduct :related-products="product.related.nodes" class="mt-20" />
     </client-only>
   </div>
 </template>
 
 <script>
 import PRODUCT_DETAIL from '~/apollo/queries/product/product_detail.gql'
+import RelatedProduct from '../../components/RelatedProduct.vue'
 
 export default {
+  components: { RelatedProduct },
   async asyncData({ app, route }) {
     const SLUG = route.params.slug
     const { data } = await app.apolloProvider.defaultClient.query({

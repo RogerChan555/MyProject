@@ -143,6 +143,7 @@ export default {
     '~/assets/scss/components/woocommerce-status.scss',
     '~/assets/scss/components/review.scss',
     '~/assets/scss/components/navigation.scss',
+    '~/assets/scss/components/related-upsells.scss',
     '~/assets/scss/components/shopping-bag.scss',
     '~/assets/scss/components/breadcrumb.scss',
     '~/assets/scss/components/comments.scss',
