@@ -24,6 +24,7 @@ query getSingleProduct($id: ID!) {
     related(first: 3) {
       nodes {
         name
+        slug
         link
         onSale
         image {

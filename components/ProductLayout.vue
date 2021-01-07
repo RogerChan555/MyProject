@@ -54,7 +54,7 @@
       </div>
       <nuxt-link
         :to="{
-          path: 'product/' + product.slug
+          path: '/product/' + product.slug
         }"
         class="soma-link"
       ></nuxt-link>
