@@ -51,6 +51,7 @@
                       >{{ product.productCategories.nodes[0].name }}</a
                     ><span>/</span>{{ product.name }}
                   </nav>
+                  <Breadcrumb />
                   <!-- <div class="woocommerce-product-rating ml-auto">
                     <a
                       href="#reviews"

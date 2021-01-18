@@ -18,7 +18,7 @@
           <a id="close-search" href="#" :class="{ 'is-active': checkMobile }"
             >Close</a
           >
-          <form action="https://neuronthemes.com/soma/" method="get">
+          <form action="" method="get">
             <input
               id="search-input"
               ref="searchInput"

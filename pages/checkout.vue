@@ -454,7 +454,7 @@
                               <span
                                 >I&rsquo;ve read and accept the
                                 <a
-                                  href="https://neuronthemes.com/soma/terms-and-conditions/"
+                                  href="#"
                                   target="_blank"
                                   class="woocommerce-terms-and-conditions-link"
                                   >terms &amp; conditions</a
