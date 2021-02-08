@@ -56,7 +56,7 @@
           <h1 class="mb-0 heading-title">Checkout</h1>
         </div>
         <ValidationObserver
-          ref="checkout"
+          ref="checkoutForm"
           v-slot="{ invalid }"
           tag="form"
           class="checkout woocommerce-checkout"
@@ -73,7 +73,7 @@
                   <div class="flex flex-wrap">
                     <ValidationProvider
                       v-slot="{ errors, classes }"
-                      rules="required|alpha"
+                      rules="required"
                       tag="p"
                       class="form-row w-1/2"
                     >
@@ -96,7 +96,7 @@
                     </ValidationProvider>
                     <ValidationProvider
                       v-slot="{ errors, classes }"
-                      rules="required|alpha"
+                      rules="required"
                       tag="p"
                       class="form-row w-1/2"
                     >
@@ -163,7 +163,7 @@
                     </ValidationProvider>
                     <ValidationProvider
                       v-slot="{ errors, classes }"
-                      rules="required|phone"
+                      rules="required"
                       tag="p"
                       class="form-row w-full"
                     >
@@ -239,9 +239,7 @@
             <div class="lg:w-2/5">
               <div class="your-order">
                 <div class="sm:pb-5">
-                  <h6 id="order_review_heading" class="margin-bottom_0">
-                    Your order
-                  </h6>
+                  <h6 id="order_review_heading">Your order</h6>
                 </div>
 
                 <div class="shadow">
@@ -301,14 +299,6 @@
                                   >&euro;</span
                                 >{{ shippingFee }}</span
                               >
-                              <input
-                                id="shipping_method_0"
-                                type="hidden"
-                                name="shipping_method[0]"
-                                data-index="0"
-                                value="flat_rate:2"
-                                class="shipping_method"
-                              />
                             </td>
                           </tr>
 
@@ -354,93 +344,6 @@
                           </li>
                         </ul>
                         <div class="form-row place-order">
-                          <div
-                            class="woocommerce-terms-and-conditions"
-                            style="
-                              display: none;
-                              max-height: 200px;
-                              overflow: auto;
-                            "
-                          >
-                            <p>
-                              Lorem ipsum dolor sit amet, consectetur adipiscing
-                              elit. Nullam placerat lectus non velit tempus
-                              sollicitudin. Donec eget lectus at sem suscipit
-                              egestas. Maecenas nec ligula massa. Curabitur
-                              rhoncus pharetra mollis. Proin efficitur velit non
-                              turpis posuere interdum. Mauris ligula ligula,
-                              tempor vel porta at, consequat sed tellus. Donec
-                              efficitur mi est, sit amet vehicula augue
-                              pellentesque sit amet. Nam eget posuere metus, sed
-                              iaculis leo.
-                            </p>
-                            <p>
-                              Praesent vehicula arcu eget lacus blandit, id
-                              viverra lectus eleifend. Ut in diam justo. Etiam
-                              sed eros ut nisl porta aliquam. Pellentesque
-                              condimentum id enim non iaculis. Aliquam congue
-                              efficitur magna, sit amet ultricies nulla volutpat
-                              in. Nam suscipit consequat aliquet. Curabitur sit
-                              amet sapien massa. Donec rutrum velit ligula,
-                              vitae posuere ligula interdum vitae. Fusce
-                              pharetra elit nibh, eget congue magna commodo non.
-                              Nunc euismod nulla vel metus molestie, at pulvinar
-                              turpis venenatis. Sed ac consequat ligula, non
-                              posuere urna. Vestibulum accumsan sapien sed eros
-                              suscipit viverra. Nullam vestibulum felis eros,
-                              vitae elementum justo feugiat porta. Quisque ut
-                              laoreet nisi. Sed ut odio varius, tincidunt justo
-                              id, tempor sapien.
-                            </p>
-                            <p>
-                              Pellentesque fermentum felis erat, at maximus
-                              felis tempus blandit. Mauris molestie arcu sit
-                              amet lacus porttitor, ac finibus quam faucibus.
-                              Sed auctor pharetra turpis eu luctus. Duis
-                              molestie porttitor gravida. Cras et lacus eu
-                              tellus ullamcorper tincidunt fermentum et tellus.
-                              Ut in justo ultricies, ultricies arcu non,
-                              imperdiet ante. Praesent vel metus felis. Aliquam
-                              nec metus leo. Maecenas iaculis massa eget
-                              interdum accumsan. Morbi eget felis non nunc
-                              suscipit placerat. Maecenas vestibulum metus
-                              turpis, ac sodales elit tristique ac. Phasellus
-                              consequat, risus molestie dapibus eleifend, metus
-                              libero tempor purus, sit amet congue tellus nisl
-                              et purus.
-                            </p>
-                            <p>
-                              Cras sit amet neque cursus, molestie nunc sed,
-                              pulvinar felis. In eleifend bibendum arcu ac
-                              faucibus. Vestibulum posuere imperdiet purus non
-                              elementum. Quisque pellentesque enim viverra,
-                              facilisis justo non, mattis turpis. Aliquam erat
-                              volutpat. Fusce mollis lectus augue, a semper orci
-                              molestie nec. Quisque nec tincidunt dolor, euismod
-                              egestas ante. Sed mauris nisi, dignissim vitae
-                              augue vel, viverra sodales odio.
-                            </p>
-                            <p>
-                              Donec a posuere sapien, et laoreet nulla. Nullam
-                              ut pellentesque urna. Pellentesque nec massa ut
-                              nibh consequat auctor at ut lectus. Maecenas a
-                              nisl ante. Curabitur ac sapien vehicula, tempor
-                              lacus sit amet, posuere turpis. Vivamus ac eros
-                              vel tellus suscipit lobortis nec nec urna.
-                              Pellentesque egestas mauris ut ex pellentesque
-                              pharetra eget eu purus. Cras quis ligula
-                              fringilla, condimentum erat at, sagittis velit.
-                              Nam nec sodales massa, id faucibus leo.
-                              Pellentesque sollicitudin tristique euismod. Sed
-                              vel tortor ex. Proin hendrerit, mi a semper
-                              interdum, leo orci sollicitudin erat, fringilla
-                              efficitur neque nibh eu dui. Orci varius natoque
-                              penatibus et magnis dis parturient montes,
-                              nascetur ridiculus mus. Praesent condimentum, elit
-                              sit amet aliquet convallis, est sapien varius
-                              felis, ut hendrerit metus turpis aliquam libero.
-                            </p>
-                          </div>
                           <p class="form-row terms wc-terms-and-conditions">
                             <label
                               class="woocommerce-form__label woocommerce-form__label-for-checkbox checkbox"
@@ -487,6 +390,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import addToCartMutation from '~/apollo/mutations/add-to-cart.gql'
 export default {
   data() {
     return {
@@ -539,7 +443,51 @@ export default {
       return this.cartProducts.totalProductsPrice + this.shippingFee
     },
     submitForm() {
-      console.log('submited')
+      this.$refs.checkoutForm.validate().then((success) => {
+        if (!success) {
+          return
+        }
+        const payload = {
+          coupon_code: this.coupon_code,
+          billing_first_name: this.billing_first_name,
+          billing_last_name: this.billing_last_name,
+          billing_address_1: this.billing_address_1,
+          billing_city: this.billing_city,
+          billing_phone: this.billing_phone,
+          billing_email: this.billing_email,
+          order_comments: this.order_comments
+        }
+        // Action
+        this.addToCart(payload)
+      })
+      // this.$validator.validateAll().then((result) => {
+      //   if (result) {
+      //     // Action
+      //     this.login(result)
+      //   }
+      // })
+    },
+    async addToCart(payload) {
+      console.log(payload)
+      const result = await this.$apollo.mutation({
+        query: addToCartMutation
+      })
+      return result
+      // const apolloClient = this.$apollo.provider.defaultClient
+      // const payload = {
+      //   email,
+      //   password,
+      //   remember_me
+      // }
+      // const result = await this.apiLoginAction({
+      //   apolloClient,
+      //   payload
+      // })
+      // if (result.requestResolved) {
+      //   console.log(result)
+      // } else {
+      //   console.log('error')
+      // }
     }
   }
 }

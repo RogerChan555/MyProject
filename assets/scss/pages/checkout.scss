@@ -212,10 +212,10 @@
           }
         }
         .form-row {
-          padding: 1.6rem 1rem;
+          padding: 1.6rem 1rem 0.5rem;
           margin: 0;
           .woocommerce-terms-and-conditions {
-            padding: 1.5rem;
+            padding: 1rem;
             background-color: transparent;
             -webkit-box-shadow: none;
             box-shadow: none;
@@ -224,7 +224,6 @@
           }
           .wc-terms-and-conditions {
             padding: 0;
-            margin: 8px 0 0 0;
             label {
               span {
                 font-weight: 500;
@@ -238,10 +237,11 @@
             }
           }
           .button {
+            @apply text-base;
+            @apply mt-4;
+
             border-radius: 0;
             background-color: #cfe5fc;
-            font-family: 'Circular', Helvetica, Arial, sans-serif;
-            font-weight: 500;
             color: #222326;
             padding: 0.8rem 1.7rem;
           }

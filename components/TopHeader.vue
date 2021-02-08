@@ -6,7 +6,7 @@
           <Cart />
         </div>
         <div class="w-1/3">
-          <!-- <Logo /> -->
+          <Logo />
         </div>
         <div class="w-1/3">
           <Menu />

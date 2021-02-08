@@ -48,22 +48,19 @@
 .button.small {
   button,
   span {
-    // font-size: 1.4rem;
     padding: 0.3rem 4rem;
   }
 }
 .button.normal {
   button,
   span {
-    // font-size: 1.5rem;
-    padding: 0.5rem 3rem;
+    padding: 0.5rem 2.5rem;
   }
 }
 .button.large {
   button,
   span {
     font-size: 1.6rem;
-    font-weight: 500;
     padding: 1rem 4rem;
   }
 }
@@ -188,8 +185,9 @@
   }
   .button.normal {
     button {
-      font-size: 1rem;
-      padding: 0.7rem 3rem;
+      @apply text-sm;
+
+      padding: 0.5rem 2.5rem;
     }
   }
   .button.large {

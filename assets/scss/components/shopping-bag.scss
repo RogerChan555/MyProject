@@ -1,7 +1,7 @@
 .woocommerce {
-  a.remove {
-    font-weight: 400 !important;
+  .remove {
     font-size: 2.3rem;
+    cursor: pointer;
     background-color: transparent !important;
     width: 3rem !important;
     height: 3rem !important;
@@ -17,8 +17,8 @@
   }
 }
 .shopping-bag {
-  a.remove {
-    @apply text-xl;
+  .remove {
+    @apply text-lg;
 
     background-color: transparent !important;
     width: 1.5rem !important;

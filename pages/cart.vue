@@ -118,7 +118,6 @@
                       <div class="coupon flex items-center mr-auto">
                         <label for="coupon_code">Coupon:</label>
                         <input
-                          id="coupon_code"
                           type="text"
                           name="coupon_code"
                           class="input-text"
@@ -206,7 +205,7 @@
                 <div class="wc-proceed-to-checkout">
                   <nuxt-link
                     :to="{ path: 'checkout' }"
-                    class="checkout-button button alt wc-forward"
+                    class="checkout-button button"
                   >
                     Proceed to checkout
                   </nuxt-link>

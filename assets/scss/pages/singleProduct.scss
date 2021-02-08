@@ -117,10 +117,10 @@
     .product_meta {
       margin-bottom: 4rem;
       > span {
+        @apply text-sm;
+
         display: block;
         color:var(--fg-light-color);
-        font-size: 1rem;
-        font-weight: 500;
         text-transform: uppercase;
         letter-spacing: 1px;
         margin-bottom: 0.7rem;
