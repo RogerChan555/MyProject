@@ -20,48 +20,92 @@ export default () => {
   const httpLink = createHttpLink({
     // You should use an absolute URL here
     uri: clientConfig.graphqlUrl,
-    fetch,
-    headers: {
-      'Content-Type': 'application/json'
-    }
+    fetch: fetch
+    // headers: {
+    //   'Content-Type': 'application/json'
+    // }
   })
 
   // Error Handling
   const errorLink = onError(({ graphQLErrors, networkError }) => {
     if (graphQLErrors) {
-      const Unauthorized = graphQLErrors[0].extensions.category === 'validation'
-      if (Unauthorized) {
-        // auth.actions.logout()
-      }
-
-      return false
+      graphQLErrors.map(({ message, locations, path }) =>
+        console.log(
+          `[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`
+        )
+      )
     }
     if (networkError) {
-      // Handle network error here!
+      if (networkError) console.log(`[Network error]: ${networkError}`)
     }
   })
 
+  /**
+   * Middleware operation
+   * If we have a session token in localStorage, add it to the GraphQL request as a Session header.
+   */
   const middlewareLink = setContext((request, previousContext) => {
-    // Get user token
-    const token = process.browser ? localStorage.getItem('apollo-token') : null
+    /**
+     * If session data exist in local storage, set value as session header.
+     */
+    const session = process.browser ? localStorage.getItem('woo-session') : null
     return {
       headers: {
         // Make sure you include any existing headers!
         ...previousContext.headers,
-        authorization: `Bearer ${token}`
+        'woocommerce-session': `Session ${session}`
       }
     }
   })
 
+  /**
+   * Afterware operation.
+   *
+   * This catches the incoming session token and stores it in localStorage, for future GraphQL requests.
+   */
+  const afterwareLink = new ApolloLink((operation, forward) => {
+    return forward(operation).map((response) => {
+      /**
+       * Check for session header and update session in local storage accordingly.
+       */
+      const {
+        response: { headers }
+      } = operation.getContext()
+      if (headers) {
+        const session = headers.get('woocommerce-session')
+
+        if (session) {
+          // Remove session data if session destroyed.
+          // if (session === 'false') {
+          //   localStorage.removeItem('woo-session')
+          //   // Update session new data if changed.
+          // } else if (localStorage.getItem('woo-session') !== session) {
+          //   localStorage.setItem(
+          //     'woo-session',
+          //     headers.get('woocommerce-session')
+          //   )
+          // }
+        }
+      }
+
+      return response
+    })
+  })
+
   // Create Apollo Link
-  const link = new ApolloLink.from([errorLink, middlewareLink, httpLink])
+  const link = new ApolloLink.from([
+    errorLink,
+    afterwareLink,
+    middlewareLink,
+    httpLink
+  ])
+
   // here you can place your middleware. ctx has the context forwarded from Nuxt
 
   // return the an object with additional apollo-client options
   return {
     link,
     cache: new InMemoryCache({ fragmentMatcher }),
-    connectToDevTools: true,
     defaultHttpLink: false // this should do the trick
   }
 }
