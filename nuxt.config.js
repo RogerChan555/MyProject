@@ -125,33 +125,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: [
-    // '~/assets/scss/woocommerce.scss',
-    '~/assets/scss/woocommerce-layout.scss',
-    '~/assets/scss/styles.scss',
-    '~/assets/scss/themes.scss',
-    '~/assets/scss/fonts.scss',
-    '~/assets/css/main.css',
-    '~/assets/scss/pages/singleProduct.scss',
-    '~/assets/scss/pages/checkout.scss',
-    '~/assets/scss/pages/account.scss',
-    '~/assets/scss/pages/cart.scss',
-    '~/assets/scss/pages/blog.scss',
-    '~/assets/scss/components/badge.scss',
-    '~/assets/scss/components/header.scss',
-    '~/assets/scss/components/footer.scss',
-    '~/assets/scss/components/woocommerce-status.scss',
-    '~/assets/scss/components/review.scss',
-    '~/assets/scss/components/navigation.scss',
-    '~/assets/scss/components/related-upsells.scss',
-    '~/assets/scss/components/shopping-bag.scss',
-    '~/assets/scss/components/breadcrumb.scss',
-    '~/assets/scss/components/comments.scss',
-    '~/assets/scss/components/button.scss',
-    '~/assets/scss/components/socialMedia.scss',
-    '~/assets/scss/components/topBar.scss',
-    '~/assets/scss/components/darkModeToggle.scss'
-  ],
+  css: ['~/assets/scss/app.scss'],
   pageTransition: {
     // name: 'fade',
     // css: false,

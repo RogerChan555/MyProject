@@ -1,0 +1,109 @@
+@keyframes waves {
+  50% {
+    -webkit-transform: translateX(5px) rotate(0.5deg);
+    transform: translateX(5px) rotate(0.5deg);
+  }
+}
+@keyframes boat {
+  50% {
+    -webkit-transform: rotate(-2deg) translateY(-3px);
+    transform: rotate(-2deg) translateY(-3px);
+  }
+}
+@keyframes boat-rotate {
+  50% {
+    -webkit-transform: rotate(-2deg) translateY(5px) translateX(-2px);
+    transform: rotate(-2deg) translateY(5px) translateX(-2px);
+  }
+}
+@keyframes boat-reverse {
+  50% {
+    -webkit-transform: rotate(2deg) translateY(10px) translateX(2px);
+    transform: rotate(2deg) translateY(10px) translateX(2px);
+  }
+}
+.error404 {
+	.error404-holder {
+		padding: 4rem 0 8rem 0;
+		.error-text {
+			margin-bottom: 5rem;
+		}
+		.waves {
+			.boat {
+				-webkit-animation: boat 3s ease-in-out infinite;
+				animation: boat 3s ease-in-out infinite;
+				-webkit-transform-origin: center;
+				-ms-transform-origin: center;
+				transform-origin: center;
+			}
+			.boat-rotate {
+				-webkit-animation: boat-rotate 6s ease-in-out infinite;
+				animation: boat-rotate 6s ease-in-out infinite;
+				-webkit-transform-origin: center;
+				-ms-transform-origin: center;
+				transform-origin: center;
+			}
+			.boat-reverse {
+				-webkit-animation: boat-reverse 4s ease-in-out infinite;
+				animation: boat-reverse 4s ease-in-out infinite;
+				-webkit-transform-origin: center;
+				-ms-transform-origin: center;
+				transform-origin: center;
+			}
+			#waves {
+				path {
+					-webkit-animation: waves 6s ease-in-out infinite;
+					animation: waves 6s ease-in-out infinite;
+					-webkit-transform-origin: center;
+					-ms-transform-origin: center;
+					transform-origin: center;
+					&:nth-child(1) {
+						-webkit-animation-delay: 1s;
+						animation-delay: 1s;
+						-webkit-animation-duration: 4s;
+						animation-duration: 4s;
+					}
+					&:nth-child(2) {
+						-webkit-animation-delay: 2s;
+						animation-delay: 2s;
+						-webkit-animation-duration: 10s;
+						animation-duration: 10s;
+					}
+					&:nth-child(3) {
+						-webkit-animation-delay: 1s;
+						animation-delay: 1s;
+						-webkit-animation-duration: 7s;
+						animation-duration: 7s;
+					}
+					&:nth-child(4) {
+						-webkit-animation: none;
+						animation: none;
+					}
+					&:nth-child(5) {
+						-webkit-animation-delay: 2s;
+						animation-delay: 2s;
+						-webkit-animation-duration: 4s;
+						animation-duration: 4s;
+					}
+					&:nth-child(6) {
+						-webkit-animation-delay: 2s;
+						animation-delay: 2s;
+						-webkit-animation-duration: 5s;
+						animation-duration: 5s;
+					}
+				}
+			}
+		}
+	}
+}
+@media (min-width: 993px) {
+	.error404 {
+		.error404-holder {
+			padding: 6rem 0 16rem 0;
+			.error-text {
+				text-align: left;
+				margin-bottom: 0;
+			}
+		}
+	}
+}

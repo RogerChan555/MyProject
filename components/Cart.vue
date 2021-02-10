@@ -83,11 +83,14 @@
                   <div
                     class="woocommerce-mini-cart__buttons buttons flex justify-between"
                   >
-                    <nuxt-link :to="{ path: 'cart' }" class="button wc-forward">
+                    <nuxt-link
+                      :to="{ path: '/cart' }"
+                      class="button wc-forward"
+                    >
                       View cart
                     </nuxt-link>
                     <nuxt-link
-                      :to="{ path: 'checkout' }"
+                      :to="{ path: '/checkout' }"
                       class="button checkout wc-forward"
                     >
                       Checkout

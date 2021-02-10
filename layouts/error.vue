@@ -118,7 +118,7 @@ export default {
   head() {
     return {
       bodyAttrs: {
-        class: 'error404 wpb-js-composer js-comp-ver-5.4.7 vc_responsive'
+        class: 'error404'
       }
     }
   }

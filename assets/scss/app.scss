@@ -1,0 +1,30 @@
+// Setting
+@import 'woocommerce-layout.scss';
+@import 'styles.scss';
+@import 'fonts.scss';
+@import 'themes.scss';
+@import '../css/main.css';
+
+// Pages
+@import 'pages/singleProduct.scss';
+@import 'pages/checkout.scss';
+@import 'pages/account.scss';
+@import 'pages/cart.scss';
+@import 'pages/blog.scss';
+@import 'pages/error.scss';
+
+// Components
+@import 'components/header.scss';
+@import 'components/footer.scss';
+@import 'components/woocommerce-status.scss';
+@import 'components/badge.scss';
+@import 'components/review.scss';
+@import 'components/navigation.scss';
+@import 'components/related-upsells.scss';
+@import 'components/shopping-bag.scss';
+@import 'components/breadcrumb.scss';
+@import 'components/comments.scss';
+@import 'components/button.scss';
+@import 'components/socialMedia.scss';
+@import 'components/topBar.scss';
+@import 'components/darkModeToggle.scss'
