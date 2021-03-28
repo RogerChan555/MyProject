@@ -47,7 +47,8 @@ const createNewProduct = (product, qty) => {
 // }
 
 export const state = () => ({
-  cartList: {}
+  cartList: {},
+  checkoutData: {}
 })
 
 export const getters = {
@@ -107,8 +108,11 @@ export const mutations = {
 
   [types.CART_REMOVE_PRODUCT](state, updatedProducts) {
     updateProductLocalStore(state, updatedProducts)
+  },
+
+  [types.CREATE_CHECKOUT_DATA](state, payload) {
+    state.checkoutData = payload
   }
-  // decrementProductQuantity(state, product) {}
 }
 
 export const actions = {
@@ -154,5 +158,43 @@ export const actions = {
     )
 
     commit(types.CART_REMOVE_PRODUCT, updatedProducts)
+  },
+  createCheckoutData({ commit }, order) {
+    const checkoutData = {
+      clientMutationId: this.uuid.v4(),
+
+      billing: {
+        firstName: order.firstName,
+        lastName: order.lastName,
+        address1: order.address1,
+        address2: order.address2,
+        city: order.city,
+        country: order.country,
+        state: order.state,
+        postcode: order.postcode,
+        email: order.email,
+        phone: order.phone,
+        company: order.company
+      },
+      shipping: {
+        firstName: order.firstName,
+        lastName: order.lastName,
+        address1: order.address1,
+        address2: order.address2,
+        city: order.city,
+        country: order.country,
+        state: order.state,
+        postcode: order.postcode,
+        email: order.email,
+        phone: order.phone,
+        company: order.company
+      },
+      shipToDifferentAddress: false,
+      paymentMethod: order.paymentMethod,
+      isPaid: false,
+      transactionId: 'hjkhjkhsdsdiui'
+    }
+
+    commit(types.CREATE_CHECKOUT_DATA, checkoutData)
   }
 }

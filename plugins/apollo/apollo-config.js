@@ -75,16 +75,22 @@ export default () => {
         const session = headers.get('woocommerce-session')
 
         if (session) {
+          const wooSession = process.browser
+            ? localStorage.getItem('woo-session')
+            : null
+          console.log(wooSession)
           // Remove session data if session destroyed.
-          // if (session === 'false') {
-          //   localStorage.removeItem('woo-session')
-          //   // Update session new data if changed.
-          // } else if (localStorage.getItem('woo-session') !== session) {
-          //   localStorage.setItem(
-          //     'woo-session',
-          //     headers.get('woocommerce-session')
-          //   )
-          // }
+          if (session === 'false') {
+            process.browser ? localStorage.removeItem('woo-session') : null
+            // Update session new data if changed.
+          } else if (wooSession !== session) {
+            process.browser
+              ? localStorage.setItem(
+                  'woo-session',
+                  headers.get('woocommerce-session')
+                )
+              : null
+          }
         }
       }
 
@@ -104,6 +110,8 @@ export default () => {
 
   // return the an object with additional apollo-client options
   return {
+    connectToDevTools: process.browser,
+    ssrMode: !process.browser,
     link,
     cache: new InMemoryCache({ fragmentMatcher }),
     defaultHttpLink: false // this should do the trick

@@ -8,7 +8,7 @@ module.exports = {
   future: {
     removeDeprecatedGapUtilities: true
   },
-  experimental: 'all',
+  // experimental: 'all',
   corePlugins: {
     clear: false,
     float: false,

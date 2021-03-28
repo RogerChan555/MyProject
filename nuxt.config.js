@@ -145,6 +145,7 @@ export default {
     { src: '~/plugins/vee-validate.js', mode: 'client' },
     { src: '~/plugins/filter.js' },
     { src: '~/plugins/vue-lazyload', mode: 'client' },
+    { src: '~/plugins/vue-uuid', mode: 'client' },
     { src: '~/plugins/vuex-persistedstate.js', mode: 'client' },
     { src: '~/plugins/after-each.js', mode: 'client' },
     { src: '~/plugins/external/main.js', mode: 'client' }
@@ -189,8 +190,6 @@ export default {
     '@nuxtjs/apollo',
     // https://github.com/nuxt-community/robots-module
     '@nuxtjs/robots',
-    // Doc: https://github.com/nuxt/content
-    '@nuxt/content',
     // Doc: https://github.com/nuxt-community/modules/tree/master/packages/toast
     '@nuxtjs/toast',
     // Doc: https://github.com/nuxt-community/sitemap-module
@@ -274,11 +273,6 @@ export default {
     preference: 'light',
     fallback: 'light'
   },
-  /*
-   ** Content module configuration
-   ** See https://content.nuxtjs.org/configuration
-   */
-  content: {},
 
   // Public runtime configuration (https://nuxtjs.org/guide/runtime-config)
   publicRuntimeConfig: {
