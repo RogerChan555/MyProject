@@ -416,6 +416,7 @@ export default {
           description: 'Pay with cash upon delivery.'
         }
       ],
+      paymentMethod: 'cod',
       current_payment_method: 0
     }
   },
@@ -483,8 +484,8 @@ export default {
     },
     async checkout(payload) {
       console.log(payload)
-      const result = await this.$apollo.mutation({
-        query: addToCartMutation,
+      const result = await this.$apollo.mutate({
+        mutation: addToCartMutation,
         variables: {
           input: payload
         }
