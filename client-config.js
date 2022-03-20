@@ -1,5 +1,5 @@
 const clientConfig = {
-  siteUrl: 'https://haudev.ga/',
-  graphqlUrl: 'https://haudev.ga/graphql'
+  siteUrl: process.env.BASE_URL,
+  graphqlUrl: process.env.GRAPHQL_URL
 }
 module.exports = clientConfig
