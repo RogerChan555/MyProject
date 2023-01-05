@@ -1,0 +1,7 @@
+mutation CLEAR_CART_MUTATION($input: RemoveItemsFromCartInput!) {
+  removeItemsFromCart(input: $input) {
+    cartItems {
+      quantity
+    }
+  }
+}

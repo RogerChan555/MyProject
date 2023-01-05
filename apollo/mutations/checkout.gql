@@ -3,7 +3,6 @@ mutation CHECKOUT_MUTATION($input: CheckoutInput!) {
     clientMutationId
     order {
       id
-      orderKey
       refunds {
         nodes {
           amount

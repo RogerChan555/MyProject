@@ -89,8 +89,6 @@
                         class="input-text"
                         :class="{ invalid: classes.invalid }"
                         placeholder=""
-                        autocomplete="given-name"
-                        autofocus="autofocus"
                       />
                       <span class="error">{{ errors[0] }}</span>
                     </ValidationProvider>
@@ -112,8 +110,6 @@
                         class="input-text"
                         :class="{ invalid: classes.invalid }"
                         placeholder=""
-                        autocomplete="given-name"
-                        autofocus="autofocus"
                       />
                       <span class="error">{{ errors[0] }}</span>
                     </ValidationProvider>
@@ -390,7 +386,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import addToCartMutation from '~/apollo/mutations/add-to-cart.gql'
+import addToCartMutation from '~/apollo/mutations/addCart.gql'
 export default {
   data() {
     return {
@@ -420,6 +416,7 @@ export default {
           description: 'Pay with cash upon delivery.'
         }
       ],
+      paymentMethod: 'cod',
       current_payment_method: 0
     }
   },
@@ -448,17 +445,35 @@ export default {
           return
         }
         const payload = {
-          coupon_code: this.coupon_code,
-          billing_first_name: this.billing_first_name,
-          billing_last_name: this.billing_last_name,
-          billing_address_1: this.billing_address_1,
-          billing_city: this.billing_city,
-          billing_phone: this.billing_phone,
-          billing_email: this.billing_email,
-          order_comments: this.order_comments
+          // coupon_code: this.coupon_code,
+          clientMutationId: this.$uuid.v4(),
+
+          billing: {
+            firstName: this.billing_first_name,
+            lastName: this.billing_last_name,
+            address1: this.billing_address_1,
+            address2: this.billing_address_2,
+            city: this.billing_city,
+            email: this.billing_email,
+            phone: this.billing_phone
+          },
+          shipping: {
+            firstName: this.billing_first_name,
+            lastName: this.billing_last_name,
+            address1: this.billing_address_1,
+            address2: this.billing_address_2,
+            city: this.billing_city,
+            email: this.billing_email,
+            phone: this.billing_phone
+          },
+          customerNote: this.order_comments,
+          shipToDifferentAddress: false,
+          paymentMethod: this.paymentMethod,
+          isPaid: false,
+          transactionId: 'hjkhjkhsdsdiui'
         }
         // Action
-        this.addToCart(payload)
+        this.checkout(payload)
       })
       // this.$validator.validateAll().then((result) => {
       //   if (result) {
@@ -467,12 +482,16 @@ export default {
       //   }
       // })
     },
-    async addToCart(payload) {
+    async checkout(payload) {
       console.log(payload)
-      const result = await this.$apollo.mutation({
-        query: addToCartMutation
+      const result = await this.$apollo.mutate({
+        mutation: addToCartMutation,
+        variables: {
+          input: payload
+        }
       })
       return result
+
       // const apolloClient = this.$apollo.provider.defaultClient
       // const payload = {
       //   email,
