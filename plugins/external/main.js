@@ -6,9 +6,8 @@ export default () => {
         .clientHeight
     }
     function calculateHeaderHeight() {
-      document.getElementsByClassName(
-        'header-height'
-      )[0].style.height = getHeaderHeight()
+      document.getElementsByClassName('header-height')[0].style.height =
+        getHeaderHeight()
       // console.log(document.getElementsByClassName('header-height')[0])
     }
     calculateHeaderHeight()
